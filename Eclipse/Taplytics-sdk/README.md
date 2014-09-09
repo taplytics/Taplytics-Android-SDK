@@ -1,0 +1,4 @@
+Taplytics-Android
+=================
+
+Android SDK
