@@ -60,11 +60,12 @@ _How do I, as a developer, start using Taplytics?_
   ```
   dependencies {                                                                   
     //Taplytics                                                                        
-    compile('com.taplytics.sdk:taplytics:1.0.0@aar') {              	
+    compile('com.taplytics.sdk:taplytics:+@aar') {              	
       transitive = true                                                           
     }                                                                                       
   }    
   ```
+  
   
 3. _Override your application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). It should look like this:_
 
@@ -88,3 +89,23 @@ _How do I, as a developer, start using Taplytics?_
   ```
   
 5. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
+
+
+####Fixing common gradle issues
+
+  This import may cause conflicts with your existing dependencies. So, if you see an error during the build step that says: `‘Multiple dex files define…’`, then you can exclude the conflicting libraries the following ways:
+  
+  Example: the conflicting library is the v4 support library:
+    
+  Underneath `transitive=true':
+    
+    
+    //You can exclude by artifact name
+      exclude module: ‘support-v4’
+    
+    //Or, you can exclude by group
+      exclude group: 'com.google.support'
+        
+    //Or, you can exclude by group and artifact
+      exclude group: 'com.google.support', module: ‘support-v4’
+    
