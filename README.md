@@ -95,17 +95,15 @@ _How do I, as a developer, start using Taplytics?_
 
   This import may cause conflicts with your existing dependencies. So, if you see an error during the build step that says: `‘Multiple dex files define…’`, then you can exclude the conflicting libraries the following ways:
   
+    // You can exclude by artifact name
+    exclude module: ‘support-v4’
+  
   Example: the conflicting library is the v4 support library:
     
+    // Or, you can exclude by group
+    exclude group: 'com.google.support'
+
   Underneath `transitive=true':
     
-    
-    //You can exclude by artifact name
-      exclude module: ‘support-v4’
-    
-    //Or, you can exclude by group
-      exclude group: 'com.google.support'
-        
-    //Or, you can exclude by group and artifact
-      exclude group: 'com.google.support', module: ‘support-v4’
-    
+    // Or, you can exclude by group and artifact
+    exclude group: 'com.google.support', module: ‘support-v4’
