@@ -45,3 +45,65 @@ _How do I, as a developer, start using Taplytics?_
 7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
 ## Android Studio Installation Instructions
+
+1. _In your module’s build.gradle, add the url to the sdk, as well as mavenCentral():_
+
+  ```
+  repositories {                                                                                              
+    mavenCentral() 
+    maven { url 'https://github.com/taplytics/Taplytics-Android-SDK/raw/master/AndroidStudio/’ }
+  }      
+  ```
+  
+2. _In your module’s build.gradle dependencies, compile Taplytics and all of its dependencies by adding ‘transitive =  true’_
+
+  ```
+  dependencies {                                                                   
+    //Taplytics                                                                        
+    compile('com.taplytics.sdk:taplytics:+@aar') {              	
+      transitive = true                                                           
+    }                                                                                       
+  }    
+  ```
+  
+  
+3. _Override your application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). It should look like this:_
+
+  ```java
+  public class ExampleApplication extends Application {
+    @Override
+    public void onCreate() {
+      super.onCreate();
+      Taplytics.startTaplytics(this, "YOUR TAPLYTICS API KEY");
+    }
+  }
+  ```
+4. _Finally, add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
+
+  ```xml
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <application
+    android:name=".ExampleApplication"
+    ...
+  ```
+  
+5. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
+
+
+####Fixing common gradle issues
+
+  This import may cause conflicts with your existing dependencies. So, if you see an error during the build step that says: `‘Multiple dex files define…’`, then you can exclude the conflicting libraries the following ways:
+  
+    // You can exclude by artifact name
+    exclude module: ‘support-v4’
+  
+  Example: the conflicting library is the v4 support library:
+    
+    // Or, you can exclude by group
+    exclude group: 'com.google.support'
+
+  Underneath `transitive=true':
+    
+    // Or, you can exclude by group and artifact
+    exclude group: 'com.google.support', module: ‘support-v4’
