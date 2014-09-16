@@ -60,7 +60,7 @@ _How do I, as a developer, start using Taplytics?_
   ```
   dependencies {                                                                   
     //Taplytics                                                                        
-    compile('com.taplytics.sdk:taplytics:+@aar') {              	
+    compile('com.taplytics.sdk:taplytics:1.0.2@aar') {              	
       transitive = true                                                           
     }                                                                                       
   }    
