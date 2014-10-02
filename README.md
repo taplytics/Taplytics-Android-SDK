@@ -12,16 +12,10 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Eclipse Installation Instructions
 
-1. _Clone the Taplyitcs Android SDK as a submodule into your desired directory using:_
-
-  ```
-  git submodule add git@github.com:taplytics/taplytics-android-sdk.git Taplytics
-  ```
-  
-2. _Import the project into eclipse._
-3. _Mark the SDK as a library in the SDK project’s properties (Right click the project in the project list, select properties. Next click Android and check the ‘Is Library’ option)_
-4. _Add the library to your project (right click the project, select properties, click android, click add, select the sdk)_
-5. _Override your application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). It should look like this:_
+1. _Download the taplytics.jar [here](https://github.com/taplytics/Taplytics-Android-SDK/raw/master/taplytics.jar)_
+2. _Copy the jar into your 'libs' directory in your project._
+3. _Right click the jar in Eclipse, click Build Path > add to build path_
+4. _Override your application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). It should look like this:_
 
   ```java
   public class ExampleApplication extends Application {
@@ -32,7 +26,7 @@ _How do I, as a developer, start using Taplytics?_
     }
   }
   ```
-6. _Finally, add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
+5. _Finally, add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
 
   ```xml
   <uses-permission android:name="android.permission.INTERNET" />
@@ -42,27 +36,24 @@ _How do I, as a developer, start using Taplytics?_
     ...
   ```
   
-7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
+6. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
 ## Android Studio Installation Instructions
 
-1. _In your module’s build.gradle, add the url to the sdk, as well as mavenCentral():_
+1. _In your module’s build.gradle, add the url to the sdk._
 
   ```
   repositories {                                                                                              
-    mavenCentral() 
     maven { url 'https://github.com/taplytics/Taplytics-Android-SDK/raw/master/AndroidStudio/’ }
   }      
   ```
   
-2. _In your module’s build.gradle dependencies, compile Taplytics and all of its dependencies by adding ‘transitive =  true’_
+2. _In your module’s build.gradle dependencies, compile Taplytics._
 
   ```
   dependencies {                                                                   
     //Taplytics                                                                        
-    compile("com.taplytics.sdk:taplytics:1.0.2@aar") {              	
-      transitive = true                                                           
-    }                                                                                       
+    compile("com.taplytics.sdk:taplytics:1.0.7@aar")                                                         
   }    
   ```
   
@@ -89,21 +80,3 @@ _How do I, as a developer, start using Taplytics?_
   ```
   
 5. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
-
-
-####Fixing common gradle issues
-
-  This import may cause conflicts with your existing dependencies. So, if you see an error during the build step that says: `‘Multiple dex files define…’`, then you can exclude the conflicting libraries the following ways:
-  
-    // You can exclude by artifact name
-    exclude module: "support-v4"
-  
-  Example: the conflicting library is the v4 support library:
-    
-    // Or, you can exclude by group
-    exclude group: "com.google.support"
-
-  Underneath `transitive=true':
-    
-    // Or, you can exclude by group and artifact
-    exclude group: "com.google.support", module: "support-v4"
