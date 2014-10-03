@@ -2,6 +2,8 @@
 
 _Description: Taplytics is a native mobile A/B testing platform that helps you optimize your Android app!_
 
+**Current Version**: 1.0.8
+
 ## Project Setup
 
 _How do I, as a developer, start using Taplytics?_ 
