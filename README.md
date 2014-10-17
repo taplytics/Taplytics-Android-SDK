@@ -1,8 +1,10 @@
 # Taplytics-Android-SDK
 
-_Description: Taplytics is a native mobile A/B testing platform that helps you optimize your Android app!_
+_Taplytics is a native mobile A/B testing platform that helps you optimize your Android app!_
 
-**Current Version**: 1.0.9
+_Visual editing is now available for your Android apps. Try it on text, buttons and more!_
+
+**Current Version**: 1.1.0
 
 ## Project Setup
 
