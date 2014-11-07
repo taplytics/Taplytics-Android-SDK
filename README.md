@@ -55,8 +55,19 @@ _How do I, as a developer, start using Taplytics?_
     android:name=".ExampleApplication"
     ...
   ```
+
+
+5. _(Only if using Support Fragments) Add the following to your proguard rules:_
+
+  ```
+	-keep class android.support.v4.app.Fragment { *; }
+	-keep class android.support.v4.view.ViewPager
+	-keepclassmembers class android.support.v4.view.ViewPager$LayoutParams { *; }
   
-5. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
+  ```
+  
+  
+6. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
 
 ## Eclipse Installation Instructions
@@ -84,5 +95,14 @@ _How do I, as a developer, start using Taplytics?_
     android:name=".ExampleApplication"
     ...
   ```
+
+6. _(Only if using Support Fragments) Add the following to your proguard rules:_
+
+  ```
+	-keep class android.support.v4.app.Fragment { *; }
+	-keep class android.support.v4.view.ViewPager
+	-keepclassmembers class android.support.v4.view.ViewPager$LayoutParams { *; }
   
-6. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
+  ```
+
+7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
