@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing platform that helps you optimize your 
 
 _Visual editing is now available for your Android apps. Try it on text, buttons and more!_
 
-**Current Version**: 1.1.5
+**Current Version**: 1.1.6
 
 ## Project Setup
 
