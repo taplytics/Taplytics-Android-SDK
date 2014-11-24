@@ -19,7 +19,7 @@ _How do I, as a developer, start using Taplytics?_
 2. _Install the SDK._
 3. _Create an experiment and push it live to your users!_
 
-##The Border / Shake menu. 
+####The Border / Shake menu. 
 
 When connected to an experiment on a **debug** build, a border will show around your app window. This shows which experiment and variation you are currently viewing.
 
