@@ -29,7 +29,14 @@
       <version>1.1.5</version>
       <version>1.1.6</version>
       <version>1.1.7</version>
+<<<<<<< HEAD
     </versions>
     <lastUpdated>20141113213547</lastUpdated>
+=======
+      <version>1.2.0</version>
+      <version>1.2.1</version>
+    </versions>
+    <lastUpdated>20141124231610</lastUpdated>
+>>>>>>> 22bfdbe... 1.2.1
   </versioning>
 </metadata>
