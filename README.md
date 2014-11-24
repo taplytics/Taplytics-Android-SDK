@@ -23,7 +23,7 @@ _How do I, as a developer, start using Taplytics?_
 
 When connected to an experiment on a **debug** build, a border will show around your app window. This shows which experiment and variation you are currently viewing.
 
-You can long-press on the top of the border to switch experiments, or shake your device and pick from the menu.
+You can long-press on the top of the border to switch experiments, or shake your device and pick from the menu, or select an experiment from the Taplytics website.
 
 **The border and shake menu will _NOT_ appear on release builds.**
 
