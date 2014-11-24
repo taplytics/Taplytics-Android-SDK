@@ -3,15 +3,12 @@
 _Taplytics is a native mobile A/B testing platform that helps you optimize your Android app!_
 
 
-<<<<<<< HEAD
-**Current Version**: 1.1.7
-=======
+
 **Current Version**: 1.2.1
 
 ###Note for 1.2.1 update:
 
 Any builds prior to 1.2.1 require changes in the way dependencies are imported in Gradle. Please see Android Studio Setup section 2.
->>>>>>> 22bfdbe... 1.2.1
 
 ##Project Setup
 
@@ -41,12 +38,21 @@ You can long-press on the top of the border to switch experiments, or shake your
   }      
   ```
   
-2. _In your module’s build.gradle dependencies, compile Taplytics._
+2. _In your module’s build.gradle dependencies, compile Taplytics and its dependencies._
 
   	```
   dependencies {                                                                   
     //Taplytics                                                                        
-    compile("com.taplytics.sdk:taplytics:+@aar")                                                         
+    compile("com.taplytics.sdk:taplytics:+@aar")  
+    
+    //Dependencies for taplytics
+    //Note: Socket.io connection only made on debug builds.
+    compile("com.mcxiaoke.volley:library:+")
+    compile("com.squareup.okhttp:okhttp-urlconnection:+")
+    compile("com.squareup.okhttp:okhttp:+")
+   
+    compile("com.github.nkzawa:socket.io-client:+")
+    compile("com.github.nkzawa:engine.io-client:+") 
   }    
   ```
   
