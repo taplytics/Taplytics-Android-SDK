@@ -38,12 +38,21 @@ You can long-press on the top of the border to switch experiments, or shake your
   }      
   ```
   
-2. _In your module’s build.gradle dependencies, compile Taplytics._
+2. _In your module’s build.gradle dependencies, compile Taplytics and its dependencies._
 
   	```
   dependencies {                                                                   
     //Taplytics                                                                        
-    compile("com.taplytics.sdk:taplytics:+@aar")                                                         
+    compile("com.taplytics.sdk:taplytics:+@aar")  
+    
+    //Dependencies for taplytics
+    //Note: Socket.io connection only made on debug builds.
+    compile("com.mcxiaoke.volley:library:+")
+    compile("com.squareup.okhttp:okhttp-urlconnection:+")
+    compile("com.squareup.okhttp:okhttp:+")
+   
+    compile("com.github.nkzawa:socket.io-client:+")
+    compile("com.github.nkzawa:engine.io-client:+") 
   }    
   ```
   
