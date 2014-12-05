@@ -289,10 +289,13 @@ The possible fields are:
 |Parameter  |Type         |
 |---	    |---          |
 |email	    |	String    |
+|user_id    |	String    |
+|firstname  |	String    |
+|lastname   |	String    |
 |name	    |	String    |
 |age	    |	Number    |
 |gender	    |	String    |
-|customData	|	JsonObject|
+|customData |	JsonObject|
 
 Where the customData key lets you pass in custom user data as a JSONObject.
 
