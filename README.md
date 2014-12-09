@@ -101,13 +101,21 @@ You can long-press on the top of the border to switch experiments, or shake your
     ```
 
 
-6. _(Only if using Support Fragments) Add the following to your proguard rules:_
+6. Add the following to your Proguard rules:_
+  
+  (Only if using Support Fragments)
 
 	```
   -keep class android.support.v4.app.Fragment { *; }
   -keep class android.support.v4.view.ViewPager
   -keepclassmembers class android.support.v4.view.ViewPager$LayoutParams {*;}
   ```
+  
+  (Only if using Mixpanel)
+  
+  	```
+  	-keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
+  	```
   
   
 7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
@@ -161,14 +169,23 @@ You can long-press on the top of the border to switch experiments, or shake your
         </activity>
     ```
 
-7. _(Only if using Support Fragments) Add the following to your proguard rules:_
+7. _Add the following to your Proguard rules:_
+  
+  (Only if using Support Fragments)
 
 	```
-	-keep class android.support.v4.app.Fragment { *; }
-	-keep class android.support.v4.view.ViewPager
-	-keepclassmembers class android.support.v4.view.ViewPager$LayoutParams { *; }
-    ```
-
+  -keep class android.support.v4.app.Fragment { *; }
+  -keep class android.support.v4.view.ViewPager
+  -keepclassmembers class android.support.v4.view.ViewPager$LayoutParams {*;}
+  ```
+  
+  (Only if using Mixpanel)
+  
+  	```
+  	-keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
+  	```
+  
+  
 8. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
 ##Usage
