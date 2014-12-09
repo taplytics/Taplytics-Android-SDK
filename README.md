@@ -80,7 +80,7 @@ You can long-press on the top of the border to switch experiments, or shake your
 
 5. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
 	
-	First,[Get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
+	First, [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
 
 	![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
 	
@@ -141,7 +141,7 @@ You can long-press on the top of the border to switch experiments, or shake your
   
 6. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
 	
-	First,[Get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
+	First, [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
 
 	![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
 	
