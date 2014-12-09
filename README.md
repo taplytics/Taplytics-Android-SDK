@@ -79,6 +79,12 @@ You can long-press on the top of the border to switch experiments, or shake your
   ```
 
 5. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
+	
+	First,[Get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
+
+	![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
+	
+	Then, add it to your manifest:
 
 	```xml
 			...
@@ -87,7 +93,7 @@ You can long-press on the top of the border to switch experiments, or shake your
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data
-                    android:scheme="tl-71ac90da"
+                    android:scheme="YOUR URL SCHEME"
                     android:host="pair"
                     />
             </intent-filter>
@@ -134,6 +140,12 @@ You can long-press on the top of the border to switch experiments, or shake your
   ```
   
 6. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
+	
+	First,[Get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
+
+	![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
+	
+	Then, add it to your manifest:
 
 	```xml
 			...
@@ -142,7 +154,7 @@ You can long-press on the top of the border to switch experiments, or shake your
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data
-                    android:scheme="tl-71ac90da"
+                    android:scheme="YOUR URL SCHEME"
                     android:host="pair"
                     />
             </intent-filter>
