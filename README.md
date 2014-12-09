@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing platform that helps you optimize your 
 
 
 
-**Current Version**: [1.2.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.2.3)
+**Current Version**: [1.2.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.2.4)
 
 ###Note for 1.2.1 update:
 
@@ -68,7 +68,7 @@ You can long-press on the top of the border to switch experiments, or shake your
     }
   }
   ```
-4. _Finally, add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
+4. _Now, add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
 
  	 ```xml
   <uses-permission android:name="android.permission.INTERNET" />
@@ -78,8 +78,24 @@ You can long-press on the top of the border to switch experiments, or shake your
     ...
   ```
 
+5. Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
 
-5. _(Only if using Support Fragments) Add the following to your proguard rules:_
+	```xml
+			...
+	           <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:scheme="tl-71ac90da"
+                    android:host="pair"
+                    />
+            </intent-filter>
+        </activity>
+    ```
+
+
+6. _(Only if using Support Fragments) Add the following to your proguard rules:_
 
 	```
   -keep class android.support.v4.app.Fragment { *; }
@@ -88,7 +104,7 @@ You can long-press on the top of the border to switch experiments, or shake your
   ```
   
   
-6. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
+7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
 
 ### Eclipse Installation
@@ -107,7 +123,7 @@ You can long-press on the top of the border to switch experiments, or shake your
     }
   }
   ```
-5. _Finally, add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
+5. _Add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
 
   	```xml
   <uses-permission android:name="android.permission.INTERNET" />
@@ -116,8 +132,24 @@ You can long-press on the top of the border to switch experiments, or shake your
     android:name=".ExampleApplication"
     ...
   ```
+  
+6. Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
 
-6. _(Only if using Support Fragments) Add the following to your proguard rules:_
+	```xml
+			...
+	           <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:scheme="tl-71ac90da"
+                    android:host="pair"
+                    />
+            </intent-filter>
+        </activity>
+    ```
+
+7. _(Only if using Support Fragments) Add the following to your proguard rules:_
 
 	```
 	-keep class android.support.v4.app.Fragment { *; }
@@ -125,7 +157,7 @@ You can long-press on the top of the border to switch experiments, or shake your
 	-keepclassmembers class android.support.v4.view.ViewPager$LayoutParams { *; }
     ```
 
-7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
+8. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
 ##Usage
 
