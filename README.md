@@ -78,7 +78,7 @@ You can long-press on the top of the border to switch experiments, or shake your
     ...
   ```
 
-5. Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
+5. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
 
 	```xml
 			...
@@ -133,7 +133,7 @@ You can long-press on the top of the border to switch experiments, or shake your
     ...
   ```
   
-6. Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
+6. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
 
 	```xml
 			...
