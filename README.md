@@ -92,10 +92,7 @@ You can long-press on the top of the border to switch experiments, or shake your
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data
-                    android:scheme="YOUR URL SCHEME"
-                    android:host="pair"
-                    />
+                <data android:scheme="YOUR URL SCHEME"/>
             </intent-filter>
         </activity>
     ```
@@ -161,10 +158,7 @@ You can long-press on the top of the border to switch experiments, or shake your
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data
-                    android:scheme="YOUR URL SCHEME"
-                    android:host="pair"
-                    />
+                <data android:scheme="YOUR URL SCHEME"/>
             </intent-filter>
         </activity>
     ```
