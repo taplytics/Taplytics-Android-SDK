@@ -103,7 +103,9 @@ You can long-press on the top of the border to switch experiments, or shake your
     ```
 
 
-6. Add the following to your Proguard rules:_
+6. _Add the following to your Proguard rules:_
+
+  
   
   (Only if using Support Fragments)
 
@@ -118,7 +120,13 @@ You can long-press on the top of the border to switch experiments, or shake your
   	```
   	-keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
   	```
-  
+  	
+  (Only if you see gradle compiler errors with com.okio)
+  ```
+  	-dontwarn okio.**
+	-dontwarn java.nio.file.*
+	-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+```
   
 7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
@@ -183,6 +191,13 @@ You can long-press on the top of the border to switch experiments, or shake your
   	```
   	-keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
   	```
+  
+  (Only if you see gradle compiler errors with com.okio or com.nio)
+  ```
+  	-dontwarn okio.**
+	-dontwarn java.nio.file.*
+	-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+```
   
   
 8. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
