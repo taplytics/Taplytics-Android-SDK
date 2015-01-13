@@ -51,8 +51,13 @@ You can long-press on the top of the border to switch experiments, or shake your
     compile("com.squareup.okhttp:okhttp-urlconnection:+")
     compile("com.squareup.okhttp:okhttp:+")
    
-    compile("com.github.nkzawa:socket.io-client:+")
-    compile("com.github.nkzawa:engine.io-client:+") 
+    //Excluding org.json due to compiler warnings
+    compile("com.github.nkzawa:socket.io-client:+") {
+        exclude group: 'org.json'
+    }
+    compile("com.github.nkzawa:engine.io-client:+") {
+        exclude group: 'org.json'
+    }
   }    
   ```
   
