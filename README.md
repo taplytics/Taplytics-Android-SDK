@@ -51,8 +51,13 @@ You can long-press on the top of the border to switch experiments, or shake your
     compile("com.squareup.okhttp:okhttp-urlconnection:+")
     compile("com.squareup.okhttp:okhttp:+")
    
-    compile("com.github.nkzawa:socket.io-client:+")
-    compile("com.github.nkzawa:engine.io-client:+") 
+    //Excluding org.json due to compiler warnings
+    compile("com.github.nkzawa:socket.io-client:+") {
+        exclude group: 'org.json'
+    }
+    compile("com.github.nkzawa:engine.io-client:+") {
+        exclude group: 'org.json'
+    }
   }    
   ```
   
@@ -92,16 +97,15 @@ You can long-press on the top of the border to switch experiments, or shake your
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data
-                    android:scheme="YOUR URL SCHEME"
-                    android:host="pair"
-                    />
+                <data android:scheme="YOUR URL SCHEME"/>
             </intent-filter>
         </activity>
     ```
 
 
-6. Add the following to your Proguard rules:_
+6. _Add the following to your Proguard rules:_
+
+  
   
   (Only if using Support Fragments)
 
@@ -116,7 +120,13 @@ You can long-press on the top of the border to switch experiments, or shake your
   	```
   	-keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
   	```
-  
+  	
+  (Only if you see gradle compiler errors with com.okio)
+  ```
+  	-dontwarn okio.**
+	-dontwarn java.nio.file.*
+	-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+```
   
 7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
@@ -161,10 +171,7 @@ You can long-press on the top of the border to switch experiments, or shake your
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data
-                    android:scheme="YOUR URL SCHEME"
-                    android:host="pair"
-                    />
+                <data android:scheme="YOUR URL SCHEME"/>
             </intent-filter>
         </activity>
     ```
@@ -184,6 +191,13 @@ You can long-press on the top of the border to switch experiments, or shake your
   	```
   	-keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
   	```
+  
+  (Only if you see gradle compiler errors with com.okio or com.nio)
+  ```
+  	-dontwarn okio.**
+	-dontwarn java.nio.file.*
+	-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+```
   
   
 8. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
