@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing platform that helps you optimize your 
 
 
 
-**Current Version**: [1.3.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.3.1)
+**Current Version**: [1.3.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.3.2)
 
 ###Note for 1.2.1 update:
 
