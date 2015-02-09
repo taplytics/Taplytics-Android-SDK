@@ -395,3 +395,22 @@ Taplytics.setUserAttributes(attributes);
 ###Visual Editing
 
 All visual editing is done on the Taplytics dashboard. See the docs on visual editing [here](https://taplytics.com/docs/visual-experiments).
+
+###Advanced Device Pairing
+
+Link a device (even in release mode) to Taplytics.
+
+**NOTE: This is used only for deeplink pairing, and is unnecessary if your main activity does NOT have a singleTask flag.**
+
+Retrieve deeplink through Taplytics deeplink intercepted via either email or SMS device pairing. It contains your Taplytics URL scheme and device token. If you wish to intercept the deeplink and then pair the device yourself in your application's code, call this method, like so:
+
+```java
+private void handleDeepLink(Intent intent) {
+  String tlDeeplink = intent.getDataString(); //example deep link: 'tl-506f596f://e10651f9ef6b'
+  if (tlDeeplink == null) {
+      // No deeplink found
+      return;
+  }
+  Taplytics.deviceLink(tlDeeplink);
+}
+```
