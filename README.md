@@ -136,7 +136,8 @@ You can long-press on the top of the border to switch experiments, or shake your
 1. _Download the taplytics.jar [here](https://github.com/taplytics/Taplytics-Android-SDK/raw/master/taplytics.jar)_
 2. _Copy the jar into your 'libs' directory in your project._
 3. _Right click the jar in Eclipse, click Build Path > add to build path_
-4. _Override your application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). It should look like this:_
+4. **NEW:** _Add Google Play Services to your project by following the steps listed [here.](http://developer.android.com/google/play-services/setup.html) Be sure to change the dropdown to "Eclipse with ADT"
+5. _Override your application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). It should look like this:_
 
 	```java
   public class ExampleApplication extends Application {
@@ -147,7 +148,7 @@ You can long-press on the top of the border to switch experiments, or shake your
     }
   }
   ```
-5. _Add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
+6. _Add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
 
   	```xml
   <uses-permission android:name="android.permission.INTERNET" />
@@ -157,7 +158,7 @@ You can long-press on the top of the border to switch experiments, or shake your
     ...
   ```
   
-6. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
+7. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
 	
 	First, [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
 
@@ -176,7 +177,7 @@ You can long-press on the top of the border to switch experiments, or shake your
         </activity>
     ```
 
-7. _Add the following to your Proguard rules:_
+8. _Add the following to your Proguard rules:_
   
   (Only if using Support Fragments)
 
@@ -200,7 +201,7 @@ You can long-press on the top of the border to switch experiments, or shake your
 ```
   
   
-8. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
+9. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
 ##Usage
 
