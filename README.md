@@ -46,7 +46,6 @@ You can long-press on the top of the border to switch experiments, or shake your
     compile("com.taplytics.sdk:taplytics:+@aar")  
     
     //Dependencies for taplytics
-    //Note: Socket.io connection only made on debug builds.
     compile("com.mcxiaoke.volley:library:+")
     compile("com.squareup.okhttp:okhttp-urlconnection:+")
     compile("com.squareup.okhttp:okhttp:+")
