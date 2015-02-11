@@ -6,9 +6,6 @@ _Taplytics is a native mobile A/B testing platform that helps you optimize your 
 
 **Current Version**: [1.3.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.3.4)
 
-###Note for 1.2.1 update:
-
-Any builds prior to 1.2.1 require changes in the way dependencies are imported in Gradle. **Please see Android Studio Setup section 2.**
 
 ##Project Setup
 
