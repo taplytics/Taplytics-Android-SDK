@@ -48,6 +48,8 @@ You can long-press on the top of the border to switch experiments, or shake your
     compile("com.squareup.okhttp:okhttp:+")
    
     //Excluding org.json due to compiler warnings
+    //socket.io connections only made on debug devices OR if making live changes to a release build.
+    //No socket.io connection will be made on your release devices unless explicitly told to do so. 
     compile("com.github.nkzawa:socket.io-client:+") {
         exclude group: 'org.json'
     }
