@@ -119,6 +119,12 @@ You can long-press on the top of the border to switch experiments, or shake your
   	```
   	-keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
   	```
+  
+  (Only if using Flurry)
+  
+  	```
+	-keep class com.flurry.android.FlurryAgent { *; }
+  	```
   	
   (Only if you see gradle compiler errors with com.okio)
   ```
@@ -190,6 +196,12 @@ You can long-press on the top of the border to switch experiments, or shake your
   
   	```
   	-keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
+  	```
+  
+  (Only if using Flurry)
+  
+  	```
+	-keep class com.flurry.android.FlurryAgent { *; }
   	```
   
   (Only if you see gradle compiler errors with com.okio or com.nio)
