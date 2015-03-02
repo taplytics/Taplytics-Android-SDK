@@ -424,3 +424,27 @@ private void handleDeepLink(Intent intent) {
   Taplytics.deviceLink(tlDeeplink);
 }
 ```
+
+###Push Notifications
+If you wish to use Push Notifications on Taplytics, you must add the following permissions (replace the example name with your app name) to your Android Manifest:
+
+```xml
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+<permission android:name="com.taplytics.testapp.permission.C2D_MESSAGE"/>
+<uses-permission android:name="com.taplytics.testapp.permission.C2D_MESSAGE" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+```
+And you must add the following receiver and service under your application tag:
+
+```xml
+<receiver
+    android:name="com.taplytics.sdk.TLGcmBroadcastReceiver"
+    android:permission="com.google.android.c2dm.permission.SEND" >
+    <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+    </intent-filter>
+</receiver>
+<service android:name="com.taplytics.sdk.TLGcmIntentService" />
+```
+
+Now, just follow the docs on [Taplytics](https://taplytics.com/docs/push-notifications/google-push-certificates) to get started with Push Notifications in your application!
