@@ -55,6 +55,9 @@ You can long-press on the top of the border to switch experiments, or shake your
     compile("com.github.nkzawa:engine.io-client:+") {
         exclude group: 'org.json'
     }
+    
+    //Only include this if you wish to enable push notifications:
+    compile("com.google.android.gms:play-services-base:6.5.87")
   }    
   ```
   
