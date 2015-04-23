@@ -405,6 +405,22 @@ attributes.put("customData", customData);
 Taplytics.setUserAttributes(attributes);
 ```
 
+###Resetting Users
+
+Sometimes, it may be useful to completely reset the data stored for a user. If you want to completely disassociate an app user from their device, and thus reset all their data, you can do it like so:
+
+```java
+TaplyticsResetUserListener listener = new TaplyticsResetUserListener() {
+  @Override
+  public void finishedResettingUser() {
+    // Do stuff
+  }
+};
+Taplytics.resetAppUser(listener);
+```
+
+Now, the device that the app is currently running on will be associated with a completely new user
+
 ###Visual Editing
 
 All visual editing is done on the Taplytics dashboard. See the docs on visual editing [here](https://taplytics.com/docs/visual-experiments).
