@@ -405,22 +405,6 @@ attributes.put("customData", customData);
 Taplytics.setUserAttributes(attributes);
 ```
 
-###Resetting Users
-
-Sometimes, it may be useful to completely reset the data stored for a user. If you want to completely disassociate an app user from their device, and thus reset all their data, you can do it like so:
-
-```java
-TaplyticsResetUserListener listener = new TaplyticsResetUserListener() {
-  @Override
-  public void finishedResettingUser() {
-    // Do stuff
-  }
-};
-Taplytics.resetAppUser(listener);
-```
-
-Now, the device that the app is currently running on will be associated with a completely new user
-
 ###Visual Editing
 
 All visual editing is done on the Taplytics dashboard. See the docs on visual editing [here](https://taplytics.com/docs/visual-experiments).
@@ -476,4 +460,20 @@ To do so, follow the steps in the following link. Click on the `Using Android St
 
 [See how to set up GooglePlay Services on developer.android.com](http://developer.android.com/google/play-services/setup.html). 
 
-Once Google Play Services is added to your application in Eclipse, follow the usual steps listed above to get started with Push on Android with Taplytics! 
+Once Google Play Services is added to your application in Eclipse, follow the usual steps listed above to get started with Push on Android with Taplytics!
+
+###Resetting Users
+
+Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, it may be desirable for them to no longer receive push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
+
+```java
+TaplyticsResetUserListener listener = new TaplyticsResetUserListener() {
+  @Override
+  public void finishedResettingUser() {
+    // Do stuff
+  }
+};
+Taplytics.resetAppUser(listener);
+```
+
+Now, the device that the app is currently running on will no longer receive push notifications until the app user attributes are updated again.
