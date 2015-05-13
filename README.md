@@ -57,7 +57,7 @@ You can long-press on the top of the border to switch experiments, or shake your
     }
     
     //Only include this if you wish to enable push notifications:
-    compile("com.google.android.gms:play-services-base:6.5.87")
+    compile("com.google.android.gms:play-services-gcm:7.3.0")
   }    
   ```
   
