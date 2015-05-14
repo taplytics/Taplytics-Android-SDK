@@ -251,7 +251,7 @@ Possible options are:
 
 ####Setup
 
-To set up a code experiment in Taplytics, please refer to the [Taplycs code-based experiment docs](https://taplytics.com/docs/code-experiments).
+To set up a code experiment in Taplytics, please refer to the [Taplytics code-based experiment docs](https://taplytics.com/docs/code-experiments).
 
 ####Usage
 
