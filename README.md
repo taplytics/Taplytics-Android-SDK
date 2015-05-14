@@ -540,3 +540,19 @@ Taplytics.resetAppUser(listener);
 ```
 
 Now, the device that the app is currently running on will no longer receive push notifications until the app user attributes are updated again.
+
+
+###Get Running Experiments and Variations
+
+If you would like to see which variations and experiments are running on the device, there exists a `getRunningExperimentsAndVariations(TaplyticsRunningExperimentsListener listener)` function which provides a callback with a map of the current experiments and their running variation. An example:
+
+```java
+  Taplytics.getRunningExperimentsAndVariations(new TaplyticsRunningExperimentsListener() {
+                    @Override
+                    public void runningExperimentsAndVariation(Map<String, String> experimentsAndVariations) {
+                        //TODO: Do something with the map.
+                    }
+                });
+```
+
+**NOTE:**This function runs asynchronously, as it waits for the updated properties to load from Taplytics' servers before returning the running experiments. 
