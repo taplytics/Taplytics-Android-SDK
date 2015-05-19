@@ -2,6 +2,10 @@
 
 _Taplytics is a native mobile A/B testing platform that helps you optimize your Android app!_
 
+##NOTE: 
+
+**The newest version of OkHttp (2.4.0-RC) breakes the socket library used in Taplytics. For now, switch all okhttp dependencies to 2.3.0 in your build.gradle**
+
 
 **Current Version**: [1.4.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.4.2)
 
