@@ -376,7 +376,7 @@ Taplytics.logRevenue("Revenue Name", someRevenue, customInfo);
 
 Its possible to send custom user attributes to Taplytics using a JSONObject of user info. 
 
-The possible fields are:
+The main possible fields are:
 
 |Parameter  |Type         |
 |---	    |---          |
@@ -387,11 +387,10 @@ The possible fields are:
 |name	    |	String    |
 |age	    |	Number    |
 |gender	    |	String    |
-|customData |	JsonObject|
 
-Where the customData key lets you pass in custom user data as a JSONObject.
+You can also add anything else you would like to this JSONObject and it will also be passed to Taplytics. 
 
-For example:
+An example with custom data: 
 
 ```java
 JSONObject attributes = new JSONObject();
@@ -401,10 +400,9 @@ attributes.put("age", 25);
 attributes.put("gender", "male");
 attributes.put("avatarUrl", "https://someurl.com/someavatar.png");
 
-JSONObject customData = new JSONObject();
-customData.put("paidSubscriber", true);
-customData.put("subscriptionPlan", "yearly");
-attributes.put("customData", customData);
+attributes.put("someCustomAttribute",50);
+attributes.put("paidSubscriber", true);
+attributes.put("subscriptionPlan", "yearly");
 
 Taplytics.setUserAttributes(attributes);
 ```
