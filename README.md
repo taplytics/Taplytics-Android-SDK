@@ -43,7 +43,7 @@ You can long-press on the top of the border to switch experiments, or shake your
     
     //Dependencies for taplytics
     compile("com.mcxiaoke.volley:library:+")
-    compile("com.squareup.okhttp:okhttp-urlconnection:+")
+    compile("com.squareup.okhttp:okhttp-urlconnection:2.3.0")
     compile("com.squareup.okhttp:okhttp:2.3.0")
    
     //Excluding org.json due to compiler warnings
