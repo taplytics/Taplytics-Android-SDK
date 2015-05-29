@@ -42,8 +42,8 @@ You can long-press on the top of the border to switch experiments, or shake your
     
     //Dependencies for taplytics
     compile("com.mcxiaoke.volley:library:+")
-    compile("com.squareup.okhttp:okhttp-urlconnection:2.3.0")
-    compile("com.squareup.okhttp:okhttp:2.3.0")
+    compile("com.squareup.okhttp:okhttp-urlconnection:+")
+    compile("com.squareup.okhttp:okhttp:+")
    
     //Excluding org.json due to compiler warnings
     //socket.io connections only made on debug devices OR if making live changes to a release build.
@@ -56,7 +56,7 @@ You can long-press on the top of the border to switch experiments, or shake your
     }
     
     //Only include this if you wish to enable push notifications:
-    compile("com.google.android.gms:play-services-gcm:7.3.0")
+    compile("com.google.android.gms:play-services-gcm:7.5.0")
   }    
   ```
   
