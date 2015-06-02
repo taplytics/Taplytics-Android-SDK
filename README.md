@@ -2,7 +2,7 @@
 
 _Taplytics is a native mobile A/B testing platform that helps you optimize your Android app!_
 
-**Current Version**: [1.4.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.4.6)
+**Current Version**: [1.4.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.4.7)
 
 
 ##Project Setup
@@ -365,6 +365,39 @@ JSONObject customInfo = new JSONObject();
 customInfo.put("some rag",someValue)
 	
 Taplytics.logRevenue("Revenue Name", someRevenue, customInfo);
+```
+
+####External Analytics
+At the moment, Taplytics supports both Mixpanel and Google Analytics as a source of external analytics.
+
+#####Mixpanel
+
+When the Taplytics SDK is installed alongside Mixpanel, all of your existing and future Mixpanel analytics will be sent to both Mixpanel _and_ Taplytics.
+
+#####Google Analytics 7.0.0-
+
+If you are using Google Analytics 7.0.0 and below, all Google Analytics will automatically be sent to both Google Analytics _and_ Taplytics.
+
+#####Google Analytics 7.3.0+
+
+If you are using Google Analytics 7.3.0 or above, you have the option of changing things a bit to send your Google Analytics to both Google _and_ Taplytics.
+
+Simply find all instances of `tracker.send(new Hitbuilder...)` and replace them with `Taplytics.logGAEvent(tracker, new Hitbuilder...)`
+
+This can be done with a simple find/replace in your application.
+
+An example:
+
+```java
+Tracker t = TrackerManager.getInstance().getGoogleAnalyticsTracker(TrackerManager.TrackerName.APP_TRACKER, getApplication());
+t.send(new HitBuilders.EventBuilder().setCategory("someCategry").setAction("someAction").setLabel("someLabel").setValue(12).build());
+```
+
+Would be changed to:
+
+```java
+Tracker t = TrackerManager.getInstance().getGoogleAnalyticsTracker(TrackerManager.TrackerName.APP_TRACKER, getApplication());
+Taplytics.logGAEvent(t, new HitBuilders.EventBuilder().setCategory("someCategry").setAction("someAction").setLabel("someLabel").setValue(12).build());
 ```
 
 ###User Attributes
