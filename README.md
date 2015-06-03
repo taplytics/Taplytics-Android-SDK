@@ -439,7 +439,7 @@ Taplytics.setUserAttributes(attributes);
 
 All visual editing is done on the Taplytics dashboard. See the docs on visual editing [here](https://taplytics.com/docs/visual-experiments).
 
-##Delay Load
+###Delay Load
 
 Much like the iOS SDK, Taplytics now has the option to delay the loading of your main activity while Taplytics gets initial view changes ready. Keep in mind that this initial load will only take a while the very first time, after that, these changes will be saved to disk and will not need a delay thereafter.
 
