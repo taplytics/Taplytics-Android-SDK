@@ -33,7 +33,7 @@ You can long-press on the top of the border to switch experiments, or shake your
   }      
   ```
   
-2. _In your module’s build.gradle dependencies, compile Taplytics and its dependencies._
+2. _In your *module’s* build.gradle dependencies (not your project's build.gradle), compile Taplytics and its dependencies._
 
   	```
   dependencies {                                                                   
@@ -61,7 +61,7 @@ You can long-press on the top of the border to switch experiments, or shake your
   ```
   
   
-3. _Override your application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). It should look like this:_
+3. _Override your Application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). If you don't have an Application class, create one. It should look like this:_
 
 	```java	  	  
   public class ExampleApplication extends Application {
