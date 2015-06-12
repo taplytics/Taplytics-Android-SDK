@@ -1,11 +1,9 @@
-## Project Setup
-
 | Table of Contents |
 | ----------------- |
 | [Android Studio Installation](#android-studio-installation) |
 | [Eclipse Installation](#eclipse-installation) |
 
-### Android Studio Installation
+## Android Studio Installation
 
 1. _In your module’s build.gradle, add the url to the sdk._
 
@@ -118,12 +116,12 @@
 7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
 
-### Eclipse Installation
+## Eclipse Installation
 
 1. _Download the taplytics.jar [here](https://github.com/taplytics/Taplytics-Android-SDK/raw/master/taplytics.jar)_
 2. _Copy the jar into your 'libs' directory in your project._
 3. _Right click the jar in Eclipse, click Build Path > add to build path_
-4. **NEW:** _Add Google Play Services to your project by following the steps listed [here.](http://developer.android.com/google/play-services/setup.html) Be sure to change the dropdown to "Eclipse with ADT"
+4. **NEW:** _Add Google Play Services to your project by following the steps listed [here.](http://developer.android.com/google/play-services/setup.html) Be sure to change the dropdown to "Eclipse with ADT"_
 5. _Override your application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). It should look like this:_
 
 	```java
