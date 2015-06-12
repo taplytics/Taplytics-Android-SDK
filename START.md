@@ -7,7 +7,7 @@ You can get started with using Taplytics on Android in minutes. Just follow the 
 | 3 | Send [User Attributes](#user-attributes) (optional) |
 | 4 | Send [Events](#events) (optional) |
 
-You can use Taplytics to create [experiments](https://taplytics.com/docs/android-sdk/experiments) as well as send [Push Notifications](https://taplytics.com/docs/android-sdk/push-notifications) to your app.
+You can use Taplytics to create [Experiments](https://taplytics.com/docs/android-sdk/experiments) as well as send [Push Notifications](https://taplytics.com/docs/android-sdk/push-notifications) to your app.
 
 ## Instalation
 
@@ -201,12 +201,9 @@ You can use Taplytics to create [experiments](https://taplytics.com/docs/android
 
 9. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
+---
 
 ## Setup
-
-To use Taplytics and set up experiments, refer to [the Taplytics online docs.](https://taplytics.com/docs/)
-
-To switch between experiments or variations in debug mode, select them on the website, or **shake the device ** and select which variation or experiment you wish to view.
 
 ### Initialization
 

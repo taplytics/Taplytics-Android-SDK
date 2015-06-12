@@ -2,8 +2,7 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 
 | Table of Contents |
 | ----------------- |
-| Setup: [Android Studio](#android-studio) |
-| Setup: [Eclipse](#eclipse) |
+| Setup: [Android Studio](#android-studio), [Eclipse](#eclipse) |
 | [Receiving Push Notifications](#receiving-push-notifications) |
 | [Resetting Users](#resetting-users) |
 
@@ -33,6 +32,8 @@ And you must add the following receiver and service under your application tag:
 <service android:name="com.taplytics.sdk.TLGcmIntentService" />
 ```
 
+---
+
 ### Eclipse
 
 An extra step is needed for Push Notifications in Eclipse. You must add the Google Play Services library to your project's dependencies. 
@@ -43,9 +44,13 @@ To do so, follow the steps in the following link. Click on the `Using Android St
 
 Once Google Play Services is added to your application in Eclipse, follow the steps [listed above](#android-studio) to get started with Push on Android with Taplytics!
 
+---
+
 ## Receiving Push Notifictions
 
 In order to be able to send your users Push Notifications, we'll need you to upload your Google Cloud Messaging credentials. Please follow [this guide](https://taplytics.com/docs/guides/push-notifications/google-push-certificates) to do so.
+
+---
 
 ## Resetting Users
 

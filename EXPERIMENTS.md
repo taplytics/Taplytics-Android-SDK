@@ -8,11 +8,11 @@ Creating experiments are easy using Taplytics. You can either use our visual edi
 
 ## Code Experiments
 
-###Setup
+#### Setup
 
 To set up a code experiment in Taplytics, please refer to the [Taplytics code-based experiment docs](https://taplytics.com/docs/guides/code-experiments).
 
-###Usage
+#### Usage
 
 Taplytics automatically generates the base needed for your code experiment. Paste it into the relevant section of your app, and apply the variables as necessary. 
 
@@ -71,6 +71,7 @@ This separate function is suggested, because if you would like to update experim
 
 You don't have to do anything else! All visual editing is done on the Taplytics dashboard. See the docs on visual editing [here](https://taplytics.com/docs/visual-experiments).
 
+---
 
 ## Running Experiments
 
