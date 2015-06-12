@@ -1,13 +1,13 @@
 Setting up Push Notifications using Taplytics is simple. Follow the steps below to get started.
 
-| Table of Contents |
-| ----------------- |
-| Setup: [Android Studio](#android-studio), [Eclipse](#eclipse) |
-| [Receiving Push Notifications](#receiving-push-notifications) |
-| [Resetting Users](#resetting-users) |
+| # | Step |
+| - | ----------------- |
+| 1 | Setup: [Android Studio](#android-studio), [Eclipse](#eclipse) |
+| 2 | [Receiving Push Notifications](#1-receiving-push-notifictions) |
+| 3 | [Resetting Users](#2-resetting-users) |
 
 
-## Setup
+## 1. Setup
 
 ### Android Studio
 
@@ -46,13 +46,13 @@ Once Google Play Services is added to your application in Eclipse, follow the st
 
 ---
 
-## Receiving Push Notifictions
+## 2. Receiving Push Notifictions
 
 In order to be able to send your users Push Notifications, we'll need you to upload your Google Cloud Messaging credentials. Please follow [this guide](https://taplytics.com/docs/guides/push-notifications/google-push-certificates) to do so.
 
 ---
 
-## Resetting Users
+## 3. Resetting Users
 
 Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, it may be desirable for them to no longer receive push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
 
