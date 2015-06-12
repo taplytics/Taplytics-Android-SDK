@@ -375,7 +375,9 @@ Taplytics.logGAEvent(t, new HitBuilders.EventBuilder().setCategory("someCategry"
 
 ---
 
-### Advanced Device Pairing
+## Advanced
+
+### Device Pairing
 
 Link a device (even in release mode) to Taplytics.
 
