@@ -91,13 +91,13 @@ If you would like to see which variations and experiments are running on the dev
 
 ---
 
-### Delay Load
+## Delay Load
 
 Taplytics has the option to delay the loading of your main activity while Taplytics gets initial view changes ready. Keep in mind that this initial load will only take a while the very first time, after that, these changes will be saved to disk and will not need a delay thereafter.
 
 There are two methods to do this, **use both at the start of your oncreate after ```java setContentView()```**:
 
-####Delay Load With Image
+#### Delay Load With Image
 In this instance, Taplytics takes care of the loading for you. Taplytics creates a splash screen with the provided image. The image will fade automatically after the given time, or when Taplytics has successfully loaded visual changes on the provided activity.
 
 Method: ```Taplytics.delayLoad(Activity activity, Drawable image, int maxTime) ```
@@ -119,7 +119,7 @@ Method: ```Taplytics.delayLoad(Activity activity, Drawable image, int maxTime) `
                 ...
 ```
 
-####Delay Load with Callbacks
+#### Delay Load with Callbacks
 In this instance, Taplytics provides callbacks when the delay load should begin, and when the delay load ends. The callback will also return after the provided timeout time has been reached. This provides you the ability to show a splashscreen that is more than just a simple image. 
 
 Method: ```Taplytics.delayLoad(int maxTime, TaplyticsDelayLoadListener listener) ```
@@ -152,5 +152,3 @@ Method: ```Taplytics.delayLoad(int maxTime, TaplyticsDelayLoadListener listener)
                 ...
                 
 ```
-
----
