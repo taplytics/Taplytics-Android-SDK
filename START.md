@@ -3,13 +3,13 @@ You can get started with using Taplytics on Android in minutes. Just follow the 
 | # | Step |
 | - | ----------------- |
 | 1 | Installation: [Android Studio](#android-studio), [Eclipse](#eclipse) |
-| 2 | [Initialize](#initialization) SDK |
-| 3 | Send [User Attributes](#user-attributes) (optional) |
-| 4 | Send [Events](#events) (optional) |
+| 2 | [Initialize](#2-initialization) SDK |
+| 3 | [Setting User Attributes](#3-user-attributes) (optional) |
+| 4 | [Tracking Events](#4-track-events) (optional) |
 
 You can use Taplytics to create [Experiments](https://taplytics.com/docs/android-sdk/experiments) as well as send [Push Notifications](https://taplytics.com/docs/android-sdk/push-notifications) to your app.
 
-## Instalation
+## 1. Instalation
 
 ### Android Studio
 
@@ -205,7 +205,7 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
 
 ## Setup
 
-### Initialization
+### 2. Initialization
 
 Taplytics can be started with a few options to help you use it during development.
 
@@ -241,7 +241,7 @@ You can long-press on the top of the border to switch experiments, or shake your
 
 ---
 
-### User Attributes
+### 3. User Attributes
 
 Its possible to send custom user attributes to Taplytics using a JSONObject of user info. 
 
@@ -278,7 +278,7 @@ Taplytics.setUserAttributes(attributes);
 
 --- 
 
-### Events
+### 4. Track Events
 
 ####Automatic Events
 
