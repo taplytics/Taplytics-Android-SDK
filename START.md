@@ -2,129 +2,129 @@ You can get started with using Taplytics on Android in minutes. Just follow the 
 
 | # | Step |
 | - | ----------------- |
-| 1 | Install: [Android Studio](#android-studio-installation), [Eclipse](#eclipse-installation) |
-| 2 | [Initialize][#initialization] |
-| 3 | Send [User Attributes](#user-attributes) (optional) |
+| 1 | Installation: [Android Studio](#android-studio), [Eclipse](#eclipse) |
+| 2 | [Initialize](#initialization) SDK |
+| 3 | |
+
+<!-- | 3 | Send [User Attributes](#user-attributes) (optional) |
 | 4 | Send [Events](#events) (optional) |
 | 5 | Setup an Experiment: [Visual](#visual-editing) or [Code-based](#code-experiments) (optional) |
-
+ -->
 
 ## Instalation
 
-### Android Studio Installation
+### Android Studio
 
 1. _In your module’s build.gradle, add the url to the sdk._
 
-	  ```
-  repositories {                                                                                              
-    maven { url "https://github.com/taplytics/Taplytics-Android-SDK/raw/master/AndroidStudio/" }
-  }      
-  ```
-  
+    ```
+        repositories {                                                                                              
+            maven { url "https://github.com/taplytics/Taplytics-Android-SDK/raw/master/AndroidStudio/" }
+        }      
+    ```
+    
 2. _In your *module’s* build.gradle dependencies (not your project's build.gradle), compile Taplytics and its dependencies._
 
-  	```
-  dependencies {                                                                   
-    //Taplytics                                                                        
-    compile("com.taplytics.sdk:taplytics:+@aar")  
+    ```
+        dependencies {                                                                   
+            //Taplytics                                                                        
+            compile("com.taplytics.sdk:taplytics:+@aar")  
+            
+            //Dependencies for taplytics
+            compile("com.mcxiaoke.volley:library:+")
+            compile("com.squareup.okhttp:okhttp-urlconnection:+")
+            compile("com.squareup.okhttp:okhttp:+")
+         
+            //Excluding org.json due to compiler warnings
+            //socket.io connections only made on debug devices OR if making live changes to a release build.
+            //No socket.io connection will be made on your release devices unless explicitly told to do so. 
+            compile("com.github.nkzawa:socket.io-client:+") {
+                    exclude group: 'org.json'
+            }
+            compile("com.github.nkzawa:engine.io-client:+") {
+                    exclude group: 'org.json'
+            }
+            
+            //Only include this if you wish to enable push notifications:
+            compile("com.google.android.gms:play-services-gcm:7.5.0")
+        }    
+    ```
     
-    //Dependencies for taplytics
-    compile("com.mcxiaoke.volley:library:+")
-    compile("com.squareup.okhttp:okhttp-urlconnection:+")
-    compile("com.squareup.okhttp:okhttp:+")
-   
-    //Excluding org.json due to compiler warnings
-    //socket.io connections only made on debug devices OR if making live changes to a release build.
-    //No socket.io connection will be made on your release devices unless explicitly told to do so. 
-    compile("com.github.nkzawa:socket.io-client:+") {
-        exclude group: 'org.json'
-    }
-    compile("com.github.nkzawa:engine.io-client:+") {
-        exclude group: 'org.json'
-    }
-    
-    //Only include this if you wish to enable push notifications:
-    compile("com.google.android.gms:play-services-gcm:7.5.0")
-  }    
-  ```
-  
-  
 3. _Override your Application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). If you don't have an Application class, create one. It should look like this:_
 
-	```java	  	  
-  public class ExampleApplication extends Application {
-    @Override
-    public void onCreate() {
-      super.onCreate();
-      Taplytics.startTaplytics(this, "YOUR TAPLYTICS API KEY");
-    }
-  }
-  ```
+    ```java       
+        public class ExampleApplication extends Application {
+            @Override
+            public void onCreate() {
+                super.onCreate();
+                Taplytics.startTaplytics(this, "YOUR TAPLYTICS API KEY");
+            }
+        }
+    ```
+
 4. _Now, add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
 
- 	 ```xml
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application
-    android:name=".ExampleApplication"
-    ...
-  ```
+     ```xml
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <application
+            android:name=".ExampleApplication"
+        ...
+    ```
 
 5. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
-	
-	First, [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
+    
+    First, [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
 
-	![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
-	
-	Then, add it to your manifest:
+    ![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
+    
+    Then, add it to your manifest:
 
-	```xml
-			...
-	           <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="YOUR URL SCHEME"/>
-            </intent-filter>
+    ```xml
+            ...
+                 <intent-filter>
+                        <action android:name="android.intent.action.VIEW"/>
+                        <category android:name="android.intent.category.DEFAULT"/>
+                        <category android:name="android.intent.category.BROWSABLE"/>
+                        <data android:scheme="YOUR URL SCHEME"/>
+                </intent-filter>
         </activity>
     ```
 
-
 6. _Add the following to your Proguard rules:_
+    (Only if using Support Fragments)
 
-  
-  
-  (Only if using Support Fragments)
+    ```
+        -keep class android.support.v4.app.Fragment { *; }
+        -keep class android.support.v4.view.ViewPager
+        -keepclassmembers class android.support.v4.view.ViewPager$LayoutParams {*;}
+    ```
 
-	```
-  -keep class android.support.v4.app.Fragment { *; }
-  -keep class android.support.v4.view.ViewPager
-  -keepclassmembers class android.support.v4.view.ViewPager$LayoutParams {*;}
-  ```
-  
-  (Only if using Mixpanel)
-  
-  	```
-  	-keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
-  	```
-  
-  (Only if using Flurry)
-  
-  	```
-	-keep class com.flurry.android.FlurryAgent { *; }
-  	```
-  	
-  (Only if you see gradle compiler errors with com.okio)
-  ```
-  	-dontwarn okio.**
-	-dontwarn java.nio.file.*
-	-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
-```
-  
+    (Only if using Mixpanel)
+    
+    ```
+        -keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
+    ```
+
+    (Only if using Flurry)
+    
+    ```
+        -keep class com.flurry.android.FlurryAgent { *; }
+    ```
+        
+    (Only if you see gradle compiler errors with com.okio)
+
+    ```
+        -dontwarn okio.**
+        -dontwarn java.nio.file.*
+        -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+    ```
+
 7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
+---
 
-### Eclipse Installation
+### Eclipse
 
 1. _Download the taplytics.jar [here](https://github.com/taplytics/Taplytics-Android-SDK/raw/master/taplytics.jar)_
 2. _Copy the jar into your 'libs' directory in your project._
@@ -132,74 +132,75 @@ You can get started with using Taplytics on Android in minutes. Just follow the 
 4. **NEW:** _Add Google Play Services to your project by following the steps listed [here.](http://developer.android.com/google/play-services/setup.html) Be sure to change the dropdown to "Eclipse with ADT"_
 5. _Override your application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). It should look like this:_
 
-	```java
-  public class ExampleApplication extends Application {
-    @Override
-    public void onCreate() {
-      super.onCreate();
-      Taplytics.startTaplytics(this, "YOUR TAPLYTICS API KEY");
-    }
-  }
-  ```
+    ```java
+        public class ExampleApplication extends Application {
+            @Override
+            public void onCreate() {
+                super.onCreate();
+                Taplytics.startTaplytics(this, "YOUR TAPLYTICS API KEY");
+            }
+        }
+    ```
+
 6. _Add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
 
-  	```xml
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application
-    android:name=".ExampleApplication"
-    ...
-  ```
-  
+    ```xml
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <application
+            android:name=".ExampleApplication"
+            ...
+    ```
+
 7. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
-	
-	First, [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
+    
+    First, [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
 
-	![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
-	
-	Then, add it to your manifest:
+    ![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
+    
+    Then, add it to your manifest:
 
-	```xml
-			...
-	           <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="YOUR URL SCHEME"/>
-            </intent-filter>
+    ```xml
+        ...
+                 <intent-filter>
+                        <action android:name="android.intent.action.VIEW"/>
+                        <category android:name="android.intent.category.DEFAULT"/>
+                        <category android:name="android.intent.category.BROWSABLE"/>
+                        <data android:scheme="YOUR URL SCHEME"/>
+                </intent-filter>
         </activity>
     ```
 
 8. _Add the following to your Proguard rules:_
-  
-  (Only if using Support Fragments)
+    
+    (Only if using Support Fragments)
 
-	```
-  -keep class android.support.v4.app.Fragment { *; }
-  -keep class android.support.v4.view.ViewPager
-  -keepclassmembers class android.support.v4.view.ViewPager$LayoutParams {*;}
-  ```
-  
-  (Only if using Mixpanel)
-  
-  	```
-  	-keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
-  	```
-  
-  (Only if using Flurry)
-  
-  	```
-	-keep class com.flurry.android.FlurryAgent { *; }
-  	```
-  
-  (Only if you see gradle compiler errors with com.okio or com.nio)
-  ```
-  	-dontwarn okio.**
-	-dontwarn java.nio.file.*
-	-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
-```
-  
-  
+    ```
+        -keep class android.support.v4.app.Fragment { *; }
+        -keep class android.support.v4.view.ViewPager
+        -keepclassmembers class android.support.v4.view.ViewPager$LayoutParams {*;}
+    ```
+
+    (Only if using Mixpanel)
+    
+    ```
+        -keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
+    ```
+
+    (Only if using Flurry)
+    
+    ```
+        -keep class com.flurry.android.FlurryAgent { *; }
+    ```
+    
+    (Only if you see gradle compiler errors with com.okio or com.nio)
+
+    ```
+        -dontwarn okio.**
+        -dontwarn java.nio.file.*
+        -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+    ```
+    
 9. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
 
@@ -234,6 +235,7 @@ Possible options are:
 |liveUpdate   | boolean: true/false  | true  | Disable live update to remove the border, and activity refreshing in your debug builds to test the functionality of your applications as if they were in release mode. Note that this functionality is always disabled in release builds.  |   
 | shakeMenu | boolean: true/false   | true  | In your debug builds, disable the quick menu that appears when you shake your device. This menu is never present in release builds.|   
 
+
 #### The Border / Shake menu. 
 
 When connected to an experiment on a **debug** build, a border will show around your app window. This shows which experiment and variation you are currently viewing.
@@ -241,6 +243,8 @@ When connected to an experiment on a **debug** build, a border will show around 
 You can long-press on the top of the border to switch experiments, or shake your device and pick from the menu, or select an experiment from the Taplytics website.
 
 **The border and shake menu will _NOT_ appear on release builds.**
+
+---
 
 ### User Attributes
 
@@ -277,6 +281,8 @@ attributes.put("subscriptionPlan", "yearly");
 Taplytics.setUserAttributes(attributes);
 ```
 
+--- 
+
 ### Code Experiments
 
 ####Setup
@@ -294,52 +300,55 @@ For example:
 ```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(savedInstanceState);
-  setContentView(some_layout);
-  
-  // Run this code experiment. This triggers the experiment.
-  runAnExperiment();
+    super.onCreate(savedInstanceState);
+    setContentView(some_layout);
+    
+    // Run this code experiment. This triggers the experiment.
+    runAnExperiment();
 }
 ```
-  
+    
 Then, in that function, add your experiment code generated by Taplytics, and modify it as you need.
-  
+    
 ```java
 private void runAnExperiment(){
-  Taplytics.runCodeExperiment("experiment name", new TaplyticsCodeExperimentListener() {
-  
-    @Override
-    public void baselineVariation(Map<String, Object> variables) {
-        
-            // Insert baseline variation code here.
-            Object myVar0 = variables.get("foo"); // can be null if no experiment is found
-          }
-          
-    @Override
-    public void experimentVariation(String variationName, Map<String, Object> variables) {
-          Object myVar0 = variables.get("foo"); // can be null if no experiment is found
-        
-          if (variationName.equals("Variation 1")) {
-            // Insert Variation 1 variation code here.
-          } else if (variationName.equals("Variation 2")) {
-        // Insert Variation 2 variation code here.
-      }
-    }
-  
-    @Override
-    public void experimentUpdated() {
-      // Use this method to re-run your code experiments when testing your ex periment variations.
-    }
-  });
+    Taplytics.runCodeExperiment("experiment name", new TaplyticsCodeExperimentListener() {
+    
+        @Override
+        public void baselineVariation(Map<String, Object> variables) {
+                
+                        // Insert baseline variation code here.
+                        Object myVar0 = variables.get("foo"); // can be null if no experiment is found
+                    }
+                    
+        @Override
+        public void experimentVariation(String variationName, Map<String, Object> variables) {
+                    Object myVar0 = variables.get("foo"); // can be null if no experiment is found
+                
+                    if (variationName.equals("Variation 1")) {
+                        // Insert Variation 1 variation code here.
+                    } else if (variationName.equals("Variation 2")) {
+                // Insert Variation 2 variation code here.
+            }
+        }
+    
+        @Override
+        public void experimentUpdated() {
+            // Use this method to re-run your code experiments when testing your ex periment variations.
+        }
+    });
 }
 ```
 
 This separate function is suggested, because if you would like to update experiments instantly for debug testing or another reason, you can simply place the `runAnExperiment()` function into the `experimentUpdated()` block.
 
+---
+
 ### Visual Editing
 
 You don't have to do anything else! All visual editing is done on the Taplytics dashboard. See the docs on visual editing [here](https://taplytics.com/docs/visual-experiments).
 
+---
 
 ### Events
 
@@ -372,7 +381,7 @@ You can also log events with numerical values:
 Number num = 0;
 Taplytics.logEvent("Your Event Name", num);
 ```
-  
+    
 And with custom object data:
 
 ```java
@@ -392,14 +401,14 @@ Revenue logging is the exact same as event logging, only call `logRevenue`:
 Number someRevenue = 10000000;  
 Taplytics.logRevenue("Revenue Name", someRevenue);
 ```
-  
+    
 And similarly, with custom object data:
 
 ```java 
 Number someRevenue = 10000000;
 JSONObject customInfo = new JSONObject();
 customInfo.put("some rag",someValue)
-  
+    
 Taplytics.logRevenue("Revenue Name", someRevenue, customInfo);
 ```
 
@@ -436,6 +445,8 @@ Tracker t = TrackerManager.getInstance().getGoogleAnalyticsTracker(TrackerManage
 Taplytics.logGAEvent(t, new HitBuilders.EventBuilder().setCategory("someCategry").setAction("someAction").setLabel("someLabel").setValue(12).build());
 ```
 
+---
+
 ### Delay Load
 
 Much like the iOS SDK, Taplytics now has the option to delay the loading of your main activity while Taplytics gets initial view changes ready. Keep in mind that this initial load will only take a while the very first time, after that, these changes will be saved to disk and will not need a delay thereafter.
@@ -456,12 +467,12 @@ Method: ```Taplytics.delayLoad(Activity activity, Drawable image, int maxTime) `
 **Example**:
 
 ```java
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_layout);
+        protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.main_layout);
 
-        Taplytics.delayLoad(this, getResources().getDrawable(R.drawable.image5), 2000);
-        ...
+                Taplytics.delayLoad(this, getResources().getDrawable(R.drawable.image5), 2000);
+                ...
 ```
 
 ####Delay Load with Callbacks
@@ -478,26 +489,27 @@ Method: ```Taplytics.delayLoad(int maxTime, TaplyticsDelayLoadListener listener)
 
 ```java
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_layout);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.main_layout);
 
-        Taplytics.delayLoad(2000, new TaplyticsDelayLoadListener() {
-            @Override
-            public void startDelay() {
-                //Start delaying!
-            }
+                Taplytics.delayLoad(2000, new TaplyticsDelayLoadListener() {
+                        @Override
+                        public void startDelay() {
+                                //Start delaying!
+                        }
 
-            @Override
-            public void delayComplete() {
-                //Loading completed, or the given time has been reached. Insert your code here.
-            }
-        });
-        ...
-        
+                        @Override
+                        public void delayComplete() {
+                                //Loading completed, or the given time has been reached. Insert your code here.
+                        }
+                });
+                ...
+                
 ```
 
+---
 
 ### Advanced Device Pairing
 
@@ -509,11 +521,11 @@ Retrieve deeplink through Taplytics deeplink intercepted via either email or SMS
 
 ```java
 private void handleDeepLink(Intent intent) {
-  String tlDeeplink = intent.getDataString(); //example deep link: 'tl-506f596f://e10651f9ef6b'
-  if (tlDeeplink == null) {
-      // No deeplink found
-      return;
-  }
-  Taplytics.deviceLink(tlDeeplink);
+    String tlDeeplink = intent.getDataString(); //example deep link: 'tl-506f596f://e10651f9ef6b'
+    if (tlDeeplink == null) {
+            // No deeplink found
+            return;
+    }
+    Taplytics.deviceLink(tlDeeplink);
 }
 ```
