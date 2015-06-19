@@ -70,7 +70,7 @@ This separate function is suggested, because if you would like to update experim
 
 ## Visual Editing
 
-You don't have to do anything else! All visual editing is done on the Taplytics dashboard. See the docs on visual editing [here](https://taplytics.com/docs/visual-experiments).
+You don't have to do anything else! All visual editing is done on the Taplytics dashboard. See the docs on visual editing [here](https://taplytics.com/docs/guides/visual-experiments).
 
 ---
 
