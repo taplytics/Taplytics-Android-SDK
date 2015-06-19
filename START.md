@@ -9,7 +9,7 @@ You can get started with using Taplytics on Android in minutes. Just follow the 
 
 You can use Taplytics to create [Experiments](https://taplytics.com/docs/android-sdk/experiments) as well as send [Push Notifications](https://taplytics.com/docs/android-sdk/push-notifications) to your app.
 
-## 1. Instalation
+## 1. Installation
 
 ### Android Studio
 
