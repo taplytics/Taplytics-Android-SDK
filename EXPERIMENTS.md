@@ -11,7 +11,7 @@ Creating experiments are easy using Taplytics. You can either use our visual edi
 
 #### Setup
 
-To set up a code experiment in Taplytics, please refer to the [Taplytics code-based experiment docs](https://taplytics.com/docs/guides/code-experiments).
+To set up a code-based experiment in Taplytics, please refer to the [Taplytics code-based experiment docs](https://taplytics.com/docs/guides/code-experiments).
 
 #### Usage
 
@@ -58,7 +58,7 @@ private void runAnExperiment(){
     
         @Override
         public void experimentUpdated() {
-            // Use this method to re-run your code experiments when testing your ex periment variations.
+            // Use this method to re-run your code experiments when testing your experiment variations.
         }
     });
 }
@@ -70,7 +70,7 @@ This separate function is suggested, because if you would like to update experim
 
 ## Visual Editing
 
-You don't have to do anything else! All visual editing is done on the Taplytics dashboard. See the docs on visual editing [here](https://taplytics.com/docs/guides/visual-experiments).
+You don't have to do anything else! You can use the Taplytics dashboard to make all your visual changes. See the docs on visual editing [here](https://taplytics.com/docs/guides/visual-experiments).
 
 ---
 
@@ -87,13 +87,13 @@ If you would like to see which variations and experiments are running on the dev
                 });
 ```
 
-**NOTE:**This function runs asynchronously, as it waits for the updated properties to load from Taplytics' servers before returning the running experiments. 
+NOTE: This function runs asynchronously, as it waits for the updated properties to load from Taplytics' servers before returning the running experiments. 
 
 ---
 
 ## Delay Load
 
-Taplytics has the option to delay the loading of your main activity while Taplytics gets initial view changes ready. Keep in mind that this initial load will only take a while the very first time, after that, these changes will be saved to disk and will not need a delay thereafter.
+Taplytics has the option to delay the loading of your main activity while Taplytics gets initial view changes ready. Keep in mind that this initial load will only take a while the very first time, after that, these changes will be saved to disk and will not need a delay after that.
 
 There are two methods to do this, **use both at the start of your oncreate after ```java setContentView()```**:
 
