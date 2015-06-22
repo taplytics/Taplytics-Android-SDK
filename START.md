@@ -30,8 +30,6 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
         
         //Dependencies for taplytics
         compile("com.mcxiaoke.volley:library:+")
-        compile("com.squareup.okhttp:okhttp-urlconnection:+")
-        compile("com.squareup.okhttp:okhttp:+")
      
         //Excluding org.json due to compiler warnings
         //socket.io connections only made on debug devices OR if making live changes to a release build.
