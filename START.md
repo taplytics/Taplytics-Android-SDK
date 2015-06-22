@@ -2,7 +2,7 @@ You can get started with using Taplytics on Android in minutes. Just follow the 
 
 |#  |Step                                                                       |
 |---|---                                                                        |
-|1  |  Installation: [Android Studio](#android-studio), [Eclipse](#eclipse)     |
+|1  |  Installation: [Android Studio](#android-studio) or [Eclipse](#eclipse)     |
 |2  | [Initialize](#2-initialization) SDK                                       |
 |3  | [Setting User Attributes](#3-user-attributes) (optional)                  |
 |4  | [Tracking Events](#4-track-events) (optional)                             |
