@@ -339,10 +339,10 @@ customInfo.put("some rag",someValue)
 Taplytics.logRevenue("Revenue Name", someRevenue, customInfo);
 ```
 
-####External Analytics
+### 5. External Analytics
 At the moment, Taplytics supports both Mixpanel and Google Analytics as a source of external analytics.
 
-#####Mixpanel
+####Mixpanel
 
 When the Taplytics SDK is installed alongside Mixpanel, all of your existing and future Mixpanel analytics will be sent to both Mixpanel _and_ Taplytics.
 
