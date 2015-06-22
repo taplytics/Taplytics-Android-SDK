@@ -244,9 +244,9 @@ You can long-press on the top of the border to switch experiments, or shake your
 
 ### 3. User Attributes
 
-Its possible to send custom user attributes to Taplytics using a JSONObject of user info. 
+It's possible to send custom user attributes to Taplytics using a JSONObject of user info. 
 
-The main possible fields are:
+The possible main fields are:
 
 |Parameter  |Type         |
 |---      |---          |
@@ -322,9 +322,9 @@ Taplytics.logEvent("Your Event Name", num, customInfo);
 
 ####Revenue Logging
 
-Its also possible to log revenue.
+It's also possible to log revenue.
 
-Revenue logging is the exact same as event logging, only call `logRevenue`:
+Revenue logging is the same as event logging, only call `logRevenue`:
 
 ```java
 Number someRevenue = 10000000;  
@@ -354,11 +354,11 @@ If you are using Google Analytics 7.0.0 and below, all Google Analytics will aut
 
 #####Google Analytics 7.3.0+
 
-If you are using Google Analytics 7.3.0 or above, you have the option of changing things a bit to send your Google Analytics to both Google _and_ Taplytics.
+If you are using Google Analytics 7.3.0 or above, you have the option of changing things to send your Google Analytics to both Google _and_ Taplytics.
 
 Simply find all instances of `tracker.send(new Hitbuilder...)` and replace them with `Taplytics.logGAEvent(tracker, new Hitbuilder...)`
 
-This can be done with a simple find/replace in your application.
+You can do this with a simple find/replace in your application.
 
 An example:
 
