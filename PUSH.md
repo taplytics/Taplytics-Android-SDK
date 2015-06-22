@@ -46,15 +46,15 @@ Once Google Play Services is added to your application in Eclipse, follow the st
 
 ---
 
-## 2. Receiving Push Notifictions
+## 2. Receiving Push Notifications
 
-In order to be able to send your users Push Notifications, we'll need you to upload your Google Cloud Messaging credentials. Please follow [this guide](https://taplytics.com/docs/guides/push-notifications/google-push-certificates) to do so.
+To be able to send your users Push Notifications, we'll need you to upload your Google Cloud Messaging credentials. Please follow [this guide](https://taplytics.com/docs/guides/push-notifications/google-push-certificates) to do so.
 
 ---
 
 ## 3. Resetting Users
 
-Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, it may be desirable for them to no longer receive push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
+Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, you may want to stop sending them push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
 
 ```java
 TaplyticsResetUserListener listener = new TaplyticsResetUserListener() {
