@@ -30,8 +30,6 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
         
         //Dependencies for taplytics
         compile("com.mcxiaoke.volley:library:+")
-        compile("com.squareup.okhttp:okhttp-urlconnection:+")
-        compile("com.squareup.okhttp:okhttp:+")
      
         //Excluding org.json due to compiler warnings
         //socket.io connections only made on debug devices OR if making live changes to a release build.
@@ -341,10 +339,10 @@ customInfo.put("some rag",someValue)
 Taplytics.logRevenue("Revenue Name", someRevenue, customInfo);
 ```
 
-####External Analytics
+### 5. External Analytics
 At the moment, Taplytics supports both Mixpanel and Google Analytics as a source of external analytics.
 
-#####Mixpanel
+####Mixpanel
 
 When the Taplytics SDK is installed alongside Mixpanel, all of your existing and future Mixpanel analytics will be sent to both Mixpanel _and_ Taplytics.
 
