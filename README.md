@@ -4,14 +4,14 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 [Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)
 
-##**Major Release: [1.5.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.0)**
+##**Major Release: [1.5.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.1)**
 
 **Changes**
 
 1. Removal of OkHttp
 2. New Session definitions
 
-More details can be found [here](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.0).
+More details can be found [here](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.1).
 
 ## Getting Started
 
