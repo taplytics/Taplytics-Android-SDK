@@ -346,6 +346,22 @@ At the moment, Taplytics supports both Mixpanel and Google Analytics as a source
 
 When the Taplytics SDK is installed alongside Mixpanel, all of your existing and future Mixpanel analytics will be sent to both Mixpanel _and_ Taplytics.
 
+####Flurry
+
+To properly support sending Flurry data, you simply need to tell Taplytics whenever a new Flurry session begins. This can be done directly after Flurry initialization.
+
+```java
+    
+    FlurryAgent.init(this, "your flurry API key");
+
+    FlurryAgent.setFlurryAgentListener(new FlurryAgentListener() {
+            @Override
+            public void onSessionStarted() {
+                Taplytics.startFlurrySession();
+            }
+        });
+```
+
 #####Google Analytics 7.0.0-
 
 If you are using Google Analytics 7.0.0 and below, all Google Analytics will automatically be sent to both Google Analytics _and_ Taplytics.
