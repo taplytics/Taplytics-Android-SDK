@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 [Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)
 
-##**Major Release: [1.5.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.1)**
+##**Major Release: [1.5.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.2)**
 
 **Changes**
 
