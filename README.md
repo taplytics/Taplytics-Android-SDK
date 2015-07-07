@@ -14,7 +14,7 @@ _How do I, as a developer, start using Taplytics?_
 2. _Install the SDK. Steps [here](/START.md)._
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
-**Changelog**
+## Changelog
 
 **[1.5.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.2)**
 
