@@ -46,13 +46,13 @@ Once Google Play Services is added to your application in Eclipse, follow the st
 
 ---
 
-## 2. Receiving Push Notifictions
+## 2. Receiving Push Notifications
 
-In order to be able to send your users Push Notifications, we'll need you to upload your Google Cloud Messaging credentials. Please follow [this guide](https://taplytics.com/docs/guides/push-notifications/google-push-certificates) to do so.
+To send your users Push Notifications, we'll need you to upload your Google Cloud Messaging credentials. Please follow [this guide](https://taplytics.com/docs/guides/push-notifications/google-push-certificates) to do so.
 
 ### Activity Routing
 
-By default, when a notification sent by Taplytics is clicked, it will open up the main activity of the application. However, it may be desirable to route your users to a different Activity. This can be done on the Taplytics Push page.
+By default, when a notification sent by Taplytics is clicked, it will open up the main activity of the application. However, you may want to route your users to a different Activity. This can be done on the Taplytics Push page.
 
 Simply add a custom data value to the push with the key `tl_activity` and with the **full** (_including package name_) class name of your activity. For example:
 
@@ -63,7 +63,7 @@ Simply add a custom data value to the push with the key `tl_activity` and with t
 
 ## 3. Resetting Users
 
-Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, it may be desirable for them to no longer receive push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
+Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, you may want them to stop receiving push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
 
 ```java
 TaplyticsResetUserListener listener = new TaplyticsResetUserListener() {
