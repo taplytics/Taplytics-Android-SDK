@@ -50,6 +50,15 @@ Once Google Play Services is added to your application in Eclipse, follow the st
 
 In order to be able to send your users Push Notifications, we'll need you to upload your Google Cloud Messaging credentials. Please follow [this guide](https://taplytics.com/docs/guides/push-notifications/google-push-certificates) to do so.
 
+### Activity Routing
+
+By default, when a notification sent by Taplytics is clicked, it will open up the main activity of the application. However, it may be desirable to route your users to a different Activity. This can be done on the Taplytics Push page.
+
+Simply add a custom data value to the push with the key `tl_activity` and with the **full** (_including package name_) class name of your activity. For example:
+
+
+![image](http://staging.taplytics.com/assets/docs/push/push_activity.png)
+
 ---
 
 ## 3. Resetting Users
