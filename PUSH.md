@@ -1,11 +1,10 @@
 Setting up Push Notifications using Taplytics is simple. Follow the steps below to get started.
 
-| # | Step |
-| - | ----------------- |
-| 1 | Setup: [Android Studio](#android-studio), [Eclipse](#eclipse) |
-| 2 | [Receiving Push Notifications](#1-receiving-push-notifictions) |
-| 3 | [Resetting Users](#2-resetting-users) |
-
+|#  |Step                                                                       |
+|---|---                                                                        |
+|1  |  Setup: [Android Studio](#android-studio), [Eclipse](#eclipse)            |
+|2  | [Receiving Push Notifications](#1-receiving-push-notifictions)            |
+|3  | [Resetting Users](#2-resetting-users)                                     |
 
 ## 1. Setup
 
