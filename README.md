@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 [Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)
 
-###**Current Version: [1.5.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.3)**
+###**Current Version: [1.5.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.4)**
 
 ## Getting Started
 
@@ -15,6 +15,10 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.5.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.4)**
+
+1. Button goals no longer limited to only buttons. Anything with an onClickListener will be selectable.
 
 **[1.5.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.3)**
 
