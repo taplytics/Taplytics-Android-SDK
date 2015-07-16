@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 [Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)
 
-###**Current Version: [1.5.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.5)**
+###**Current Version: [1.5.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.6)**
 
 ## Getting Started
 
@@ -16,6 +16,9 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.5.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.6)**
+
+1. Event reconciliation! If you were notcing more events in Taplytics than your other sources, this update fixes things from now on. 
 
 **[1.5.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.5)**
 
