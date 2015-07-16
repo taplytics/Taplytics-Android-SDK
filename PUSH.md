@@ -74,7 +74,23 @@ To get this token, use the following method:
 
 ---
 
-## 3. Resetting Users
+## 3. Retreiving Custom Push Data
+
+On the push dashboard, custom data can be entered into push notifications. To receive this data, you can use a PushNotificationListener. 
+
+```java
+Taplytics.addPushNotificationListener(new TaplyticsPushNotificationListener() {
+            @Override
+            public void pushReceived(JSONObject customData) throws JSONException {
+                //There it is!
+            }
+        });
+```
+
+You can add as many PushNotificationListeners in your application as you would like. To remove them, simply save a reference to the PushNotificationListener and call `Taplytics.removePushNotificationListener`. 
+
+
+## 4. Resetting Users
 
 Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, you may want them to stop receiving push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
 
