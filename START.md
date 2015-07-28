@@ -203,6 +203,12 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
 
 ---
 
+### Segment
+
+The Taplytics SDK can also be installed via Segment. You can find install instructions [here](/SEGMENT.md)
+
+---
+
 ## Setup
 
 ### 2. Initialization
