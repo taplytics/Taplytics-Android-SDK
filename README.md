@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.5.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.7)**
+###**Current Version: [1.5.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.8)**
 
 ## Getting Started
 
@@ -15,6 +15,13 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.5.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.8)**
+
+1. Added indicator for when the device is not connected to the internet or Taplytics.
+2. Added ability to disable the border from the shakemenu, for QA purposes
+3. Added socket connection retries
+4. Connections to Taplytics made more stable. 
 
 **[1.5.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.7)**
 
@@ -43,17 +50,6 @@ _How do I, as a developer, start using Taplytics?_
 2. Generate unique ID if the phone does not contain one.
 3. Taplytics push now works nicer alongside other push services
 4. Push notifications can now route to Activities other than main.
-
-**[1.5.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.1)**
-
-1. Visual changes on fragments are faster.
-2. Disabling the Taplytics shakemenu no longer disables the Taplytics long-press interaction. 
-
-**[1.5.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.0)**
-
-1. Removal of OkHttp
-2. New Session definitions
-3. More details for the major release of 1.5.0 can be found [here](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.0).
 
 
 ## Questions or Need Help
