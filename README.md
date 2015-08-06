@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.5.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.8)**
+###**Current Version: [1.5.9](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.9)**
 
 ## Getting Started
 
@@ -16,12 +16,13 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
-**[1.5.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.8)**
+**[1.5.9](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.9)**
 
-1. Added indicator for when the device is not connected to the internet or Taplytics.
-2. Added ability to disable the border from the shakemenu, for QA purposes
-3. Added socket connection retries
-4. Connections to Taplytics made more stable. 
+1. Fixed issue where the wrong experiment was being selected from the shake menu.
+2. Added indicator for when the device is not connected to the internet or Taplytics.
+3. Added ability to disable the border from the shakemenu, for QA purposes
+4. Added socket connection retries
+5. Connections to Taplytics made more stable. 
 
 **[1.5.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.7)**
 
@@ -38,18 +39,6 @@ _How do I, as a developer, start using Taplytics?_
 **[1.5.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.4)**
 
 1. Button goals no longer limited to only buttons. Anything with an onClickListener will be selectable.
-
-**[1.5.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.3)**
-
-1. Added a method to grab the GCM push token of the user if needed.
-2. Removed session time limit. 
-
-**[1.5.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.2)**
-
-1. Added a flurry analytic method to track flurry events to Taplytics 
-2. Generate unique ID if the phone does not contain one.
-3. Taplytics push now works nicer alongside other push services
-4. Push notifications can now route to Activities other than main.
 
 
 ## Questions or Need Help
