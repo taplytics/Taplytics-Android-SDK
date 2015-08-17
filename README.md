@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.5.9](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.9)**
+###**Current Version: [1.5.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.10)**
 
 ## Getting Started
 
@@ -15,6 +15,13 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+
+**[1.5.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.10)**
+
+1. Fixed images not loading correctly.
+2. Fixed RecyclerView changes not showing correctly.
+3. Views selected / hovered on Taplytics Dashboard will not be highlighted to better visualize changes.
 
 **[1.5.9](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.9)**
 
