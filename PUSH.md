@@ -89,8 +89,20 @@ Taplytics.addPushNotificationListener(new TaplyticsPushNotificationListener() {
 
 You can add as many PushNotificationListeners in your application as you would like. To remove them, simply save a reference to the PushNotificationListener and call `Taplytics.removePushNotificationListener`. 
 
+## 4. Setting a custom push intent
 
-## 4. Resetting Users
+To further customize the push notification intent, a ```PushNotificationIntentListener``` can be used to supply an entirely new intent to be used by the push notification. This listener is triggered when a push notification is being built, so the custom data from the Taplytics dashboard can be used in the new intent if needed.  
+
+```java
+Taplytics.setPushNotificationIntentListener(new TaplyticsPushNotificationIntentListener() {
+            @Override
+            public Intent setPushNotificationIntent(JSONObject customData) throws JSONException {
+               //return your own custom intent (CustomData is the custom keys from the dashboard)
+            }
+        });
+```
+
+## 5. Resetting Users
 
 Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, you may want them to stop receiving push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
 
