@@ -3,8 +3,10 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |#  |Step                                                                       |
 |---|---                                                                        |
 |1  |  Setup: [Android Studio](#android-studio), [Eclipse](#eclipse)            |
-|2  | [Receiving Push Notifications](#1-receiving-push-notifictions)            |
-|3  | [Resetting Users](#2-resetting-users)                                     |
+|2  | [Receiving Push Notifications](#2-receiving-push-notifications)            |
+|3  | [Retreiving Custom Push Data](#3-retreiving-custom-push-data)             |
+|4  | [Setting a Custom Push Intent](#4-setting-custom-push-intent)             |
+|5  | [Resetting Users](#5-resetting-users)                                     |
 
 ## 1. Setup
 
@@ -89,7 +91,7 @@ Taplytics.addPushNotificationListener(new TaplyticsPushNotificationListener() {
 
 You can add as many PushNotificationListeners in your application as you would like. To remove them, simply save a reference to the PushNotificationListener and call `Taplytics.removePushNotificationListener`. 
 
-## 4. Setting a custom push intent
+## 4. Setting Custom Push Intent
 
 To further customize the push notification intent, a ```PushNotificationIntentListener``` can be used to supply an entirely new intent to be used by the push notification. This listener is triggered when a push notification is being built, so the custom data from the Taplytics dashboard can be used in the new intent if needed.  
 
