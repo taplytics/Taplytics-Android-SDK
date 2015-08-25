@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.5.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.10)**
+###**Current Version: [1.5.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.11)**
 
 ## Getting Started
 
@@ -16,6 +16,12 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+
+**[1.5.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.11)**
+
+1. Fixed app icons not showing in notification sometimes.
+2. Added tl_title custom data field to allow changing title of push notifications.
+3. Fixed issues with setting padding.
 
 **[1.5.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.10)**
 
@@ -42,10 +48,6 @@ _How do I, as a developer, start using Taplytics?_
 **[1.5.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.5)**
 
 1. Just some safety around starting Taplytics. 
-
-**[1.5.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.4)**
-
-1. Button goals no longer limited to only buttons. Anything with an onClickListener will be selectable.
 
 
 ## Questions or Need Help
