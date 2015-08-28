@@ -168,7 +168,7 @@ Method: ```Taplytics.delayLoad(int maxTime, TaplyticsDelayLoadListener listener)
                                               
 ```
 
-** With a 1 second minimum time:**
+**With a 1 second minimum time:**
 
 ```java
 
