@@ -18,7 +18,7 @@ _How do I, as a developer, start using Taplytics?_
 
 **[1.5.13](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.13)**
 
-1. Changed `PushNotificationOpenListener` to require a context, to prevent duplicates
+1. Changed `PushNotificationOpenListener` to simply be a set, instead of an add to prevent duplicate tracking.
 2. Changed TurnMenu max time to 30 seconds.
 
 **[1.5.12](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.12)**
