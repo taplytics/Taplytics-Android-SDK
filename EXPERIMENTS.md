@@ -124,10 +124,6 @@ Method: ```Taplytics.delayLoad(Activity activity, Drawable image, int maxTime) `
 **With a 1 second minimium time**
 
 ```java
-        protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                setContentView(R.layout.main_layout);
-
                 Taplytics.delayLoad(this, getResources().getDrawable(R.drawable.image5), 2000, 1000);
                 ...
 ```
@@ -171,24 +167,7 @@ Method: ```Taplytics.delayLoad(int maxTime, TaplyticsDelayLoadListener listener)
 **With a 1 second minimum time:**
 
 ```java
+                Taplytics.delayLoad(2000,1000, ...
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                setContentView(R.layout.main_layout);
-
-                Taplytics.delayLoad(2000,1000, new TaplyticsDelayLoadListener() {
-                        @Override
-                        public void startDelay() {
-                                //Start delaying!
-                        }
-
-                        @Override
-                        public void delayComplete() {
-                                //Loading completed, or the given time has been reached. Insert your code here.
-                        }
-                });
-                ...
-                                              
 ```
 
