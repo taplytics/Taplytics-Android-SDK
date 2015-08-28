@@ -234,7 +234,7 @@ Possible options are:
 |liveUpdate   | boolean: true/false  | true  | Disable live update to remove the border, and activity refreshing in your debug builds to test the functionality of your applications as if they were in release mode. Note that this functionality is always disabled in release builds.  |   
 | shakeMenu | boolean: true/false   | true  | In your debug builds, disable the quick menu that appears when you shake your device. This menu is never present in release builds.|   
 | sessionMinutes | int > 0  | 10 | If you do your own analytics alongside taplytics, it helps to define your sessions to be the same length to reconcile your data. Set this to be the same timing interval that your app counts sessions. |   
-| turnMenu | boolean: true/false | false | If you are doing visual testing on an emulator, or UI automation, many emulators do not have the ability to shake the device. So, to pop up the taplytics menu on such devices, set turnMenu to true, and simply rotate the device from portrait/landscape twice in a row within 7.5 seconds and this menu will show.|   
+| turnMenu | boolean: true/false | false | If you are doing visual testing on an emulator, or UI automation, many emulators do not have the ability to shake the device. So, to pop up the taplytics menu on such devices, set turnMenu to true, and simply rotate the device from portrait/landscape twice in a row within 30 seconds and this menu will show.|   
 
 
 #### The Border / Shake menu. 
