@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.5.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.11)**
+###**Current Version: [1.5.12](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.12)**
 
 ## Getting Started
 
@@ -15,6 +15,13 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.5.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.11)**
+
+1. Added a `PushNotificationOpenListener` to track push notification opens.
+2. Added a minimum time for delayLoad.
+3. Fixed delayLoad images not showing with certain drawables.
+4. Added a TurnMenu option to trigger the experiment dialog without shaking the device (for emulators that don't have a shake option).
 
 
 **[1.5.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.11)**
@@ -44,11 +51,6 @@ _How do I, as a developer, start using Taplytics?_
 **[1.5.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.6)**
 
 1. Event reconciliation! If you were notcing more events in Taplytics than your other sources, this update fixes things from now on. 
-
-**[1.5.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.5)**
-
-1. Just some safety around starting Taplytics. 
-
 
 ## Questions or Need Help
 

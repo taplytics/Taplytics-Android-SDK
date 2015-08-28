@@ -6,7 +6,8 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |2  | [Receiving Push Notifications](#2-receiving-push-notifications)            |
 |3  | [Retreiving Custom Push Data](#3-retreiving-custom-push-data)             |
 |4  | [Setting a Custom Push Intent](#4-setting-custom-push-intent)             |
-|5  | [Resetting Users](#5-resetting-users)                                     |
+|5  | [Tracking Push Notification Opens](#5-tracking-push-notification-opens)                             |
+|6  | [Resetting Users](#6-resetting-users)
 
 ## 1. Setup
 
@@ -109,10 +110,27 @@ Taplytics.setPushNotificationIntentListener(new TaplyticsPushNotificationIntentL
             public Intent setPushNotificationIntent(JSONObject customData) throws JSONException {
                //return your own custom intent (CustomData is the custom keys from the dashboard)
             }
+        });                
+```
+
+## 5. Tracking Push Notification Opens
+
+By default, Taplytics will automatically track push notification opens. However, if this information is needed elsewhere, a `TaplyticsPushOpenedListener` can be used to track a push being opened.
+
+
+```java
+        Taplytics.addPushNotificationOpenedListener(new TaplyticsPushOpenedListener() {
+            @Override
+            public void pushOpened(Bundle bundle) {
+                //The push has been opened. Bundle is the extras associated with the intent. 
+            }
         });
 ```
 
-## 5. Resetting Users
+Note: If the push notification is opened while currently on the page that the push notification opens, it will not be tracked. Also, if the push notification doesn't open an activity, or if it opens an application other than the one building the notification, this cannot be tracked. 
+
+
+## 6. Resetting Users
 
 Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, you may want them to stop receiving push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
 

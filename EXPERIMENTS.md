@@ -108,7 +108,9 @@ Method: ```Taplytics.delayLoad(Activity activity, Drawable image, int maxTime) `
 
 **Max Time**:  Regardless of the results of Taplytics, the image will fade after this time. Milliseconds.
 
-**Example**:
+**Min Time**: Sometimes Taplytics loads things really fast, and this might make the image show only for a short amount of time. To keep this from happening, there is an optional minimum time option. Regardless of Taplytics loading experiments, the delayload wont finish until after this minumum time. 
+
+**Examples**:
 
 ```java
         protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +118,17 @@ Method: ```Taplytics.delayLoad(Activity activity, Drawable image, int maxTime) `
                 setContentView(R.layout.main_layout);
 
                 Taplytics.delayLoad(this, getResources().getDrawable(R.drawable.image5), 2000);
+                ...
+```
+
+**With a 1 second minimium time**
+
+```java
+        protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.main_layout);
+
+                Taplytics.delayLoad(this, getResources().getDrawable(R.drawable.image5), 2000, 1000);
                 ...
 ```
 
@@ -127,9 +140,11 @@ Method: ```Taplytics.delayLoad(int maxTime, TaplyticsDelayLoadListener listener)
 
 **Max Time**: Regardless of the results of Taplytics, the image will fade after this time. Milliseconds.
 
+**Min Time**: Sometimes Taplytics loads things really fast, and this might make the behavior of the callback undesirable. To keep this from happening, there is an optional minimum time option. Regardless of Taplytics loading experiments, the delayload wont finish until after this minumum time. 
+
 **Listener**: This listener will provide the necessary callbacks.
 
-**Example**:
+**Examples**:
 
 ```java
 
@@ -150,5 +165,30 @@ Method: ```Taplytics.delayLoad(int maxTime, TaplyticsDelayLoadListener listener)
                         }
                 });
                 ...
-                
+                                              
 ```
+
+** With a 1 second minimum time:**
+
+```java
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.main_layout);
+
+                Taplytics.delayLoad(2000,1000, new TaplyticsDelayLoadListener() {
+                        @Override
+                        public void startDelay() {
+                                //Start delaying!
+                        }
+
+                        @Override
+                        public void delayComplete() {
+                                //Loading completed, or the given time has been reached. Insert your code here.
+                        }
+                });
+                ...
+                                              
+```
+
