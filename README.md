@@ -16,7 +16,7 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
-**[1.5.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.11)**
+**[1.5.12](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.12)**
 
 1. Added a `PushNotificationOpenListener` to track push notification opens.
 2. Added a minimum time for delayLoad.
