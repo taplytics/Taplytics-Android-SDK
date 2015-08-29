@@ -119,7 +119,7 @@ By default, Taplytics will automatically track push notification opens. However,
 
 
 ```java
-        Taplytics.addPushNotificationOpenedListener(new TaplyticsPushOpenedListener() {
+        Taplytics.setPushNotificationOpenedListener(new TaplyticsPushOpenedListener() {
             @Override
             public void pushOpened(Bundle bundle) {
                 //The push has been opened. Bundle is the extras associated with the intent. 
