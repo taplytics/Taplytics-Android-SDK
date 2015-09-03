@@ -34,6 +34,15 @@ And you must add the following receiver and service under your application tag:
 <service android:name="com.taplytics.sdk.TLGcmIntentService" />
 ```
 
+In order to set the notification icon you must add a meta-tag to your manifest specifying the drawable you want to use as the icon:
+
+```xml
+<meta-data android:name="com.taplytics.sdk.notification_icon"
+            android:resource="@drawable/notification_icon"/>
+```
+
+If this isn't set the application's icon will be used instead.
+
 ---
 
 ### Eclipse
