@@ -1,4 +1,4 @@
-You can get started with using Taplytics on Android in minutes. Just follow the steps below:
+IYou can get started with using Taplytics on Android in minutes. Just follow the steps below:
 
 |#  |Step                                                                       |
 |---|---                                                                        |
