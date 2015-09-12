@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.5.15](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.15)**
+###**Current Version: [1.6.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.0)**
 
 ## Getting Started
 
@@ -15,6 +15,20 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.6.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.0)**
+
+**Big Changes!**
+
+1. **Increased Taplytics speed 50-80% in specific cases. **
+2. **Added new Dynamic Variable and Code Block feature.**
+2. Full ListView and RecyclerView support.
+3. Full GridView support.
+4. Activities no longer need to reset when testing variations.
+5. Element values can now be reset on the Taplytics dashboard. 
+6. Lag eliminated when editing fragments.
+7. Lag eliminated from setting images.
+
 
 **[1.5.15](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.15)**
 
