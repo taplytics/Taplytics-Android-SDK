@@ -1,13 +1,80 @@
-Creating experiments are easy using Taplytics. You can either use our visual editor or create code-based experiments. You can find documentation on how to do this below.
+ICreating experiments are easy using Taplytics. You can either use our visual editor or create code-based experiments. You can find documentation on how to do this below.
 
 | Table of Contents |
 | ----------------- |
-| [Code Experiments](#code-experiments) |
+| [Dynamic Variables & Blocks](#dynamic-variables-&-blocks)|
+| [Code Experiments](#code-experiments-deprecated) |
 | [Visual Editing](#visual-editing) |
 | [First-view Experiments](#delay-load) |
 | [List Running Experiments](#running-experiments) |
 
-## Code Experiments
+## Dynamic Variables & Blocks
+
+**To see and modify these variables or blocks on the dashboard, the app must me launched and this code containing the variable or block must be navigated to a least once.**
+
+This is to send the information of the variable or block to Taplytics, so it will appear on the dashboard.
+
+###Variables
+
+Taplytics now offers the ability to create simple variables that can be changed on the Taplytics Dashboard. 
+
+A Taplytics variable is instantiated with three variables.
+
+1. Variable name (String)
+2. Default Value
+3. TaplyticsVarListener (Optional)
+
+The type of the variable is defined in the first diamond brackets, and must be a Parcelable type (String, Number, JSON, etc).
+
+For example:
+
+```java
+        TaplyticsVar<Integer> var = new TaplyticsVar<>("name", 5, new TaplyticsVarListener() {
+            @Override
+            public void variableUpdated(Object value) {
+                //Do something with the updated value
+            }
+        });
+```
+
+Or without a listener:
+
+```java
+		TaplyticsVar<String> stringVar = new TaplyticsVar<String>("some name","default value");
+```
+
+To retrieve the value for use, simply call `.get()`
+
+For example:
+
+```java
+String example = stringVar.get();
+```
+When `.get()` is called, the value currently associated with the variable is returned. If the new value hasn't been retrieved from the server, it will fall back to the default value. 
+
+```variableUpdated`` is called when the server does receive a new value for the variable. This should mostly be used for testing purposes, however it is available for convenience in all projects. 
+
+### Code Blocks
+
+Similar to Dynamic Variables, Taplytics has an option for 'Code Blocks'. A Code Block is a callback that can be enabled or disabled depending on the Variation. If enabled, the code within the callback will be executed. If disabled, the variation will not get the callback.
+
+These Code Blocks can be used in conjunction with many other Code Blocks to determine a combination that yields the best results. Perhaps there are three different Code Blocks on one activity. This means there could be 8 different combinations of Code Blocks being enabled /disabled.
+
+For example:
+
+```java
+ Taplytics.runCodeBlock("name", new CodeBlockListener() {
+            @Override
+            public void run() {
+                //Put your code here!
+            }
+        });
+   ```
+  
+By default, a code block will _not_ run unless enabled on the Taplytic Dashboard. It must be enabled for a Variation before it will run. 
+   
+
+## Code Experiments (depricated)
 
 #### Setup
 
