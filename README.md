@@ -20,7 +20,7 @@ _How do I, as a developer, start using Taplytics?_
 
 **Big Changes!**
 
-1. **Increased Taplytics speed 50-80% in specific cases. **
+1. **Increased Taplytics speed 50-80% in specific cases.**
 2. **Added new Dynamic Variable and Code Block feature.**
 2. Full ListView and RecyclerView support.
 3. Full GridView support.
