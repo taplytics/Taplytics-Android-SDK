@@ -14,7 +14,7 @@ ICreating experiments are easy using Taplytics. You can either use our visual ed
 
 This is to send the information of the variable or block to Taplytics, so it will appear on the dashboard.
 
-###Variables
+###Dynamic Variables
 
 Taplytics now offers the ability to create simple variables that can be changed on the Taplytics Dashboard. 
 
@@ -52,7 +52,7 @@ String example = stringVar.get();
 ```
 When `.get()` is called, the value currently associated with the variable is returned. If the new value hasn't been retrieved from the server, it will fall back to the default value. 
 
-```variableUpdated`` is called when the server does receive a new value for the variable. This should mostly be used for testing purposes, however it is available for convenience in all projects. 
+``variableUpdated`` is called when the server does receive a new value for the variable. This should mostly be used for testing purposes, however it is available for convenience in all projects. 
 
 ### Code Blocks
 
