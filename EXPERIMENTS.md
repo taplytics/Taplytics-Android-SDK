@@ -2,13 +2,13 @@ ICreating experiments are easy using Taplytics. You can either use our visual ed
 
 | Table of Contents |
 | ----------------- |
-| [Dynamic Variables & Blocks](#dynamic-variables-&-blocks)|
+| [Dynamic Variables & Code Blocks](#dynamic-variables-&-code-blocks)|
 | [Code Experiments](#code-experiments-deprecated) |
 | [Visual Editing](#visual-editing) |
 | [First-view Experiments](#delay-load) |
 | [List Running Experiments](#running-experiments) |
 
-## Dynamic Variables & Blocks
+## Dynamic Variables & Code Blocks
 
 **To see and modify these variables or blocks on the dashboard, the app must me launched and this code containing the variable or block must be navigated to a least once.**
 
@@ -74,7 +74,7 @@ For example:
 By default, a code block will _not_ run unless enabled on the Taplytic Dashboard. It must be enabled for a Variation before it will run. 
    
 
-## Code Experiments (depricated)
+## Code Experiments (Deprecated)
 
 #### Setup
 
