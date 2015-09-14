@@ -14,7 +14,7 @@ Creating experiments is easy using Taplytics. You can either use our visual edit
 
 The code below is used to send the information of the variable or block to Taplytics, so it will appear on the dashboard.
 
-###Dynamic Variables
+### Dynamic Variables
 
 Taplytics variables are dynamic variables that can be used to change content or functionality of your app dynamically from the Taplytics website. Variables are re-useable between experiments and are instantiated with three variables:
 
