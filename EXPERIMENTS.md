@@ -1,4 +1,4 @@
-ICreating experiments are easy using Taplytics. You can either use our visual editor or create code-based experiments. You can find documentation on how to do this below.
+Creating experiments is easy using Taplytics. You can either use our visual editor or create code-based experiments. You can find documentation on how to do this below.
 
 | Table of Contents |
 | ----------------- |
@@ -10,15 +10,13 @@ ICreating experiments are easy using Taplytics. You can either use our visual ed
 
 ## Dynamic Variables & Code Blocks
 
-**To see and modify these variables or blocks on the dashboard, the app must me launched and this code containing the variable or block must be navigated to a least once.**
+**To see and modify these variables or blocks on the dashboard, the app must be launched and this code containing the variable or block must be navigated to a least once.**
 
-This is to send the information of the variable or block to Taplytics, so it will appear on the dashboard.
+The code below is used to send the information of the variable or block to Taplytics, so it will appear on the dashboard.
 
 ###Dynamic Variables
 
-Taplytics now offers the ability to create simple variables that can be changed on the Taplytics Dashboard. 
-
-A Taplytics variable is instantiated with three variables.
+Taplytics variables are dynamic variables that can be used to change content or functionality of your app dynamically from the Taplytics website. Variables are re-useable between experiments and are instantiated with three variables:
 
 1. Variable name (String)
 2. Default Value
@@ -26,7 +24,7 @@ A Taplytics variable is instantiated with three variables.
 
 The type of the variable is defined in the first diamond brackets, and must be a Parcelable type (String, Number, JSON, etc).
 
-For example:
+For example with a listener:
 
 ```java
         TaplyticsVar<Integer> var = new TaplyticsVar<>("name", 5, new TaplyticsVarListener() {
@@ -37,7 +35,7 @@ For example:
         });
 ```
 
-Or without a listener:
+Example without a listener:
 
 ```java
 		TaplyticsVar<String> stringVar = new TaplyticsVar<String>("some name","default value");
@@ -56,9 +54,9 @@ When `.get()` is called, the value currently associated with the variable is ret
 
 ### Code Blocks
 
-Similar to Dynamic Variables, Taplytics has an option for 'Code Blocks'. A Code Block is a callback that can be enabled or disabled depending on the Variation. If enabled, the code within the callback will be executed. If disabled, the variation will not get the callback.
+Similar to Dynamic Variables, Taplytics has an option for 'Code Blocks'. Code blocks are linked to Experiments through the Taplytics website very much the same way that Dynamic Variables are, and will be executed based on the configuration of the experiment through the Taplytics website. A Code Block is a callback that can be enabled or disabled depending on the variation. If enabled, the code within the callback will be executed. If disabled, the variation will not get the callback.
 
-These Code Blocks can be used in conjunction with many other Code Blocks to determine a combination that yields the best results. Perhaps there are three different Code Blocks on one activity. This means there could be 8 different combinations of Code Blocks being enabled /disabled.
+A Code Block can be used alongside as many other Code Blocks as you would like to determine a combination that yields the best results. Perhaps there are three different Code Blocks on one activity. This means there could be 8 different combinations of Code Blocks being enabled / disabled on that activity if you'd like.
 
 For example:
 
@@ -131,6 +129,8 @@ private void runAnExperiment(){
 }
 ```
 
+#### Previewing Code Experiments
+
 This separate function is suggested, because if you would like to update experiments instantly for debug testing or another reason, you can simply place the `runAnExperiment()` function into the `experimentUpdated()` block.
 
 ---
@@ -138,23 +138,6 @@ This separate function is suggested, because if you would like to update experim
 ## Visual Editing
 
 You don't have to do anything else!  You can use the Taplytics dashboard to make all your visual changes. See the docs on visual editing [here](https://taplytics.com/docs/guides/visual-experiments).
-
----
-
-## Running Experiments
-
-If you would like to see which variations and experiments are running on the device, there exists a `getRunningExperimentsAndVariations(TaplyticsRunningExperimentsListener listener)` function which provides a callback with a map of the current experiments and their running variation. An example:
-
-```java
-  Taplytics.getRunningExperimentsAndVariations(new TaplyticsRunningExperimentsListener() {
-                    @Override
-                    public void runningExperimentsAndVariation(Map<String, String> experimentsAndVariations) {
-                        //TODO: Do something with the map.
-                    }
-                });
-```
-
-NOTE: This function runs asynchronously, as it waits for the updated properties to load from Taplytics' servers before returning the running experiments. 
 
 ---
 
@@ -237,4 +220,21 @@ Method: ```Taplytics.delayLoad(int maxTime, TaplyticsDelayLoadListener listener)
                 Taplytics.delayLoad(2000,1000, ...
 
 ```
+
+---
+
+## Running Experiments
+
+If you would like to see which variations and experiments are running on a given device, there exists a `getRunningExperimentsAndVariations(TaplyticsRunningExperimentsListener listener)` function which provides a callback with a map of the current experiments and their running variation. An example:
+
+```java
+  Taplytics.getRunningExperimentsAndVariations(new TaplyticsRunningExperimentsListener() {
+                    @Override
+                    public void runningExperimentsAndVariation(Map<String, String> experimentsAndVariations) {
+                        //TODO: Do something with the map.
+                    }
+                });
+```
+
+NOTE: This function runs asynchronously, as it waits for the updated properties to load from Taplytics' servers before returning the running experiments. 
 
