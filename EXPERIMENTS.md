@@ -129,7 +129,10 @@ private void runAnExperiment(){
 }
 ```
 
-To do this synchronously, use ```Taplytics.runCodeExperimentSync(..```
+To do this synchronously, use 
+```java 
+	Taplytics.runCodeExperimentSync(..
+```
 
 #### Previewing Code Experiments
 
