@@ -129,6 +129,8 @@ private void runAnExperiment(){
 }
 ```
 
+To do this synchronously, use ```Taplytics.runCodeExperimentSync(..```
+
 #### Previewing Code Experiments
 
 This separate function is suggested, because if you would like to update experiments instantly for debug testing or another reason, you can simply place the `runAnExperiment()` function into the `experimentUpdated()` block.
