@@ -3,11 +3,12 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |#  |Step                                                                       |
 |---|---                                                                        |
 |1  |  Setup: [Android Studio](#android-studio), [Eclipse](#eclipse)            |
-|2  | [Receiving Push Notifications](#2-receiving-push-notifications)            |
-|3  | [Retreiving Custom Push Data](#3-retreiving-custom-push-data)             |
-|4  | [Setting a Custom Push Intent](#4-setting-custom-push-intent)             |
-|5  | [Tracking Push Notification Opens](#5-tracking-push-notification-opens)                             |
-|6  | [Resetting Users](#6-resetting-users)
+|2  | [Receiving Push Notifications](#2-receiving-push-notifications)           |
+|3  | [Push Campaigns](#3-push-campaigns)                                       |
+|4  | [Retrieving Custom Push Data](#3-retrieving-custom-push-data)             |
+|5  | [Setting a Custom Push Intent](#4-setting-custom-push-intent)             |
+|6  | [Tracking Push Notification Opens](#5-tracking-push-notification-opens)   |                
+|7  | [Resetting Users](#6-resetting-users)                                     |
 
 ## 1. Setup
 
@@ -94,7 +95,38 @@ To get this token, use the following method:
 
 ---
 
-## 3. Retreiving Custom Push Data
+
+## 3. Push Campaigns
+
+Push Campaigns allow you to send pushes in reaction to events, called triggers. Location based triggers use the Google Play Services Location API in order to create geofences for the locations you specify.
+
+For location based triggers add the following two permissions to you manifest:
+
+```xml 
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+``` 
+
+The `ACCESS_FINE_LOCATION` permission is used to get the devices location, and the `RECEIVE_BOOT_COMPLETED` permission is to re-register the locations which the campaign is triggered in, which get cleared upon reboot.
+
+
+Also needed is a boot receiver to re-register events, and an intent service to react to geofence events. Both which go in your manifest, under the application tag:
+
+```xml
+<receiver android:name="com.taplytics.sdk.TLBootReceiver">
+	<intent-filter>
+		<action android:name="android.intent.action.BOOT_COMPLETED"/>
+	</intent-filter>
+</receiver>
+
+<service android:name="com.taplytics.sdk.TLGeofenceEventService"/>
+```
+
+The only additional dependency needed is Google Play Services Location API, which you can add to your module's  `build.gradle` file under dependencies:
+
+`compile 'com.google.android.gms:play-services-location:7.5.0'`
+
+## 4. Retrieving Custom Push Data
 
 On the push dashboard, custom data can be entered into push notifications. To receive this data, you can use a PushNotificationListener. 
 
@@ -107,9 +139,9 @@ Taplytics.addPushNotificationListener(new TaplyticsPushNotificationListener() {
         });
 ```
 
-You can add as many PushNotificationListeners in your application as you would like. To remove them, simply save a reference to the PushNotificationListener and call `Taplytics.removePushNotificationListener`. 
+You can add as many PushNotificationListeners in your application as you would like. To remove them, simply save a reference to the PushNotificationListener and call `Taplytics.removePushNotificationListener`. '`
 
-## 4. Setting Custom Push Intent
+## 5. Setting Custom Push Intent
 
 To further customize the push notification intent, a ```PushNotificationIntentListener``` can be used to supply an entirely new intent to be used by the push notification. This listener is triggered when a push notification is being built, so the custom data from the Taplytics dashboard can be used in the new intent if needed.  
 
@@ -122,7 +154,7 @@ Taplytics.setPushNotificationIntentListener(new TaplyticsPushNotificationIntentL
         });                
 ```
 
-## 5. Tracking Push Notification Opens
+## 6. Tracking Push Notification Opens
 
 By default, Taplytics will automatically track push notification opens. However, if this information is needed elsewhere, a `TaplyticsPushOpenedListener` can be used to track a push being opened.
 
@@ -139,7 +171,7 @@ By default, Taplytics will automatically track push notification opens. However,
 Note: If the push notification is opened while currently on the page that the push notification opens, it will not be tracked. Also, if the push notification doesn't open an activity, or if it opens an application other than the one building the notification, this cannot be tracked. 
 
 
-## 6. Resetting Users
+## 7. Resetting Users
 
 Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, you may want them to stop receiving push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
 
@@ -155,3 +187,5 @@ Taplytics.resetAppUser(listener);
 ```
 
 Now, the device that the app is currently running on will no longer receive push notifications until the app user attributes are updated again.
+
+
