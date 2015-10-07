@@ -20,17 +20,8 @@ _How do I, as a developer, start using Taplytics?_
 **[1.6.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.4)**
 
 1. Upgraded to Google Play Services 8.1
-
-
-**[1.6.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.3)**
-
-1. Added Android M Support
-
-
-**[1.6.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.2)**
-
-1. Added Push Campaign support
-
+2. Added Android M Support
+3. Added Push Campaign support
 
 **[1.6.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.1)**
 
