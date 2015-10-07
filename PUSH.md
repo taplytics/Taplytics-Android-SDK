@@ -124,7 +124,7 @@ Also needed is a boot receiver to re-register events, and an intent service to r
 
 The only additional dependency needed is Google Play Services Location API, which you can add to your module's  `build.gradle` file under dependencies:
 
-`compile 'com.google.android.gms:play-services-location:7.5.0'`
+`compile 'com.google.android.gms:play-services-location:8.1.0'`
 
 ## 4. Retrieving Custom Push Data
 

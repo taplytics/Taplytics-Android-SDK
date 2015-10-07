@@ -42,7 +42,7 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
         }
         
         //Only include this if you wish to enable push notifications:
-        compile("com.google.android.gms:play-services-gcm:7.5.0")
+        compile("com.google.android.gms:play-services-gcm:8.1.0")
     }    
     ```
     
