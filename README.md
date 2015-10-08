@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.6.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.4)**
+###**Current Version: [1.6.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.5)**
 
 ## Getting Started
 
@@ -16,6 +16,10 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+
+**[1.6.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.5)**
+
+1. Fixed an issue related to reseting users
 
 **[1.6.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.4)**
 
