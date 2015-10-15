@@ -115,6 +115,11 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
     -dontwarn java.nio.file.*
     -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
     ```
+	(Only if you are seeing proguard issues with com.google.android.gms)
+	
+	```
+	-dontwarn com.taplytics.**
+	```
 
 7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 

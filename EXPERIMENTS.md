@@ -243,3 +243,16 @@ If you would like to see which variations and experiments are running on a given
 
 NOTE: This function runs asynchronously, as it waits for the updated properties to load from Taplytics' servers before returning the running experiments. 
 
+If you want to see when the experiments have been loaded by Taplytics, you can add a `TaplyticsExperimentLoadedListener` to your `startTaplytics` call. For example
+
+```  
+        Taplytics.startTaplytics(this, "YOUR API KEY", null, new TaplyticsExperimentsLoadedListener() {
+            @Override
+            public void loaded() {
+                //TODO: Do something now that experiments are loaded
+            }
+        });
+```
+
+
+
