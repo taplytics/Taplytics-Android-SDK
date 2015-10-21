@@ -15,6 +15,9 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+**[1.6.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.8)**
+
+1. Cleaned up events that don't need to be logged in production.
 
 **[1.6.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.7)**
 
