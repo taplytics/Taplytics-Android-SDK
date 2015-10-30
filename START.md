@@ -351,12 +351,12 @@ customInfo.put("some rag",someValue)
 Taplytics.logRevenue("Revenue Name", someRevenue, customInfo);
 ```
 
-### 5. External Analytics
-At the moment, Taplytics supports both Mixpanel and Google Analytics as a source of external analytics.
+### 5. Receiving External Analytics
+At the moment, Taplytics supports Mixpanel, Google Analytics, Adobe Analytics, Flurry, Localytics and Amplitude as a source of external analytics.
 
-####Mixpanel
+####Mixpanel, Adobe, Localytics and Amplitude
 
-When the Taplytics SDK is installed alongside Mixpanel, all of your existing and future Mixpanel analytics will be sent to both Mixpanel _and_ Taplytics.
+When the Taplytics SDK is installed alongside any of these sources, all of your existing and future analytics events will be sent to both the source _and_ Taplytics.
 
 ####Flurry
 
@@ -398,6 +398,16 @@ Would be changed to:
 ```java
 Tracker t = TrackerManager.getInstance().getGoogleAnalyticsTracker(TrackerManager.TrackerName.APP_TRACKER, getApplication());
 Taplytics.logGAEvent(t, new HitBuilders.EventBuilder().setCategory("someCategry").setAction("someAction").setLabel("someLabel").setValue(12).build());
+```
+
+---
+
+##6. Sending to External Analytics
+Taplytics can send experiment data to external analytics sources on startup. This integration is automatic with the exception of Google Analytics where the tracker instance must be passed as a startup option to Taplytics.
+```
+HashMap<String, Object> options = new HashMap<>();
+options.put("gaTracker", tracker);
+Taplytics.startTaplytics(this, "YOUR API KEY", options);
 ```
 
 ---
