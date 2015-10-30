@@ -410,6 +410,20 @@ options.put("gaTracker", tracker);
 Taplytics.startTaplytics(this, "YOUR API KEY", options);
 ```
 
+
+The experiment data will be sent as a single event to Adobe, Amplitude, Flurry, and Localytics. The event will be named `TL_experiments` and have the experiment data as properties.
+
+For both Google Analytics and Mixpanel the experiment data will be set as properties on _all_ the events (known as super properties in Mixpanel). 
+
+The properties for all sources are in the following format:
+
+```
+{
+"Experiment One":"Variation One",
+"Experiment Two":"baseline"
+}
+```
+
 ---
 
 ## Advanced
