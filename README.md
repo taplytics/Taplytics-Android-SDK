@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.6.12](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.12)**
+###**Current Version: [1.6.13](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.13)**
 
 ## Getting Started
 
@@ -16,8 +16,12 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.6.13](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.13)**
 
-**[1.6.12](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.11)**
+1. Increased button click accuracy
+2. Increased image caching efficiency
+
+**[1.6.12](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.12)**
 
 1. Fixed a null pointer exception that could occer with reseting users and settings user attributes rapidly
 2. Added text to the shake menu to be more descriptive
