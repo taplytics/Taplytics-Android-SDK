@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.6.13](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.13)**
+###**Current Version: [1.6.14](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.14)**
 
 ## Getting Started
 
@@ -15,6 +15,13 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.6.14](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.14)**
+
+1. Fixed a bug causing Google Analytics events not to be passed to Taplytics properly
+2. Added automatic proguard directives to prevent build errors when using proguard
+3. Fixed issue where element upload sometimes failed when editing visual experiments
+
 
 **[1.6.13](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.13)**
 
