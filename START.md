@@ -227,9 +227,9 @@ Taplytics.startTaplytics(this, "Your Api Key");
 Or, add a map of options.
 
 ```java
-Hashmap<String, Object> options = new Hashmap<>();
+HashMap<String, Object> options = new HashMap<>();
 options.put("optionName",optionValue);
-Taplytics.startTaplytics(this, "Your Api Key");
+Taplytics.startTaplytics(this, "Your Api Key", options);
 ```
 
 Possible options are:
