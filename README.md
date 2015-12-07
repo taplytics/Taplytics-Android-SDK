@@ -19,7 +19,7 @@ _How do I, as a developer, start using Taplytics?_
 
 **[1.6.16](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.16)**
 
-1. Fixed an issue where recyclerViews and listViews visual changes could not persist 
+1. Fixed an issue where recyclerViews and listViews visual changes did not persist 
 
 
 **[1.6.15](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.15)**
