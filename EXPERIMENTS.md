@@ -16,42 +16,78 @@ The code below is used to send the information of the variable or block to Taply
 
 ### Dynamic Variables
 
-Taplytics variables are dynamic variables that can be used to change content or functionality of your app dynamically from the Taplytics website. Variables are re-useable between experiments and are instantiated with three variables:
+Taplytics variables are values in your app that are controlled by experiments. Changing the values can update the content or functionality of your app. Variables are reusable between experiments and operate in one of two modes: synchronous or asynchronous.
+
+####Synchronous
+
+Synchronous variables are guaranteed to have the same value for the entire session and will have that value immediately after construction. 
+
+Due to the synchronous nature of the variable, if it is used before the experiments have been loaded, its value will be the default value rather than the value set for that experiment. This could taint the results of the experiment. In order to prevent this you can ensure that the experiments are loaded before using the variable. This can be done with either the `delayLoad` functionality, the `TaplyticsExperimentsLoadedListener` parameter in your `startTaplytics` call, or the `getRunningExperimentsAndVariations` call.
+
+Synchronous variables take two parameters in its constructor:
 
 1. Variable name (String)
 2. Default Value
-3. TaplyticsVarListener (Optional)
 
-The type of the variable is defined in the first diamond brackets, and must be a Parcelable type (String, Number, JSON, etc).
+The type of the variable is defined in the first diamond brackets, and can be a `String`, `Number` or `Boolean`. 
 
-For example with a listener:
+For example, using a variable of type `String`:
+```java
+TaplyticsVar<String> stringVar = new TaplyticsVar<String>("some name","default value");
+```
+
+Then when you wish to get the value for the variable, simply call `get()` on the Taplytics variable:
+```java
+String value = stringVar.get();
+```
+
+####Asynchronous
+
+Asynchronous variables take care of insuring that the experiments have been loaded before returning a value. This removes any danger of tainting the results of your experiment with bad data. What comes with the insurance of using the correct value is the possibility that the value will not be set immediately. If the variable is constructed *before* the experiments are loaded, you won't have the correct value until the experiments have finished loading. If the experiments fail to load, then you will be given the default value, as specified in the variables constructor.
+
+Asynchronous variables take three parameters in its constructor:
+
+1. Variable name (String)
+2. Default Value
+3. TaplyticsVarListener
+
+Just as for synchronous variables the type of the variable is defined in the first diamond brackets, and can be a `String`, `Number` or `Boolean`. 
+
+For example, using a variable of type `Number`:
 
 ```java
-        TaplyticsVar<Integer> var = new TaplyticsVar<>("name", 5, new TaplyticsVarListener() {
+TaplyticsVar<Number> var = new TaplyticsVar<>("name", 5, new TaplyticsVarListener() {
             @Override
             public void variableUpdated(Object value) {
-                //Do something with the updated value
+                //Do something with the value
+            }
+	});
+```
+
+When the variable's value has been updated, the listener will be called with that updated value. You can specify what you want to do with the variable inside the `variableUpdated` method.
+
+
+----------
+
+####Testing Dynamic Variables
+
+When testing dynamic variables in live update mode you can change the values on the fly via the taplytics interface and you can switch variations with the shake menu on the device.
+
+**Important Note:** When testing synchronous dynamic variables you *must* call the constructor again to see the new value, as there are no callbacks which occur when the variable is updated with a new value.
+
+This can be achieved by using a experiments updated listener. Here is an example for updating a textView:
+
+
+``` java
+
+Taplytics.setTaplyticsExperimentsUpatedListener(new TaplyticsExperimentsUpdatedListener() {
+            @Override
+            public void onExperimentUpdate() {
+                final TaplyticsVar<String> stringVar = new TaplyticsVar<String>("stringVar", "defaultValue");
+                updateText(stringVar.get());
             }
         });
 ```
-
-Example without a listener:
-
-```java
-		TaplyticsVar<String> stringVar = new TaplyticsVar<String>("some name","default value");
-```
-
-To retrieve the value for use, simply call `.get()`
-
-For example:
-
-```java
-String example = stringVar.get();
-```
-When `.get()` is called, the value currently associated with the variable is returned. If the new value hasn't been retrieved from the server, it will fall back to the default value. 
-
-``variableUpdated`` is called when the server does receive a new value for the variable. This should mostly be used for testing purposes, however it is available for convenience in all projects. 
-
 ### Code Blocks
 
 Similar to Dynamic Variables, Taplytics has an option for 'Code Blocks'. Code blocks are linked to Experiments through the Taplytics website very much the same way that Dynamic Variables are, and will be executed based on the configuration of the experiment through the Taplytics website. A Code Block is a callback that can be enabled or disabled depending on the variation. If enabled, the code within the callback will be executed. If disabled, the variation will not get the callback.
