@@ -8,7 +8,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 ## Getting Started
 
-_How do I, as a developer, start using Taplytics?_ 
+_How do I, as a developer, start using Taplytics?_
 
 1. _Sign up for a free account at [Taplytics.com](https://taplytics.com?utm_source=github&utm_campaign=documentation&utm_medium=content)._
 2. _Install the SDK. Steps [here](/START.md)._
@@ -16,22 +16,24 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.6.18](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.18)**
 
+1. Added a method to enable or disable push subscriptions
 
 **[1.6.17](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.17)**
 
 1. Added a synchronous option dynamic variables
-2. Added additonal documentation for dynamic variables
+2. Added additional documentation for dynamic variables
 
 
 **[1.6.16](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.16)**
 
-1. Fixed an issue where recyclerViews and listViews visual changes did not persist 
+1. Fixed an issue where recyclerViews and listViews visual changes did not persist
 
 
 **[1.6.15](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.15)**
 
-1. Bug fixes 
+1. Bug fixes
 
 
 **[1.6.14](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.14)**
@@ -48,7 +50,7 @@ _How do I, as a developer, start using Taplytics?_
 
 **[1.6.12](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.12)**
 
-1. Fixed a null pointer exception that could occer with reseting users and settings user attributes rapidly
+1. Fixed a null pointer exception that could occur with reseting users and settings user attributes rapidly
 2. Added text to the shake menu to be more descriptive
 
 **[1.6.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.11)**
@@ -107,7 +109,7 @@ _How do I, as a developer, start using Taplytics?_
 2. Full ListView and RecyclerView support.
 3. Full GridView support.
 4. Activities no longer need to reset when testing variations.
-5. Element values can now be reset on the Taplytics dashboard. 
+5. Element values can now be reset on the Taplytics dashboard.
 6. Lag eliminated when editing fragments.
 7. Lag eliminated from setting images.
 
@@ -148,7 +150,7 @@ _How do I, as a developer, start using Taplytics?_
 2. Added indicator for when the device is not connected to the internet or Taplytics.
 3. Added ability to disable the border from the shakemenu, for QA purposes
 4. Added socket connection retries
-5. Connections to Taplytics made more stable. 
+5. Connections to Taplytics made more stable.
 
 **[1.5.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.7)**
 
@@ -156,7 +158,7 @@ _How do I, as a developer, start using Taplytics?_
 
 **[1.5.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.6)**
 
-1. Event reconciliation! If you were notcing more events in Taplytics than your other sources, this update fixes things from now on. 
+1. Event reconciliation! If you were notcing more events in Taplytics than your other sources, this update fixes things from now on.
 
 ## Questions or Need Help
 
