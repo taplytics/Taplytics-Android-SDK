@@ -6,7 +6,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **MAJOR UPDATE: SOCKET.IO DEPENDENCY HAS BEEN CHANGED** 
 
-[See more here.](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/Sockets.md)
+[See more here.](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
 
 ###**Current Version: [1.7.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.0)**
 
