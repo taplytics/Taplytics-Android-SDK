@@ -22,7 +22,7 @@ _How do I, as a developer, start using Taplytics?_
 
 **[1.7.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.0)**
 
-1. [Changed to new socket.io dependency](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/Sockets.md)
+1. [Changed to new socket.io dependency](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
 2. Support for ImageButtons and StateDrawables. 
 
 **[1.6.18](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.6.18)**
