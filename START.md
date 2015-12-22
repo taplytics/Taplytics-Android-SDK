@@ -25,26 +25,27 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
 
     ```
     dependencies {                                                                   
-        //Taplytics                                                                        
-        compile("com.taplytics.sdk:taplytics:+@aar")  
         
         //Dependencies for taplytics
         compile("com.mcxiaoke.volley:library:+")
      
-        //Excluding org.json due to compiler warnings
-        //socket.io connections only made on debug devices OR if making live changes to a release build.
-        //No socket.io connection will be made on your release devices unless explicitly told to do so. 
-        compile("com.github.nkzawa:socket.io-client:+") {
-                exclude group: 'org.json'
-        }
-        compile("com.github.nkzawa:engine.io-client:+") {
-                exclude group: 'org.json'
-        }
+        //Excluding org.json to use Android version instead
+        //socket.io connections only made on debug devices.
+		//To make live changes on a release build, remove the `debugcompile` flag
+		debugCompile ('io.socket:socket.io-client:+') {
+        	// excluding org.json which is provided by Android
+        	exclude group: 'org.json', module: 'json'
+		}
+
+        //Taplytics                                                                        
+        compile("com.taplytics.sdk:taplytics:+@aar")  
         
         //Only include this if you wish to enable push notifications:
-        compile("com.google.android.gms:play-services-gcm:8.1.0")
+        compile("com.google.android.gms:play-services-gcm:8.+")
     }    
     ```
+
+	[**Click here to read more about the recent socket dependency changes.**](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/Sockets.md)
     
 3. _Override your Application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). If you don't have an Application class, create one. It should look like this:_
 
