@@ -16,15 +16,6 @@ debugCompile ('io.socket:socket.io-client:+') {
 }
 ```
 
-####OkHttp Build Errors
-
-Currently, this socket lib is on OkHttp-ws 2.5.0, but as you may know, the most recent version is 2.7.0
-
-If you are seeing an error, you can simply exclude okhttp from the dependency. 
-
-Keep track of the progress of this here: https://github.com/socketio/engine.io-client-java/issues/41
-
-
 ####I'm getting a popup saying update my sockets!
 
 There was a recent change (1.7.0) in the package name of the socket library used by Taplytics. Given that the library has continued to improve over time Taplytics makes use of this new library. Unfortunately this means that the dependency that was being used before is no longer valid.
