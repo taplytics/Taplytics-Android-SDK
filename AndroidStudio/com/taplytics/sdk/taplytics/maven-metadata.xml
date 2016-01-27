@@ -2,11 +2,11 @@
 <metadata>
   <groupId>com.taplytics.sdk</groupId>
   <artifactId>taplytics</artifactId>
-  <version>1.7.3</version>
+  <version>1.7.4</version>
   <versioning>
     <versions>
-      <version>1.7.3</version>
+      <version>1.7.4</version>
     </versions>
-    <lastUpdated>20160125204310</lastUpdated>
+    <lastUpdated>20160127161325</lastUpdated>
   </versioning>
 </metadata>
