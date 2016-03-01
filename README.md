@@ -8,7 +8,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 [See more here.](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
 
-###**Current Version: [1.7.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.5)**
+###**Current Version: [1.7.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.6)**
 
 ## Getting Started
 
@@ -20,6 +20,13 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.7.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.6)**
+
+1. Fragment change performance increase
+2. First loads on fragment performance increase
+3. No longer use 'getItem' anywhere for viewpagers
+4. No longer block youtube due to overlays
+5. ListView/Recyclerview performance tweaks
 
 **[1.7.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.5)**
 
@@ -172,21 +179,6 @@ _How do I, as a developer, start using Taplytics?_
 2. Fixed RecyclerView changes not showing correctly.
 3. Views selected / hovered on Taplytics Dashboard will not be highlighted to better visualize changes.
 
-**[1.5.9](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.9)**
-
-1. Fixed issue where the wrong experiment was being selected from the shake menu.
-2. Added indicator for when the device is not connected to the internet or Taplytics.
-3. Added ability to disable the border from the shakemenu, for QA purposes
-4. Added socket connection retries
-5. Connections to Taplytics made more stable.
-
-**[1.5.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.7)**
-
-1. PushTokenListener proguarding issues fixed.
-
-**[1.5.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.5.6)**
-
-1. Event reconciliation! If you were notcing more events in Taplytics than your other sources, this update fixes things from now on.
 
 ## Questions or Need Help
 
