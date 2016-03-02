@@ -8,7 +8,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 [See more here.](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
 
-###**Current Version: [1.7.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.6)**
+###**Current Version: [1.7.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.7)**
 
 ## Getting Started
 
@@ -20,6 +20,10 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.7.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.7)**
+
+1. Added overlayOn() and overlayOff() functions to manually handle unique youtube cases. 
+
 **[1.7.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.6)**
 
 1. Fragment change performance increase
@@ -27,6 +31,7 @@ _How do I, as a developer, start using Taplytics?_
 3. No longer use 'getItem' anywhere for viewpagers
 4. No longer block youtube due to overlays
 5. ListView/Recyclerview performance tweaks
+
 
 **[1.7.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.5)**
 
