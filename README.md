@@ -8,7 +8,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 [See more here.](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
 
-###**Current Version: [1.7.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.7)**
+###**Current Version: [1.7.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.8)**
 
 ## Getting Started
 
@@ -19,6 +19,13 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+
+**[1.7.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.8)**
+
+1. Add notification priority option.
+2. Dont warn on socketio libs during release builds.
+3. Fix dynamic variable type mismatch with booleans and strings.
 
 **[1.7.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.7)**
 
