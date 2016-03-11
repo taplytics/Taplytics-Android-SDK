@@ -18,7 +18,7 @@ The code below is used to send the information of the variable or block to Taply
 
 Taplytics variables are values in your app that are controlled by experiments. Changing the values can update the content or functionality of your app. Variables are reusable between experiments and operate in one of two modes: synchronous or asynchronous.
 
-####Synchronous
+#### Synchronous
 
 Synchronous variables are guaranteed to have the same value for the entire session and will have that value immediately after construction. 
 
@@ -41,7 +41,7 @@ Then when you wish to get the value for the variable, simply call `get()` on the
 String value = stringVar.get();
 ```
 
-####Asynchronous
+#### Asynchronous
 
 Asynchronous variables take care of insuring that the experiments have been loaded before returning a value. This removes any danger of tainting the results of your experiment with bad data. What comes with the insurance of using the correct value is the possibility that the value will not be set immediately. If the variable is constructed *before* the experiments are loaded, you won't have the correct value until the experiments have finished loading. If the experiments fail to load, then you will be given the default value, as specified in the variables constructor.
 
@@ -69,7 +69,7 @@ When the variable's value has been updated, the listener will be called with tha
 
 ----------
 
-####Testing Dynamic Variables
+#### Testing Dynamic Variables
 
 When testing dynamic variables in live update mode you can change the values on the fly via the taplytics interface and you can switch variations with the shake menu on the device.
 
