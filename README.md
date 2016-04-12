@@ -8,7 +8,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 [See more here.](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
 
-###**Current Version: [1.7.15](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.15)**
+###**Current Version: [1.7.16](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.16)**
 
 ## Getting Started
 
@@ -19,6 +19,12 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.7.16](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.16)**
+
+1. Fixed potential listview hang.
+2. Fixed dev-mode hang. 
+3. Enforce button colors on Taplytics dialogs. 
 
 **[1.7.15](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.15)**
 
