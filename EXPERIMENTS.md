@@ -221,5 +221,18 @@ Taplytics.startTaplytics(this, "YOUR API KEY", null, new TaplyticsExperimentsLoa
 });
 ```
 
+## Session Listener
 
+To keep track of when Taplytics defines a new session, use a `TaplyticsNewSessionListener` as follows.
+
+```  
+Taplytics.setTaplyticsNewSessionListener(new TaplyticsNewSessionListener() {
+     @Override
+      public void onNewSession() {
+		//We are in a new session
+      }
+ });
+```
+
+**Note that this is NOT called the first time Taplytics loads, only on subsequent sessions**
 
