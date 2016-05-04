@@ -4,7 +4,7 @@ IYou can get started with using Taplytics on Android in minutes. Just follow the
 |---|---                                                                        |
 |1  |  Installation: [Android Studio](#android-studio), or [Eclipse](#eclipse)     |
 |2  | [Initialize](#2-initialization) SDK                                       |
-|3  | [Setting User Attributes](#3-user-attributes) (optional)                  |
+|3  | [Setting User Attributes](#3-setting-user-attributes) (optional)                  |
 |4  | [Tracking Events](#4-track-events) (optional)                             |
 
 You can use Taplytics to create [Experiments](https://taplytics.com/docs/android-sdk/experiments) as well as send [Push Notifications](https://taplytics.com/docs/android-sdk/push-notifications) to your app.
@@ -253,7 +253,7 @@ You can long-press on the top of the border to switch experiments, or shake your
 
 ---
 
-### 3. User Attributes
+### 3. Setting User Attributes
 
 It's possible to send custom user attributes to Taplytics using a JSONObject of user info. 
 
@@ -288,6 +288,25 @@ attributes.put("subscriptionPlan", "yearly");
 Taplytics.setUserAttributes(attributes);
 ```
 
+#### User Attributes on First Launch
+
+User Attributes set before `startTaplytics` is called will be used for experiment segmentation on the first session of your app. Any attributes that are set after `startTaplytics` is called will not be used for experiment segmentation until the next session of your app.
+
+```java
+// These custom data values will be used for segmentation on the first session of the app.
+
+JSONObject attributes = new JSONObject();
+attributes.put("example", 1);
+Taplytics.setUserAttributes(attributes);
+
+Taplytics.startTaplytics(this, APIKEY)
+
+// These custom data values will only take effect on the second session of the app.
+
+JSONObject attributes = new JSONObject();
+attributes.put("example", 0);
+Taplytics.setUserAttributes(attributes);
+```
 --- 
 
 ### 4. Track Events

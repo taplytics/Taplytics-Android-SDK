@@ -3,10 +3,10 @@
   <groupId>com.taplytics.sdk</groupId>
   <artifactId>taplytics</artifactId>
   <versioning>
-    <release>1.7.18</release>
+    <release>1.7.19</release>
     <versions>
-      <version>1.7.18</version>
+      <version>1.7.19</version>
     </versions>
-    <lastUpdated>20160502182313</lastUpdated>
+    <lastUpdated>20160504224628</lastUpdated>
   </versioning>
 </metadata>

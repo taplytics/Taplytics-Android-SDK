@@ -4,6 +4,7 @@ Creating experiments is easy using Taplytics. You can either use our visual edit
 | ----------------- |
 | [Dynamic Variables & Code Blocks](#dynamic-variables--code-blocks)|
 | [Code Experiments](#code-experiments-deprecated) |
+| [Testing Specific Experiments](#testing-specific-experiments) |
 | [Visual Editing](#visual-editing) |
 | [First-view Experiments](#delay-load) |
 | [List Running Experiments](#running-experiments) |
@@ -106,7 +107,22 @@ For example:
 ```
   
 By default, a code block will _not_ run unless enabled on the Taplytic Dashboard. It must be enabled for a Variation before it will run. 
-   
+
+## Testing Specific Experiments
+
+To test/QA specific experiment and varation combinations, add a map to the Taplytics start options containing the experiments and variations you wish to test. The keys should be the experiment names, and values of variation names (or baseline).
+
+For example:
+
+
+```
+	HashMap<String, Object> startOptions = new 	HashMap<>();
+	HashMap testExperiments = new HashMap();
+	testExperiments.put("Big Experiment", "Variation 2");
+	startOptions.put("testExperiments", testExperiments);
+	
+	Taplytics.startTaplytics(this,APIKEY,options);
+```
 ## Visual Editing
 
 You don't have to do anything else!  You can use the Taplytics dashboard to make all your visual changes. See the docs on visual editing [here](https://taplytics.com/docs/guides/visual-experiments).
