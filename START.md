@@ -233,7 +233,7 @@ options.put("optionName",optionValue);
 Taplytics.startTaplytics(this, "Your Api Key", options);
 ```
 
-Possible options are:
+#### Start Options
 
 | Option Name  | Values | Default | Explanation
 |---|---|---|---|
