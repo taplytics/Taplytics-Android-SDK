@@ -241,6 +241,9 @@ Possible options are:
 | shakeMenu | boolean: true/false   | true  | In your debug builds, disable the quick menu that appears when you shake your device. This menu is never present in release builds.|   
 | sessionMinutes | int > 0  | 10 | If you do your own analytics alongside taplytics, it helps to define your sessions to be the same length to reconcile your data. Set this to be the same timing interval that your app counts sessions. |   
 | turnMenu | boolean: true/false | false | If you are doing visual testing on an emulator, or UI automation, many emulators do not have the ability to shake the device. So, to pop up the taplytics menu on such devices, set turnMenu to true, and simply rotate the device from portrait/landscape twice in a row within 30 seconds and this menu will show.|   
+| disableBorders | boolean: true/false | false | This will entirely disable the informational borders Taplytics applies during debug mode testing. Useful to disable for UI testing. Note that this border will NOT show in release mode regardless of setting (except for on previously paired phones).|   
+| testExperiments | HashMap | null | See: [Testing Specific Experiments](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/EXPERIMENTS.md#testing-specific-experiments).|   
+
 
 
 #### The Border / Shake menu. 
