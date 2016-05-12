@@ -18,30 +18,18 @@ _How do I, as a developer, start using Taplytics?_
 
 **[1.7.23](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.23)**
 
-(Skipped a number)
-
 1. Fixed a problem with event sending if user attributes have been set prior to starting taplytics.
-
-**[1.7.21](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.21)**
-
-1. Starting options to entirely disable borders during tests.
-
-**[1.7.20](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.20)**
-
-1. Upgraded build tools and support libs to most recent (23.0.3 at the time, as well as support libs 23.3.+)
-
-**[1.7.19](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.19)**
-
-1. New Feature: [Setting Attributes on First Launch](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/START.md#user-attributes-on-first-launch)
-2. New Feature: [Test Specific Experiments and Variations](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/EXPERIMENTS.md#testing-specific-experiments)
-3. Limit size of metadata to disallow heavy network calls.
-
+2. New Feature: [Setting Attributes on First Launch](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/START.md#user-attributes-on-first-launch)
+3. New Feature: [Test Specific Experiments and Variations](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/EXPERIMENTS.md#testing-specific-experiments)
+4. Limit size of metadata to disallow heavy network calls.
+5. Starting options to entirely disable borders during tests.
+6. Upgraded build tools and support libs to most recent (23.0.3 at the time, as well as support libs 23.3.+)
+7. Deleted all releases that had a bug regarding #2 in this list. If you were using that, please contact us. 
 
 **[1.7.18](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.18)**
 
 1. Security check fix surrounding (unused) local IPs.
 2. Complex view hierarchy debug mode improvements.
-
 
 **[1.7.17](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.17)**
 
