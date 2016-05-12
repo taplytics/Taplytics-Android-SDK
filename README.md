@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.7.21](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.21)**
+###**Current Version: [1.7.23](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.23)**
 
 ## Getting Started
 
@@ -15,6 +15,12 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.7.23](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.23)**
+
+(Skipped a number)
+
+1. Fixed a problem with event sending if user attributes have been set prior to starting taplytics.
 
 **[1.7.21](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.21)**
 
