@@ -27,8 +27,8 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
     dependencies {                                                                   
         
         //Dependencies for taplytics
-        compile("com.mcxiaoke.volley:library:+")
-     
+        compile('com.android.volley:volley:1.0.0')
+
         //Excluding org.json to use Android version instead
         //socket.io connections only made on debug devices.
 		//To make live changes on a release build, remove the `debugcompile` flag
