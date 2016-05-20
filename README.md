@@ -4,7 +4,9 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.7.24](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.24)**
+###**Current Version: [1.8.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.0)**
+
+###Big News: Retrofit2 can be used in place of Volley (Optional).
 
 ## Getting Started
 
@@ -15,6 +17,12 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.8.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.0)**
+
+1. You can now use Retrofit2 if you wish and remove volley. More info [here](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.0)
+2. getRunningExperimentsAndVariations will no longer return null, and will instead return an empty HashMap in the event that the configuation has not been loaded.
+3. Fixed a race condition in which a session ID could be null if it the config was being loaded at the same time as the appUser being reset.
 
 **[1.7.24](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.24)**
 

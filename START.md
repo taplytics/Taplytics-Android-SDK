@@ -21,24 +21,31 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
     }
     ```
     
-2. _In your *module’s* build.gradle dependencies (not your project's build.gradle), compile Taplytics and its dependencies._
+2. _In your *module’s* build.gradle dependencies (not your project's build.gradle), compile Taplytics and its dependencies._   
+_**NOTE: You can use EITHER Retrofit2 or Volley.**_
 
     ```
     dependencies {                                                                   
         
-        //Dependencies for taplytics
-        compile('com.android.volley:volley:1.0.0')
-
-        //Excluding org.json to use Android version instead
+        //Dependencies for Taplytics
+        
+        compile 'com.taplytics.sdk:taplytics:+@aar'  
+        
+        //NOTE: You can use either Volley or Retrofit2. Do not use both if you do not have to. 
+        
+        //Volley
+        compile 'com.android.volley:volley:+' 
+       
+        //Retrofit2
+        compile 'com.squareup.retrofit2:retrofit:+'
+     
         //socket.io connections only made on debug devices.
 		//To make live changes on a release build, remove the `debugcompile` flag
-		debugCompile ('io.socket:socket.io-client:+') {
-        	// excluding org.json which is provided by Android
+		debugCompile 'io.socket:socket.io-client:+' {
         	exclude group: 'org.json', module: 'json'
 		}
 
-        //Taplytics                                                                        
-        compile("com.taplytics.sdk:taplytics:+@aar")  
+
         
         //Only include this if you wish to enable push notifications:
         compile("com.google.android.gms:play-services-gcm:8.+")
@@ -88,122 +95,7 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
     </activity>
     ```
 
-6. _Add the following to your Proguard rules:_
-    (Only if using Support Fragments)
-
-    ```
-    -keep class android.support.v4.app.Fragment { *; }
-    -keep class android.support.v4.view.ViewPager
-    -keepclassmembers class android.support.v4.view.ViewPager$LayoutParams {*;}
-    ```
-
-    (Only if using Mixpanel)
-    
-    ```
-    -keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
-    ```
-
-    (Only if using Flurry)
-    
-    ```
-    -keep class com.flurry.android.FlurryAgent { *; }
-    ```
-        
-    (Only if you see gradle compiler errors with com.okio)
-
-    ```
-    -dontwarn okio.**
-    -dontwarn java.nio.file.*
-    -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
-    ```
-	(Only if you are seeing proguard issues with com.google.android.gms)
-	
-	```
-	-dontwarn com.taplytics.**
-	```
-
-7. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
-
----
-
-### Eclipse
-
-1. _Download the taplytics.jar [here](https://github.com/taplytics/Taplytics-Android-SDK/raw/master/taplytics.jar)_
-2. _Copy the jar into your 'libs' directory in your project._
-3. _Right click the jar in Eclipse, click Build Path > add to build path_
-4. **NEW:** _Add Google Play Services to your project by following the steps listed [here.](http://developer.android.com/google/play-services/setup.html) Be sure to change the dropdown to "Eclipse with ADT"_
-5. _Override your application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). It should look like this:_
-
-    ```java
-    public class ExampleApplication extends Application {
-        @Override
-        public void onCreate() {
-            super.onCreate();
-            Taplytics.startTaplytics(this, "YOUR TAPLYTICS API KEY");
-        }
-    }
-    ```
-
-6. _Add the proper permissions, and the Application class to your app’s AndroidManifest.xml in the Application tag._
-
-    ```xml
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <application
-        android:name=".ExampleApplication"
-        ...
-    ```
-
-7. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
-    
-    First, [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
-
-    ![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
-    
-    Then, add it to your manifest:
-
-    ```xml
-    ...
-             <intent-filter>
-                    <action android:name="android.intent.action.VIEW"/>
-                    <category android:name="android.intent.category.DEFAULT"/>
-                    <category android:name="android.intent.category.BROWSABLE"/>
-                    <data android:scheme="YOUR URL SCHEME"/>
-            </intent-filter>
-    </activity>
-    ```
-
-8. _Add the following to your Proguard rules:_
-    
-    (Only if using Support Fragments)
-
-    ```
-    -keep class android.support.v4.app.Fragment { *; }
-    -keep class android.support.v4.view.ViewPager
-    -keepclassmembers class android.support.v4.view.ViewPager$LayoutParams {*;}
-    ```
-
-    (Only if using Mixpanel)
-    
-    ```
-    -keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *;}
-    ```
-
-    (Only if using Flurry)
-    
-    ```
-    -keep class com.flurry.android.FlurryAgent { *; }
-    ```
-    
-    (Only if you see gradle compiler errors with com.okio or com.nio)
-
-    ```
-    -dontwarn okio.**
-    -dontwarn java.nio.file.*
-    -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
-    ```
-
-9. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
+6. _That's it! Now build and run your app, you can start creating experiments with Taplytics!_
 
 ---
 
@@ -243,7 +135,7 @@ Taplytics.startTaplytics(this, "Your Api Key", options);
 | turnMenu | boolean: true/false | false | If you are doing visual testing on an emulator, or UI automation, many emulators do not have the ability to shake the device. So, to pop up the taplytics menu on such devices, set turnMenu to true, and simply rotate the device from portrait/landscape twice in a row within 30 seconds and this menu will show.|   
 | disableBorders | boolean: true/false | false | This will entirely disable the informational borders Taplytics applies during debug mode testing. Useful to disable for UI testing. Note that this border will NOT show in release mode regardless of setting (except for on previously paired phones).|   
 | testExperiments | HashMap | null | See: [Testing Specific Experiments](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/EXPERIMENTS.md#testing-specific-experiments).|   
-
+| retrofit | boolean: true/false | null | Taplytics will default to using Volley if it is present. In the event that you have both enabled, you can use this flag to force the library to use retrofit instead. | 
 
 
 #### The Border / Shake menu. 
