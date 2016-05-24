@@ -4,9 +4,9 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.8.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.0)**
+###**Current Version: [1.8.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.1)**
 
-###Big News: Retrofit2 can be used in place of Volley (Optional).
+###Big News: Retrofit2 can be used in place of Volley in 1.8.0+ (Optional).
 
 ## Getting Started
 
@@ -17,6 +17,10 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.8.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.1)**
+
+1. Fixed a problem accessing Mixpanel Tokens. 
 
 **[1.8.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.0)**
 
