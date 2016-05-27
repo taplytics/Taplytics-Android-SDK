@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)**
 
-###**Current Version: [1.8.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.2)**
+###**Current Version: [1.8.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.3)**
 
 ###Big News: Retrofit2 can be used in place of Volley in 1.8.0+ (Optional).
 
@@ -17,6 +17,10 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.8.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.3)**
+
+1. Can now use JSONObjects as Dynamic Variables.
 
 **[1.8.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.8.2)**
 
