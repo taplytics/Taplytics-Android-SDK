@@ -33,7 +33,7 @@ compile("com.github.nkzawa:engine.io-client:+") {
 to:
 
 ```
-compile('io.socket:socket.io-client:+') {
+debugCompile('io.socket:socket.io-client:+') {
         // excluding org.json which is provided by Android
         exclude group: 'org.json', module: 'json'
 }
