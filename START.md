@@ -347,7 +347,7 @@ The properties for all sources are in the following format:
 
 Link a device (even in release mode) to Taplytics.
 
-**NOTE: This is used only for deeplink pairing, and is unnecessary if your main activity does NOT have a singleTask flag.**
+**NOTE: This is used only for deeplink pairing, and is unnecessary if your main activity does NOT have a singleTask flag. IF you followed step 5.**
 
 Retrieve deeplink through Taplytics deeplink intercepted via either email or SMS device pairing. It contains your Taplytics URL scheme and device token. If you wish to intercept the deeplink and then pair the device yourself in your application's code, call this method, like so:
 
@@ -361,3 +361,21 @@ private void handleDeepLink(Intent intent) {
     Taplytics.deviceLink(tlDeeplink);
 }
 ```
+
+Do not forget to [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
+
+![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
+    
+Then, add it to your manifest:
+
+```xml
+        ...
+             <intent-filter>
+                    <action android:name="android.intent.action.VIEW"/>
+                    <category android:name="android.intent.category.DEFAULT"/>
+                    <category android:name="android.intent.category.BROWSABLE"/>
+                    <data android:scheme="YOUR URL SCHEME"/>
+            </intent-filter>
+    </activity>
+```
+
