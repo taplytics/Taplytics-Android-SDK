@@ -1,5 +1,11 @@
 #Taplytics FAQ
 
+##Q. Why is Taplytics is making my app take 15+ seconds to load?
+
+In 99% of cases, this is the fault of Instant Run being enabled. Due to the nature of libraries not being able to have the `vmSafeMode` tag (it is application specific), this process cannot currently be sped up.
+
+**[Here is a response from an Android Studio developer on the problem](https://www.reddit.com/r/androiddev/comments/4m2v25/instant_run_causing_incredibly_long_app_start/d3s9iox)**
+
 ##Q. Will the border or shake menu show up on our user's devices?
 
 No.
