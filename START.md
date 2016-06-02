@@ -76,13 +76,13 @@ _**NOTE: You can use EITHER Retrofit2 or Volley.**_
     ...
     ```
 
-5. _Finally, add the following intent-filter tag to the end of your *MAIN* activity:_
+5. _To be able to connect to Taplytics on a release build, add the following intent-filter tag to the end of your *MAIN* activity:_
     
     First, [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
 
     ![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
     
-    Then, add it to your manifest:
+    Then, add it to your manifest in its _own_ intent filter (do not put in another intent filter). 
 
     ```xml
         ...
@@ -366,7 +366,7 @@ Do not forget to [get your Taplytics URL Scheme from your Project's Settings](ht
 
 ![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
     
-Then, add it to your manifest:
+Then, add it to your manifest in its _own_ intent filter:
 
 ```xml
         ...
