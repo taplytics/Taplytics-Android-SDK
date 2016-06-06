@@ -81,7 +81,7 @@ This can be achieved by using a experiments updated listener. Here is an example
 
 ``` java
 
-Taplytics.setTaplyticsExperimentsUpatedListener(new TaplyticsExperimentsUpdatedListener() {
+Taplytics.setTaplyticsExperimentsUpdatedListener(new TaplyticsExperimentsUpdatedListener() {
     @Override
     public void onExperimentUpdate() {
         final TaplyticsVar<String> stringVar = new TaplyticsVar<String>("stringVar", "defaultValue");
