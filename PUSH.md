@@ -2,7 +2,7 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 
 |#  |Step                                                                       |
 |---|---                                                                        |
-|1  |  Setup: [Android Studio](#android-studio), [Eclipse](#eclipse)            |
+|1  |  Setup: [Android Studio](#android-studio)           |
 |2  | [Receiving Push Notifications](#2-receiving-push-notifications)           |
 |3  | [Push Campaigns](#3-push-campaigns)                                       |
 |4  | [Retrieving Custom Push Data](#3-retrieving-custom-push-data)             |
@@ -43,18 +43,6 @@ In order to set the notification icon you must add a meta-tag to your manifest s
 ```
 
 If this isn't set the application's icon will be used instead.
-
----
-
-### Eclipse
-
-An extra step is needed for Push Notifications in Eclipse. You must add the Google Play Services library to your project's dependencies. 
-
-To do so, follow the steps in the following link. Click on the `Using Android Studio` dropdown and choose `Using Eclipse with ADT`.
-
-[See how to set up GooglePlay Services on developer.android.com](http://developer.android.com/google/play-services/setup.html).
-
-Once Google Play Services is added to your application in Eclipse, follow the steps [listed above](#android-studio) to get started with Push on Android with Taplytics!
 
 ---
 
