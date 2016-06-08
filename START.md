@@ -32,14 +32,14 @@ _**NOTE: You can use EITHER Retrofit2 or Volley.**_
         compile 'com.taplytics.sdk:taplytics:+@aar'  
         
         //socket.io connections only made on debug devices.
-	//To make live changes on a release build, remove the `debugcompile` flag
-	debugCompile 'io.socket:socket.io-client:+' {
-        	exclude group: 'org.json', module: 'json'
-	}
+        //To make live changes on a release build, remove the `debugcompile` flag
+        debugCompile 'io.socket:socket.io-client:+' {
+             exclude group: 'org.json', module: 'json'
+        }
         
         //NOTE: You can use either Volley or Retrofit2. Do not use both if you do not have to. 
         
-        //Volley
+       //Volley
         compile 'com.android.volley:volley:+' 
        
         //Retrofit2
