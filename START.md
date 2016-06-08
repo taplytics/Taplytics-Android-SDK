@@ -31,6 +31,12 @@ _**NOTE: You can use EITHER Retrofit2 or Volley.**_
         
         compile 'com.taplytics.sdk:taplytics:+@aar'  
         
+        //socket.io connections only made on debug devices.
+	//To make live changes on a release build, remove the `debugcompile` flag
+	debugCompile 'io.socket:socket.io-client:+' {
+        	exclude group: 'org.json', module: 'json'
+	}
+        
         //NOTE: You can use either Volley or Retrofit2. Do not use both if you do not have to. 
         
         //Volley
@@ -38,14 +44,7 @@ _**NOTE: You can use EITHER Retrofit2 or Volley.**_
        
         //Retrofit2
         compile 'com.squareup.retrofit2:retrofit:+'
-     
-        //socket.io connections only made on debug devices.
-		//To make live changes on a release build, remove the `debugcompile` flag
-		debugCompile 'io.socket:socket.io-client:+' {
-        	exclude group: 'org.json', module: 'json'
-		}
-
-
+    
         
         //Only include this if you wish to enable push notifications:
         compile("com.google.android.gms:play-services-gcm:8.+")
