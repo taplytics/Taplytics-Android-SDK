@@ -8,7 +8,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 ###Big News: Retrofit2 can be used in place of Volley in 1.8.0+ (Optional).
 
-###Big News: Push has changed and is better in 1.9.0+
+###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/PUSH.md#4-custom-data-and-tracking-push-interactions)
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ _How do I, as a developer, start using Taplytics?_
 **[1.9.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.0)**
 
 1. Workaround for when view ids change in release mode vs debug mode.
-2. Big new push notification changes.
+2. **[Big new push notification changes.](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/PUSH.md#4-custom-data-and-tracking-push-interactions)**
 3. Socketio safety.
 4. Fully deprecated code experiments. Use code blocks and dynamic variables now.
 5. General code cleanup.
