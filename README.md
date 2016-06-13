@@ -6,9 +6,9 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 ###**Current Version: [1.9.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.0)** |   	 [FAQ](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)
 
-###Big News: Retrofit2 can be used in place of Volley in 1.8.0+ (Optional).
-
 ###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
+
+###Big News: Retrofit2 can be used in place of Volley in 1.8.0+ (Optional).
 
 ## Getting Started
 
