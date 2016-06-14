@@ -378,3 +378,5 @@ Then, add it to your manifest in its _own_ intent filter:
     </activity>
 ```
 
+**NOTE: The socketIO dependency must be present in the release build (ie not set to `debugcompile`) to pair with a release build.**
+
