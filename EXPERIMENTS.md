@@ -131,7 +131,7 @@ You don't have to do anything else!  You can use the Taplytics dashboard to make
 
 ## Delay Load
 
-Taplytics has the option to delay the loading of your main activity while Taplytics gets initial view changes ready. Keep in mind that this initial load will only take a while the very first time, after that, these changes will be saved to disk and will not need a delay.
+Taplytics has the option to delay the loading of your main activity while Taplytics gets initial ***view*** changes ready. Keep in mind that this initial load will only take some time the very first time, after that, these changes will be saved to disk and will likely not need a delay.
 
 There are two methods to do this, **use both at the start of your oncreate after ```java setContentView()```**:
 
@@ -140,13 +140,16 @@ In this instance, Taplytics takes care of the loading for you. Taplytics creates
 
 Method: ```Taplytics.delayLoad(Activity activity, Drawable image, int maxTime) ```
 
+and ```Taplytics.delayLoad(Activity activity, Drawable image, int maxTime, int minTime) ```
+
+
 **Activity**: the activity (typically main activity) that will be covered in a splash image.
 
 **Image**: A Drawable image that will be the splash screen.
 
-**Max Time**:  Regardless of the results of Taplytics, the image will fade after this time. Milliseconds.
+**maxTime**:  Regardless of the results of Taplytics, the image will fade after this time. Milliseconds.
 
-**Min Time**: Sometimes Taplytics loads things really fast, and this might make the image show only for a short amount of time. To keep this from happening, there is an optional minimum time option. Regardless of Taplytics loading experiments, the delayload wont finish until after this minumum time. 
+**minTime**: Sometimes Taplytics loads things really fast, and this might make the image show only for a short amount of time. To keep this from happening, there is an optional minimum time option. Regardless of Taplytics loading experiments, the delayload wont finish until after this minumum time. Milliseconds.
 
 **Examples**:
 
@@ -162,8 +165,8 @@ protected void onCreate(Bundle savedInstanceState) {
 **With a 1 second minimium time**
 
 ```java
-        Taplytics.delayLoad(this, getResources().getDrawable(R.drawable.image5), 2000, 1000);
-        ...
+Taplytics.delayLoad(this, getResources().getDrawable(R.drawable.image5), 2000, 1000);
+...
 ```
 
 #### Delay Load with Callbacks
@@ -171,10 +174,13 @@ In this instance, Taplytics provides callbacks when the delay load should begin,
 
 Method: ```Taplytics.delayLoad(int maxTime, TaplyticsDelayLoadListener listener) ```
 
+and ```Taplytics.delayLoad(int maxTime, int minTime, TaplyticsDelayLoadListener listener) ```
 
-**Max Time**: Regardless of the results of Taplytics, the image will fade after this time. Milliseconds.
 
-**Min Time**: Sometimes Taplytics loads things really fast, and this might make the behavior of the callback undesirable. To keep this from happening, there is an optional minimum time option. Regardless of Taplytics loading experiments, the delayload wont finish until after this minumum time. 
+
+**maxTime**: Regardless of the results of Taplytics, this callback will be triggered if this time is reached.
+
+**minTime**: Sometimes Taplytics loads things really fast, and this might make the behavior of the callback undesirable. To keep this from happening, there is an optional minimum time option. Regardless of Taplytics loading experiments, the delayload wont finish until after this minumum time. 
 
 **Listener**: This listener will provide the necessary callbacks.
 
