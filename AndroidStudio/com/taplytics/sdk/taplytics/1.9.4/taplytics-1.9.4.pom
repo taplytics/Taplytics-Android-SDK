@@ -4,15 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.taplytics.sdk</groupId>
   <artifactId>taplytics</artifactId>
-  <version>1.9.2</version>
+  <version>1.9.4</version>
   <packaging>aar</packaging>
   <dependencies>
-    <dependency>
-      <groupId>com.android.volley</groupId>
-      <artifactId>volley</artifactId>
-      <version>1.0.0</version>
-      <scope>compile</scope>
-    </dependency>
     <dependency>
       <groupId>io.socket</groupId>
       <artifactId>socket.io-client</artifactId>
@@ -34,7 +28,13 @@
     <dependency>
       <groupId>com.android.support</groupId>
       <artifactId>recyclerview-v7</artifactId>
-      <version>23.4.0</version>
+      <version>+</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.android.volley</groupId>
+      <artifactId>volley</artifactId>
+      <version>+</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
