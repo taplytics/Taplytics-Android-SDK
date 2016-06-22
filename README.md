@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)**
 
-###**Current Version: [1.9.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.4)** |   	 [FAQ](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)
+###**Current Version: [1.9.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.5)** |   	 [FAQ](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)
 
 ###Big News: [Push has changed and is better in 1.9.+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
@@ -20,7 +20,7 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
-**[1.9.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.4)**
+**[1.9.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.5)**
 
 1. Fixed an issue with 'Time on View' goals. 
 2. Fixed an issue where support fragments were sometimes counting opens twice.
