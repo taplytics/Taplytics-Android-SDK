@@ -20,6 +20,10 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.9.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.5)**
+
+1. Added timeouts to ExperimentsLoadedListener and RunningExperimentsListener.
+
 **[1.9.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.5)**
 
 1. Fixed an issue with 'Time on View' goals. 
