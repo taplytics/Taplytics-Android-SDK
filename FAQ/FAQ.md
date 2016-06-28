@@ -34,3 +34,29 @@ The animal names are how we obfuscate things!
 **[You need to have add a few things to your app, as seen here.](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/START.md#device-pairing)**
 
 Also don't forget, your socket library has to be in your release builds (which may not be by default -- ask your devs!)
+
+##Q. Does Taplytics work with Segment?
+
+**Yes! But only with Segment v4**
+
+Add the following to your build.gradle:
+
+```gradle
+compile 'com.segment.analytics.android:analytics:+'
+compile('com.segment.analytics.android.integrations:taplytics:+')
+//Change from debugCompile to compile if you would like pairing on release builds as well.
+debugCompile('io.socket:socket.io-client:+') {
+    // excluding org.json which is provided by Android
+    exclude group: 'org.json', module: 'json'
+}
+```
+As well as any other integrations you are using in segment.
+
+Then, initialize Segment in your Application's onCreate:
+
+```java
+Analytics analytics = new Analytics.Builder(this, "SEGMENT_API_KEY").use(TaplyticsIntegration.FACTORY).build();
+```
+add a .use() for any other integrations you are using.
+
+Remember to enable the Taplytics integration on your Segment dashboard.
