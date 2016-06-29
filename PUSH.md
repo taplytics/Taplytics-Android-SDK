@@ -118,7 +118,9 @@ Also needed is a boot receiver to re-register events, and an intent service to r
 
 The only additional dependency needed is Google Play Services Location API, which you can add to your module's  `build.gradle` file under dependencies:
 
-`compile 'com.google.android.gms:play-services-location:8.+'`
+`compile 'com.google.android.gms:play-services-location:9.+'`
+
+**Geofences require location services 9.x**
 
 ## 4. Custom Data and Tracking Push Interactions
 
