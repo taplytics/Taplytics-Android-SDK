@@ -120,7 +120,7 @@ The only additional dependency needed is Google Play Services Location API, whic
 
 `compile 'com.google.android.gms:play-services-location:9.+'`
 
-Currently this feature requires Play Services version 9.x and above to function correctly.
+** Geofences require location services 9.x **
 
 ## 4. Custom Data and Tracking Push Interactions
 
