@@ -1,6 +1,6 @@
 #Taplytics FAQ
 
-##Q. Why is Taplytics is making my app take 15+ seconds to load?
+##Q. Why is Taplytics making my app take 15+ seconds to load?
 
 In 99% of cases, this is the fault of Instant Run being enabled. Due to the nature of libraries not being able to have the `vmSafeMode` tag (it is application specific), this process cannot currently be sped up.
 
@@ -21,7 +21,7 @@ If you see this:
 
 ![image](rejected.jpg)
 
-Its nothing to worry about, at all. 
+It's nothing to worry about, at all. 
 
 Taplytics has two different networking options -- Retrofit+OkHttp, or Volley. 
 
