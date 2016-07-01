@@ -1,4 +1,4 @@
-IYou can get started with using Taplytics on Android in minutes. Just follow the steps below:
+You can get started with using Taplytics on Android in minutes. Just follow the steps below:
 
 |#  |Step                                                                       |
 |---|---                                                                        |
@@ -20,39 +20,39 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
         maven { url "https://github.com/taplytics/Taplytics-Android-SDK/raw/master/AndroidStudio/" }
     }
     ```
-    
+
 2. _In your *module’s* build.gradle dependencies (not your project's build.gradle), compile Taplytics and its dependencies._   
 _**NOTE: You can use EITHER Retrofit2 or Volley.**_
 
     ```
     dependencies {                                                                   
-        
+
         //Dependencies for Taplytics
-        
+
         compile 'com.taplytics.sdk:taplytics:+@aar'  
-        
+
         //socket.io connections only made on debug devices.
         //To make live changes on a release build, remove the `debugcompile` flag
         debugCompile 'io.socket:socket.io-client:+' {
              exclude group: 'org.json', module: 'json'
         }
-        
-        //NOTE: You can use either Volley or Retrofit2. Do not use both if you do not have to. 
-        
-       //Volley
-        compile 'com.android.volley:volley:+' 
-       
+
+        //NOTE: You can use either Volley or Retrofit2. Do not use both if you do not have to.
+
+        //Volley
+        compile 'com.android.volley:volley:+'
+
         //Retrofit2
         compile 'com.squareup.retrofit2:retrofit:+'
-    
-        
+
+
         //Only include this if you wish to enable push notifications:
         compile("com.google.android.gms:play-services-gcm:8.+")
     }    
     ```
 
 	[**Click here to read more about the recent socket dependency changes.**](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
-    
+
 3. _Override your Application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). If you don't have an Application class, create one. It should look like this:_
 
     ```java
@@ -120,7 +120,7 @@ Or, add a map of options.
 
 ```java
 HashMap<String, Object> options = new HashMap<>();
-options.put("optionName",optionValue);
+options.put("optionName", optionValue);
 Taplytics.startTaplytics(this, "Your Api Key", options);
 ```
 
@@ -134,10 +134,10 @@ Taplytics.startTaplytics(this, "Your Api Key", options);
 | turnMenu | boolean: true/false | false | If you are doing visual testing on an emulator, or UI automation, many emulators do not have the ability to shake the device. So, to pop up the taplytics menu on such devices, set turnMenu to true, and simply rotate the device from portrait/landscape twice in a row within 30 seconds and this menu will show.|   
 | disableBorders | boolean: true/false | false | This will entirely disable the informational borders Taplytics applies during debug mode testing. Useful to disable for UI testing. Note that this border will NOT show in release mode regardless of setting (except for on previously paired phones).|   
 | testExperiments | HashMap | null | See: [Testing Specific Experiments](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/EXPERIMENTS.md#testing-specific-experiments).|   
-| retrofit | boolean: true/false | null | Taplytics will default to using Volley if it is present. In the event that you have both enabled, you can use this flag to force the library to use retrofit instead. | 
+| retrofit | boolean: true/false | null | Taplytics will default to using Volley if it is present. In the event that you have both enabled, you can use this flag to force the library to use retrofit instead. |
 
 
-#### The Border / Shake menu. 
+#### The Border / Shake menu.
 
 When connected to an experiment on a **debug** build, a border will show around your app window. This shows which experiment and variation you are currently viewing.
 
@@ -149,7 +149,7 @@ You can long-press on the top of the border to switch experiments, or shake your
 
 ### 3. Setting User Attributes
 
-It's possible to send custom user attributes to Taplytics using a JSONObject of user info. 
+It's possible to send custom user attributes to Taplytics using a JSONObject of user info.
 
 The possible fields are:
 
@@ -163,9 +163,9 @@ The possible fields are:
 |age      | Number    |
 |gender     | String    |
 
-You can also add anything else you would like to this JSONObject and it will also be passed to Taplytics. 
+You can also add anything else you would like to this JSONObject and it will also be passed to Taplytics.
 
-An example with custom data: 
+An example with custom data:
 
 ```java
 JSONObject attributes = new JSONObject();
@@ -175,7 +175,7 @@ attributes.put("age", 25);
 attributes.put("gender", "male");
 attributes.put("avatarUrl", "https://someurl.com/someavatar.png");
 
-attributes.put("someCustomAttribute",50);
+attributes.put("someCustomAttribute", 50);
 attributes.put("paidSubscriber", true);
 attributes.put("subscriptionPlan", "yearly");
 
@@ -201,7 +201,7 @@ JSONObject attributes = new JSONObject();
 attributes.put("example", 0);
 Taplytics.setUserAttributes(attributes);
 ```
---- 
+---
 
 ### 4. Track Events
 
@@ -218,7 +218,7 @@ Some events are automatically tracked by Taplytics and will appear on your dashb
 
 App terminate is also tracked, but this is only true when your MAIN activity is at the bottom of your activity stack, and the user exits the app from that activity.
 
-No changes are needed in your code for this event tracking to occur. 
+No changes are needed in your code for this event tracking to occur.
 
 ####Custom Events
 
@@ -234,13 +234,13 @@ You can also log events with numerical values:
 Number num = 0;
 Taplytics.logEvent("Your Event Name", num);
 ```
-    
+
 And with custom object data:
 
 ```java
 Number num = 0;
 JSONObject customInfo = new JSONObject();
-customInfo.put("some title",someValue)
+customInfo.put("some title", someValue)
 Taplytics.logEvent("Your Event Name", num, customInfo);
 ```
 
@@ -254,14 +254,14 @@ Revenue logging is the same as event logging, only call `logRevenue`:
 Number someRevenue = 10000000;  
 Taplytics.logRevenue("Revenue Name", someRevenue);
 ```
-    
+
 And similarly, with custom object data:
 
-```java 
+```java
 Number someRevenue = 10000000;
 JSONObject customInfo = new JSONObject();
-customInfo.put("some rag",someValue)
-    
+customInfo.put("some rag", someValue)
+
 Taplytics.logRevenue("Revenue Name", someRevenue, customInfo);
 ```
 
@@ -277,7 +277,7 @@ When the Taplytics SDK is installed alongside any of these sources, all of your 
 To properly support sending Flurry data, you simply need to tell Taplytics whenever a new Flurry session begins. This can be done directly after Flurry initialization.
 
 ```java
-    
+
     FlurryAgent.init(this, "your flurry API key");
 
     FlurryAgent.setFlurryAgentListener(new FlurryAgentListener() {
@@ -327,7 +327,7 @@ Taplytics.startTaplytics(this, "YOUR API KEY", options);
 
 The experiment data will be sent as a single event to Adobe, Amplitude, Flurry, and Localytics. The event will be named `TL_experiments` and have the experiment data as properties.
 
-For both Google Analytics and Mixpanel the experiment data will be set as properties on _all_ the events (known as super properties in Mixpanel). 
+For both Google Analytics and Mixpanel, the experiment data will be set as properties on _all_ the events (known as super properties in Mixpanel).
 
 The properties for all sources are in the following format:
 
@@ -364,7 +364,7 @@ private void handleDeepLink(Intent intent) {
 Do not forget to [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
 
 ![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
-    
+
 Then, add it to your manifest in its _own_ intent filter:
 
 ```xml
@@ -379,4 +379,3 @@ Then, add it to your manifest in its _own_ intent filter:
 ```
 
 **NOTE: The socketIO dependency must be present in the release build (ie not set to `debugcompile`) to pair with a release build.**
-
