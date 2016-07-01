@@ -298,20 +298,20 @@ If you are using Google Analytics 7.3.0 or above, you have the option of changin
 
 Simply find all instances of `tracker.send(new Hitbuilder...)` and replace them with `Taplytics.logGAEvent(tracker, new Hitbuilder...)`
 
-You can do with with a simple find/replace in your application.
+You can do this with a simple find/replace in your application.
 
 An example:
 
 ```java
 Tracker t = TrackerManager.getInstance().getGoogleAnalyticsTracker(TrackerManager.TrackerName.APP_TRACKER, getApplication());
-t.send(new HitBuilders.EventBuilder().setCategory("someCategry").setAction("someAction").setLabel("someLabel").setValue(12).build());
+t.send(new HitBuilders.EventBuilder().setCategory("someCategory").setAction("someAction").setLabel("someLabel").setValue(12).build());
 ```
 
 Would be changed to:
 
 ```java
 Tracker t = TrackerManager.getInstance().getGoogleAnalyticsTracker(TrackerManager.TrackerName.APP_TRACKER, getApplication());
-Taplytics.logGAEvent(t, new HitBuilders.EventBuilder().setCategory("someCategry").setAction("someAction").setLabel("someLabel").setValue(12).build());
+Taplytics.logGAEvent(t, new HitBuilders.EventBuilder().setCategory("someCategory").setAction("someAction").setLabel("someLabel").setValue(12).build());
 ```
 
 ---
