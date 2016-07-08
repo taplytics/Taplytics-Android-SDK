@@ -20,6 +20,11 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.9.9](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.9)**
+
+1. Fixed Adobe event tracking to work with Adobe 4.11
+2. Updated geofence logic to ensure geofences wont be lost if they are not successfully added the frist time.
+
 **[1.9.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.8)**
 
 1. In the event that there are multiple onClickListeners stacked on top of each other, Taplytics will default to tracking the _first_ one it finds set up with button clicks. This shouldn't cause issues so long as your app does not have two button click goals stacked on top of each other. 
