@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)**
 
-###**Current Version: [1.9.9](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.9)** |   	 [FAQ](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)
+###**Current Version: [1.9.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.10)** |   	 [FAQ](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)
 
 ###Big News: [Push has changed and is better in 1.9.+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
@@ -20,6 +20,11 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.9.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.10)**
+
+1. Fixed another potential issue with Adobe events.
+2. Send experiment data to segment (enable on dashboard)
+
 **[1.9.9](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.9)**
 
 1. Fixed Adobe event tracking to work with Adobe 4.11
@@ -29,7 +34,7 @@ _How do I, as a developer, start using Taplytics?_
 
 1. In the event that there are multiple `onClickListener`s stacked on top of each other, Taplytics will default to tracking the _first_ one it finds set up with button clicks. This shouldn't cause issues so long as your app does not have two button click goals stacked on top of each other.
 
-2. **You can no longer proguard Taplytics**, hopefully. Taplytics is already proguarded by us. Here is the reasoning behind this:
+2. **You can no longer ProGuard Taplytics**, hopefully. Taplytics is already proguarded by us. Here is the reasoning behind this:
   * Recently, many clients have put options in ProGuard that inadvertently proguarded Taplytics a second time. As you can imagine, this makes it impossible for us to use _our_ mappings to find the issue with that stacktrace, as we are referencing a special obfuscation (our animal names!)
   * Much of Taplytics runs on Reflection to make things more efficient and to access some fields that normally can't be accessed by a library. ProGuard checks method invocations to determine what is used and what isn't, removing those it deems not being used -- however, it is impossible for ProGuard to know when a method is accessed via reflection. This leads to some listeners and other internal systems being removed incorrectly.
   * To really compress and obfuscate Taplytics, we overload our obfuscations aggressively. This means that many methods and classes will share obfuscated names. The compiler understands this within itself. However, in the event that it gets proguarded again by another system, this can cause unsatisfied links and missing classes.
