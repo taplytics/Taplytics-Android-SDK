@@ -34,7 +34,7 @@ _**NOTE: You can use EITHER Retrofit2 or Volley.**_
 
         //socket.io connections only made on debug devices.
         //To make live changes on a release build, remove the `debugcompile` flag
-        debugCompile 'io.socket:socket.io-client:+' {
+        debugCompile ('io.socket:socket.io-client:+') {
              exclude group: 'org.json', module: 'json'
         }
 
