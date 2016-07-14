@@ -25,6 +25,7 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
 _**NOTE: You can use EITHER Retrofit2 or Volley.**_
 
     ```
+    
     dependencies {                                                                   
 
         //Dependencies for Taplytics
@@ -49,7 +50,9 @@ _**NOTE: You can use EITHER Retrofit2 or Volley.**_
         //Only include this if you wish to enable push notifications:
         compile("com.google.android.gms:play-services-gcm:8.+")
     }    
+    
     ```
+    
 
 	[**Click here to read more about the recent socket dependency changes.**](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
 
