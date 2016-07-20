@@ -132,6 +132,8 @@ Below is an example receiver that explains exactly how this is done. You can put
 
 Note that Taplytics automatically tracks the following, however if you would like to do so for internal reasons, this is how. 
 
+**Note there is also a TLGgcmBroadcastReceiverNonWakeful**.
+
 ```java
 /**
  * Example receiver to take action with push notifications.
