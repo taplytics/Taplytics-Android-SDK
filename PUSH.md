@@ -41,6 +41,13 @@ And you must add the following receiver and service under your application tag:
 <service android:name="com.taplytics.sdk.TLGcmIntentService" />
 ```
 
+Then add the following to your build.gradle:
+
+```
+compile("com.google.android.gms:play-services-gcm:9.+")
+```
+
+
 In order to set the notification icon you must add a meta-tag to your manifest specifying the drawable you want to use as the icon:
 
 ```xml
