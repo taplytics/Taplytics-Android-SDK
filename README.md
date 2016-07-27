@@ -11,7 +11,6 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 ###Big News: Retrofit2 can be used in place of Volley in 1.8.0+ (Optional).
 
 ## Getting Started
-
 _How do I, as a developer, start using Taplytics?_
 
 1. _Sign up for a free account at [Taplytics.com](https://taplytics.com?utm_source=github&utm_campaign=documentation&utm_medium=content)._
