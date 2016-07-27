@@ -4,9 +4,9 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)**
 
-###**Current Version: [1.9.16](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.16)** |   	 [FAQ](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)
+###**Current Version: [1.10.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.0)** |   	 [FAQ](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)
 
-###Big News: [Push has changed and is better in 1.9.+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
+###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
 ###Big News: Retrofit2 can be used in place of Volley in 1.8.0+ (Optional).
 
@@ -19,6 +19,10 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.10.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.0)**
+
+1. **Change in how timeouts are handled.** Now, if the TLExperimentsLoadedListener times out, Taplytics will only use what data is stored on the disk for that entire session. Taplytics will still attempt to load the proper data in the background and will save that to disk to be ready for use for the next session. This prevents bad data in the event that an experiment did not properly load (due to bad internet). The default timeout is four seconds. 
 
 **[1.9.16](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.16)**
 
@@ -167,66 +171,6 @@ _How do I, as a developer, start using Taplytics?_
 
 1. Draft experiments returned in `getRunningExperiments` callback.
 
-
-**[1.7.12](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.12)**
-
-1. Weakreference safety
-
-**[1.7.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.11)**
-
-1. Fix issue with push open listener
-
-**[1.7.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.10)**
-
-1. Fix support fragments issue
-
-**[1.7.9](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.9)**
-
-1. Handle possible type mismatch in dynamic variables
-2. Use weak refs to prevent potential leaks
-3. Other fixes
-
-**[1.7.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.8)**
-
-1. Add notification priority option.
-2. Don't warn on socketio libs during release builds.
-3. Fix dynamic variable type mismatch with booleans and strings.
-
-**[1.7.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.7)**
-
-1. Added `overlayOn()` and `overlayOff()` functions to manually handle unique YouTube cases.
-
-**[1.7.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.6)**
-
-1. Fragment change performance increase
-2. First loads on fragment performance increase
-3. No longer use 'getItem' anywhere for `ViewPager`s
-4. No longer block youtube due to overlays
-5. `ListView/RecyclerView` performance tweaks
-
-
-**[1.7.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.5)**
-
-1. Tracking current fragment without calling `getItem()` or `instantiateItem()``
-2. Build tools update
-3. Consistent internal versioning
-
-**[1.7.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.4)**
-
-1. Bug fixes related to adapter views
-
-**[1.7.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.3)**
-
-1. Limited session background time to 24 hours
-
-**[1.7.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.2)**
-
-1. Fix live pairing issues
-
-**[1.7.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.0)**
-
-1. [Changed to new socket.io dependency](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
-2. Support for `ImageButtons` and `StateDrawables`.
 
 ## Questions or Need Help
 
