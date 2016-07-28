@@ -9,7 +9,7 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |5  | [Special Push Options (title, silent, priority)](#5-special-push-options-title-silent-push-etc)   |           
 |6  | [Resetting Users](#6-resetting-users)                                     |
 
-### New!: Taplytics has updated the way push notifications are handled. See [here!](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/PUSH.md#4-custom-data-and-tracking-push-interactions)
+ ***New!: Taplytics has updated the way push notifications are handled. See [here!](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/PUSH.md#4-custom-data-and-tracking-push-interactions)***
 
 ## 1. Setup
 
