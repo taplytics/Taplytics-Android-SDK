@@ -45,11 +45,10 @@ _**NOTE: You can use EITHER Retrofit2 or Volley.**_
         compile 'com.squareup.retrofit2:retrofit:+'
 
         //Only include this if you wish to enable push notifications:
-        compile("com.google.android.gms:play-services-gcm:8.+")
+        compile("com.google.android.gms:play-services-gcm:9.+")
     }    
     ```
-    
-[**Click here to read more about the recent socket dependency changes.**](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
+    [**Click here to read more about the recent socket dependency changes.**](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/SOCKETS.md)
 
 3. _Override your Application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). If you don't have an Application class, create one. It should look like this:_
 
