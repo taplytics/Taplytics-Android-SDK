@@ -198,7 +198,21 @@ JSONObject attributes = new JSONObject();
 attributes.put("example", 0);
 Taplytics.setUserAttributes(attributes);
 ```
+### Retrieving Current User Attributes
+
+Taplytics also offers a method to retrieve select information of what you know about a user at a given time. 
+
+```java
+Taplytics.getUserAttributes(new UserAttributesRetrievedListener() {
+        @Override
+        public void userAttributesRetrieved(HashMap userAttributes) {
+            //Use your Hashmap of user attributes
+        }
+    });
+```
+
 ---
+
 
 ### 4. Track Events
 
