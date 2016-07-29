@@ -23,7 +23,7 @@ _How do I, as a developer, start using Taplytics?_
 
 1. Perfomance updates for applications that don't contain support libraries.
 2. Added the ability to retrive current user attributes. Use `Taplytics.getUserAttributes(new UserAttributesRetrievedListener)`.
-3.  
+3. If you are in a session which timed out and you are in debug mode and testing experiments via the website or shake menu, you can now properly switch between variations and experiments. Previously the timeout would make this impossible as we never used a new config, but this made testing in these situations difficult. 
 
 
 **[1.10.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.0)**
