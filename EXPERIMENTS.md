@@ -243,29 +243,6 @@ Taplytics.startTaplytics(this, "YOUR API KEY", null, new TaplyticsExperimentsLoa
 });
 ```
 
-### Timeouts
-By default, these callbacks will time out after 5 seconds. `TaplyticsRunningExperimentListeners` called before `startTaplytics` completes will also time out if there is no internet or response from the server.
-
-Timeouts can also be added manually by passing in a number as *milliseconds* before timeout. For example:
-
-```java
-Taplytics.getRunningExperimentsAndVariations(new TaplyticsRunningExperimentsListener(10000) {
-	@Override
-	public void runningExperimentsAndVariation(Map<String, String> experimentsAndVariations) {
-		// This will time out after 10 seconds and return an empty map
-	}
-});
-```
-or
-
-```  
-Taplytics.startTaplytics(this, "YOUR API KEY", null, new TaplyticsExperimentsLoadedListener(10000) {
-	@Override
-	public void loaded() {
-		// This will be called after the timeout.
-	}
-});
-```
 
 ## Session Listener
 

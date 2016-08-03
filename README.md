@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)**
 
-###**Current Version: [1.10.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.3)** |   	 [FAQ](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)
+###**Current Version: [1.10.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.4)** |   	 [FAQ](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)
 
 ###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
@@ -19,11 +19,21 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
-**[1.10.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.3)**
+**[1.10.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.4)**
 
-1. Improve code block timeout and cache interaction.
-2. Make fewer socket connection calls on debug app startup.
-3. Kickoff all variableupdated with disk or default values immediately after timeout.
+
+1. ### **Timeout declaration have been removed from callbacks and added as a Taplytics starting parameter**
+	For example, you now can start Taplytics as such:
+	`Taplytics.startTaplytics(Context, ApiKey, Options, TIMEOUT, listener)`
+
+	When this timeout is reached, Taplytics will continue and ONLY use values stored on disk for the remainder of the session. 
+
+2. Improve code block timeout and cache interaction.
+3. Make fewer socket connection calls on debug app startup.
+4. Kickoff all variableupdated and visual editor changes with disk or default values immediately after timeout.
+5. Devices which have a delay to start Taplytics (such as via segment) will now track the main activity start more consistently.
+6. Debug devices which time out can now kick off pairing without needing to restart the app. 
+ 
 
 
 **[1.10.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.2)**

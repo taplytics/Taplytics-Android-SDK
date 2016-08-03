@@ -134,6 +134,22 @@ Taplytics.startTaplytics(this, "Your Api Key", options);
 | retrofit | boolean: true/false | null | Taplytics will default to using Volley if it is present. In the event that you have both enabled, you can use this flag to force the library to use retrofit instead. |
 
 
+### Timeouts
+
+Timeouts have since been removed from individual callbacks and have been added as a starting parameter. 
+
+By default the timeout is 4000ms. After this timeout has been reached, Taplytics will use only whatever values were loaded from disk for the remainder of the session. All `variableUpdated` callbacks will trigger, all `getRunningExperimentsAndVariations` will return with disk values, and the `TaplyticsExperimentLoadedListener` will trigger. The new values will still attempt to download and they will be cached and ready to be used for the next session.
+
+Example:
+
+`Taplytics.startTaplytics(Context, ApiKey, Options, TimeoutInMillis)`
+
+or
+
+`Taplytics.startTaplytics(Context, ApiKey, TimeoutInMillis)`
+
+Etc. 
+
 #### The Border / Shake menu.
 
 When connected to an experiment on a **debug** build, a border will show around your app window. This shows which experiment and variation you are currently viewing.
@@ -141,6 +157,8 @@ When connected to an experiment on a **debug** build, a border will show around 
 You can long-press on the top of the border to switch experiments, or shake your device and pick from the menu, or select an experiment from the Taplytics website.
 
 **The border and shake menu will _NOT_ appear on release builds.**
+
+
 
 ---
 
