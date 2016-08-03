@@ -60,3 +60,19 @@ Analytics analytics = new Analytics.Builder(this, "SEGMENT_API_KEY").use(Taplyti
 add a .use() for any other integrations you are using.
 
 Remember to enable the Taplytics integration on your Segment dashboard.
+
+##Q. Why do your callbacks no longer have timeouts as parameters?
+
+**We wanted all callbacks to use the same timeout, so it has since been changed to a starting parameter. Please see the starting docs.**
+
+For example:
+
+```java
+Taplytics.startTaplytics(Context, ApiKey, TimeOut)
+```
+
+or
+
+```java
+Taplytics.StartTaplytics(Context, ApiKey, Options, TimeOut...)
+```
