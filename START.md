@@ -78,7 +78,7 @@ _**NOTE: You can use EITHER Retrofit2 or Volley.**_
 
     ![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
     
-    Then, add it to your manifest in its _own_ intent filter (do not put in another intent filter). 
+    Then, add it to your manifest in its _own_ intent filter (do not merge with another intent filter). 
 
     ```xml
         ...
