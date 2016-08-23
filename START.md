@@ -236,9 +236,9 @@ Once a user logs out of your app, their User Attributes are no longer valid. You
 ```java
 Taplytics.resetAppUser(new TaplyticsResetUserListener() {
 	@Override
-   public void finishedResettingUser() {
-   //
-   }
+	public void finishedResettingUser() {
+		//Finished User Reset
+	}
 });
 ```
 
