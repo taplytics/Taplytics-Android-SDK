@@ -229,6 +229,19 @@ Taplytics.getUserAttributes(new UserAttributesRetrievedListener() {
     });
 ```
 
+### Resetting user attributes or Logging out a user 
+
+Once a user logs out of your app, their User Attributes are no longer valid. You can reset their data by calling `resetAppUser`, make sure you do not set any new user attributes until you receive the callback.
+
+```java
+Taplytics.resetAppUser(new TaplyticsResetUserListener() {
+	@Override
+   public void finishedResettingUser() {
+   //
+   }
+});
+```
+
 ---
 
 
