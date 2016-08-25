@@ -158,7 +158,9 @@ You can long-press on the top of the border to switch experiments, or shake your
 
 **The border and shake menu will _NOT_ appear on release builds.**
 
+#### Showing the menu without shaking or turning.
 
+Taplytics offers a Taplytics.showMenu() function that can be used to call up the experiment menu. This is useful for testing environments that cannot shake or turn the device.
 
 ---
 
