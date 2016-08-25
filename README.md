@@ -2,13 +2,13 @@
 
 _Taplytics is a native mobile A/B testing and push notification platform that helps you optimize your Android app!_
 
-**[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)**
+**[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)**
 
-###**Current Version: [1.10.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.8)** |   	 [FAQ](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)
+###**Current Version: [1.11.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.0)**
 
 ###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
-###Big News: Retrofit2 can be used in place of Volley in 1.8.0+ (Optional).
+###Big News: Retrofit2 can be used in place of Volley in 1.8.0+
 
 ## Getting Started
 _How do I, as a developer, start using Taplytics?_
@@ -18,6 +18,13 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.11.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.0)**
+
+1. Fixed networking library warnings in the ART runtime environment.
+2. Fixed networking library detection (Volley/Retrofit)
+3. Removed `getUserAttributes` for security. Replaced with `getSessionInfo`. 
+4. Internal code cleanup to make things pretty.
 
 **[1.10.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.8)**
 

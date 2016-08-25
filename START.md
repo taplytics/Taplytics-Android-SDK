@@ -216,15 +216,15 @@ JSONObject attributes = new JSONObject();
 attributes.put("example", 0);
 Taplytics.setUserAttributes(attributes);
 ```
-### Retrieving Current User Attributes
+### Retrieving Session Info
 
-Taplytics also offers a method to retrieve select information of what you know about a user at a given time. 
+Taplytics also offers a method to retrieve select information of what you know about a session at a given time. This method returns the user's Taplytics identifier (`appUser_id`) and current session id (`session_id`)
 
 ```java
-Taplytics.getUserAttributes(new UserAttributesRetrievedListener() {
+Taplytics.getSessionInfo(new SessionInfoRetrievedListener() {
         @Override
-        public void userAttributesRetrieved(HashMap userAttributes) {
-            //Use your Hashmap of user attributes
+        public void sessionInfoRetrieved(HashMap sessionInfo) {
+            //Use your Hashmap of Session Info
         }
     });
 ```
