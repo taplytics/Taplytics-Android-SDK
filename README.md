@@ -22,8 +22,7 @@ _How do I, as a developer, start using Taplytics?_
 **[1.11.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.3)**
 
 1. Fixed potential google developer console warning regarding Device IDs.
-2. Changed button click goals to check for current framgent before tracking to avoid duplicates.
-3. Switched events endpoint.
+2. Switched events endpoint.
 
 **[1.11.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.2)**
 
