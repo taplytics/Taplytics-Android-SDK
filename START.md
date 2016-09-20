@@ -131,7 +131,7 @@ Taplytics.startTaplytics(this, "Your Api Key", options);
 | turnMenu | boolean: true/false | false | If you are doing visual testing on an emulator, or UI automation, many emulators do not have the ability to shake the device. So, to pop up the taplytics menu on such devices, set turnMenu to true, and simply rotate the device from portrait/landscape twice in a row within 30 seconds and this menu will show.|   
 | disableBorders | boolean: true/false | set by build (enabled in debug) | This will entirely disable the informational borders Taplytics applies during debug mode testing. Useful to disable for UI testing. Note that this border will NOT show in release mode regardless of setting (except for on previously paired phones).|   
 | testExperiments | HashMap | null | See: [Testing Specific Experiments](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/EXPERIMENTS.md#testing-specific-experiments).|   
-| retrofit | boolean: true/false | null | Taplytics will default to using Volley if it is present. In the event that you have both enabled, you can use this flag to force the library to use retrofit instead. |
+| retrofit | boolean: true/false | set by build (true if only retrofit present) | Taplytics will default to using Volley if it is present. In the event that you have both enabled, you can use this flag to force the library to use retrofit instead. |
 
 
 ### Timeouts
