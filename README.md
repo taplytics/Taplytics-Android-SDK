@@ -22,6 +22,7 @@ _How do I, as a developer, start using Taplytics?_
 **[1.11.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.5)**
 
 1. Fix crash on specific Lenovo devices that do not have carrier info. 
+2. Button click goals on buttons with same ID across multiple fragments will now be properly tracked.
 
 **[1.11.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.4)**
 
