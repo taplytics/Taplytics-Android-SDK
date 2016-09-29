@@ -33,6 +33,8 @@ _How do I, as a developer, start using Taplytics?_
 	
 2. Fragments will now too rely on the identifier of the fragment container instead of the ID for similar reasons to the ones stated above.
 
+3. Fixed an issue in which Android studio would output many warnings surrounding proguard and inner classes.
+
 **[1.11.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.5)**
 
 1. Fix crash on specific Lenovo devices that do not have carrier info. 
