@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)**
 
-###**Current Version: [1.11.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.5)**
+###**Current Version: [1.11.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.6)**
 
 ###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
@@ -19,6 +19,20 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.11.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.6)**
+
+1. Change base method used for finding views.
+
+	For a while, Taplytics relied on `findViewById` in base viewgroups to find that needed to be modified. This became unreliable over time as the applications changed (IDs can change!), so a long while ago we added a fallback which would check the resource identifier instead (essentially the string name of the view). 
+	
+	This proved successful, but then there existed the small probability that a new ID would be generated for a view that would match up with the previously generated ID. 
+	
+	The probability of that happening was extremely small, but it got picked up in a test we ran.
+	
+	So from here on out, we are now going with the identifier first, and ID second. This DOES mean that if you change the _name_ (identifier) of your view to something new, Taplytics will most likely not be able to modify it using the old experiment, and it will need to be set up again.
+	
+2. Fragments will now too rely on the identifier of the fragment container instead of the ID for similar reasons to the ones stated above.
+
 **[1.11.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.5)**
 
 1. Fix crash on specific Lenovo devices that do not have carrier info. 
@@ -32,7 +46,7 @@ _How do I, as a developer, start using Taplytics?_
 **[1.11.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.3)**
 
 1. Fixed potential google developer console warning regarding Device IDs.
-2. Changed button click goals to check for current framgent before tracking to avoid duplicates.
+2. Changed button click goals to check for current fragment before tracking to avoid duplicates.
 3. Switched events endpoint.
 
 **[1.11.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.2)**
@@ -85,7 +99,7 @@ _How do I, as a developer, start using Taplytics?_
 
 2. Improve code block timeout and cache interaction.
 3. Make fewer socket connection calls on debug app startup.
-4. Kickoff all variableupdated and visual editor changes with disk or default values immediately after timeout.
+4. Kickoff all variableUpdated and visual editor changes with disk or default values immediately after timeout.
 5. Devices which have a delay to start Taplytics (such as via segment) will now track the main activity start more consistently.
 6. Debug devices which time out can now kick off pairing without needing to restart the app. 
  
@@ -98,7 +112,7 @@ _How do I, as a developer, start using Taplytics?_
 
 **[1.10.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.10.1)**
 
-1. Perfomance updates for applications that don't contain support libraries.
+1. Performance updates for applications that don't contain support libraries.
 2. Added the ability to retrive current user attributes. Use `Taplytics.getUserAttributes(new UserAttributesRetrievedListener)`.
 3. If you are in a session which timed out and you are in debug mode and testing experiments via the website or shake menu, you can now properly switch between variations and experiments. Previously the timeout would make this impossible as we never used a new config, but this made testing in these situations difficult. 
 
@@ -117,7 +131,7 @@ _How do I, as a developer, start using Taplytics?_
 
 **[1.9.14](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.14)**
 
-1. Added starting option to fix problems whne delaying the starting of taplytics, such as with segment.
+1. Added starting option to fix problems when delaying the starting of Taplytics, such as with segment.
 
 **[1.9.13](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.13)**
 
