@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)**
 
-###**Current Version: [1.11.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.6)**
+###**Current Version: [1.11.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.7)**
 
 ###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
@@ -19,6 +19,26 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.11.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.7)**
+
+1. Fixed slowdown in visual edits on ViewPagers
+	
+	Previously there was a slight delay when applying visual edits to an element on a ViewPager. This slowdown has been eliminated in this update by preemptively making the visual update before the viewpager is visible.
+	
+	Technical Explanation:
+
+	Android unfortunately does not contain a standard method to retrieve a fragment from a ViewPager by its position, but rather it only contains a `getCurrentFragment` method which returns the current position as an integer. Taplytics does not make use of `getItem` or `instantiateItem` as it may incidentally create a new instance of the fragment depending on the developer's implementation, and we wish to remain as non-intrusive as possible. Its common for developers to implement methods in which to track the fragments in a ViewPager, but as a library, Taplytics does not want to make assumptions of the existence of such functions.
+	
+	In the past, Taplytics applied changes to every view child in the ViewPager, however this was deemed far too inefficient, especially within ViewPager with more than 5 pages. Soon after, Taplytics relied on a reflective call into the ViewPager's `mCurrentFragment` field to make visual changes, but this only allows changes to be made on the current fragment showing, which is where this mentioned delay originated. 
+	
+	Now, Taplytics is able to identify which views within a ViewPager require changes and apply them before the ViewPager is on the screen. This is due to a tagging system that identifies which fragment needs changes, which also allows for an efficient search for these fragments. Additionally, Taplytics will only change the current fragment as well as fragments directly to the left and right of the current fragment, allowing for the most efficient visual edits of ViewPagers yet.
+	
+2. Fix Taplytics not being able to properly track fragments on newest support libraries. 
+
+	This is a simple Proguard issue. Android's FragmentManager contained a `mExecutingTransactions` field which Taplytics uses to ensure that certain interactions with the FragmentManager are safe. As an extra precaution, if there is an issue surrounding this field, Taplytics will not risk interacting with fragments. 
+	
+	In the _most_ recent support fragment updates, this field was moved by Android, and so our tests picked up these changes and notified us of a necessary change within our own Proguard configuration which keeps this field's name. 
+	
 **[1.11.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.6)**
 
 1. Change base method used for finding views.
