@@ -19,6 +19,16 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.11.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.8)**
+
+1. Decreased sensitivity of shake menu listener.
+
+	Using the most recent android build tools, it seems that the shake menu appears a lot more frequently. The low-pass filter used on the device accelerometer for detecting shakes has been increased to be far less sensitive.
+	
+2. Added startup safety for Taplytics (internal) 
+
+	In past updates, safeties had been put in place during the startTaplytics call internally. More comprehensive checks, weak references for leak safety, etc. In this update, these checks and safeties have been extended to many of the static variables and their static initializations in core Taplytics classes.
+
 **[1.11.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.7)**
 
 1. Fixed slowdown in visual edits on ViewPagers
