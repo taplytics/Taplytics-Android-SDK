@@ -23,7 +23,7 @@ _How do I, as a developer, start using Taplytics?_
 
 1. Fixed ExperimentUpdatedListener returning wrong value on initial use of Shake Menu.
 
-	In a race condition for large projects, the listener was triggered  before new updated values were cached fully.  
+	In a race condition for large projects, the listener was triggered  before new updated values were cached fully. Additionally, if a project initially timed out, the SDK would not have the cached data to reference. 
 
 **[1.11.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.8)**
 
