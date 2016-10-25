@@ -61,6 +61,26 @@ add a .use() for any other integrations you are using.
 
 Remember to enable the Taplytics integration on your Segment dashboard.
 
+##Q. Do you support visual edits on Dialogs?
+
+**Yes, but in limited cases.**
+
+To do this properly, you need to use a fragmentTransaction to add the fragment to the backstack. The tag used here should be the same as the tag used to show the fragment. Like so:
+
+```java
+FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+fragmentTransaction.show(someDialog);
+fragmentTransaction.addToBackStack("fragment_some_dialog");
+someDialog.show(fragmentTransaction, "fragment_some_dialog");
+```
+
+Taplytics tracks the appearance/disappearance of the dialog via the backstack manager, which is why it needs to be sent there. The tag is necessary to confirm that the visual edits are being applied to the correct fragment. 
+
+This only works with dialogFragments as normal Dialogs do not have any unique identifying tags.
+
+**NOTE:**
+dialogFragments exist on an entirely different view hierarchy than traditional view elements. They exist within their own `window` and have an entirely different viewRoot than the rest of your application. This makes changes on dialogs very difficult, and this feature is not 100% guaranteed to work for all dialogs.
+
 ##Q. Why do your callbacks no longer have timeouts as parameters?
 
 **We wanted all callbacks to use the same timeout, so it has since been changed to a starting parameter. Please see the starting docs.**
