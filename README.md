@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-###**Current Version: [1.11.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.7)**
+###**Current Version: [1.11.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.10)**
 
 ###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
@@ -18,6 +18,19 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.11.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.10)**
+
+1. Updated Flurry, Amplitude, Adobe, Localytics, and Mixpanel integrations to allow event handling on their newest SDK versions.
+
+	Flurry integration now also supports property maps. 
+
+2. Fixed error when user's country code does not have associated ISO language.
+
+	For example, es_LG is unknown by the Android system, and will no longer cause an error when the ISO3 language code is searched for.
+	
+3. Added additional socket call to better interact with the new experiment selector on the User Insights page.
+
 
 **[1.11.9](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.9)**
 
