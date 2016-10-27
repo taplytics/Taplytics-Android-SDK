@@ -5,13 +5,13 @@
 The Taplytics SDK can automatically push experiments to the following Analytics Sources:
 
 | [Supported by Android SDK](#android) | [Supported by iOS SDK](#ios)            
-| ------------- |:-------------:    
-| <ul><li>[Google Analytics](#google-analytics-android)</li><li>[Flurry](#flurry-android)</li><li>[MixPanel](#mixpanel-android)</li><li>[Amplitude](#amplitude-android)</li><li>[Adobe](#adobe-android)</li><li>[Localytics](#localytics-android)</li><li>[Segment](#segment-android)</li></ul> | <ul><li>[Google Analytics](#google-analytics-ios)</li><li>[Flurry](#flurry-ios)</li><li>[MixPanel](#mixpanel-ios)</li><li>[Amplitude](#amplitude-ios)</li><li>[Intercom](#intercom-ios)</li><li>[Apsalar](#apsalar-ios)</li><li>[Parse](#parse-ios)</li><li>[Adobe](#adobe-ios)</li><li>[Localytics](#localytics-ios)</li><li>[Heap](#heap-ios)</li><li>[Optimizely](#optimizely-ios)</li><li>[Segment](#segment-ios)</li><li>[KISSMetrics](#kissmetrics-ios)</li></ul>
+| ------------- |-------------    
+| <ul><li>[Google Analytics](#google-analytics-android)</li><li>[Flurry](#flurry-android)</li><li>[MixPanel](#mixpanel-android)</li><li>[Amplitude](#amplitude-android)</li><li>[Adobe](#adobe-android)</li><li>[Localytics](#localytics-android)</li><li>[Segment](#segment-android)</li></ul> |<ul><li>[Google Analytics](#google-analytics-ios)</li><li>[Flurry](#flurry-ios)</li><li>[MixPanel](#mixpanel-ios)</li><li>[Amplitude](#amplitude-ios)</li><li>[Intercom](#intercom-ios)</li><li>[Apsalar](#apsalar-ios)</li><li>[Parse](#parse-ios)</li><li>[Adobe](#adobe-ios)</li><li>[Localytics](#localytics-ios)</li><li>[Heap](#heap-ios)</li><li>[Optimizely](#optimizely-ios)</li><li>[Segment](#segment-ios)</li><li>[KISSMetrics](#kissmetrics-ios)</li></ul>
 
 
 To enable any of these, navigate to your project settings and select the analytics sources you want to use with Taplytics. If you don't see your analytics source listed here, feel free to let us know what other integrations you need.
 
-Additionally, Taplytics will automatically track this data
+Additionally, Taplytics will automatically track events from these sources directly into Taplytics.
 
 ![image](https://github.com/taplytics/Taplytics-iOS-SDK/blob/master/third%20party%20integrations/settings.png?raw=true)
 
