@@ -25,11 +25,15 @@ _How do I, as a developer, start using Taplytics?_
 
 	delayLoad now waits for a pass/fail on the config request before triggering. Previously, on connected debug builds, it would trigger after visual edits have been applied, even if just from disk. 
 
-2. Added safety around new external integration methods.
+3. Track Adobe Analytics `trackState` calls. 
+
+	Previously Taplytics would only track `trackAction`, but now it also allows for `trackState`
+
+4. Added safety around new external integration methods.
 
 	Simple safety checks and catches to ensure no errors showing up. Errors are expected in these integrations and our attempts do deal with them, however they are squelched. This update just ensures that such errors don't reach crashlytics and cause confusion. 
 
-3. Update Taplytics internal Retrofit interceptor. 
+5. Update Taplytics internal Retrofit interceptor. 
 
 	Taplytics uses a networkInterceptor to do a simple obfuscation of network traffic through Taplytics (using its own okKttpClient). This may not work depending on the app's okHttp/retrofit versions (older). While not technically an issue, extra safety has been added in this area. 
 	
