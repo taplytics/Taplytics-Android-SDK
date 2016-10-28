@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-###**Current Version: [1.11.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.10)**
+###**Current Version: [1.11.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.11)**
 
 ###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
@@ -18,6 +18,21 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.11.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.11)**
+
+1. DelayLoad should no longer immediately return during liveUpdate builds.
+
+	delayLoad now waits for a pass/fail on the config request before triggering. Previously, on connected debug builds, it would trigger after visual edits have been applied, even if just from disk. 
+
+2. Added safety around new external integration methods.
+
+	Simple safety checks and catches to ensure no errors showing up. Errors are expected in these integrations and our attempts do deal with them, however they are squelched. This update just ensures that such errors don't reach crashlytics and cause confusion. 
+
+3. Update Taplytics internal Retrofit interceptor. 
+
+	Taplytics uses a networkInterceptor to do a simple obfuscation of network traffic through Taplytics (using its own okKttpClient). This may not work depending on the app's okHttp/retrofit versions (older). While not technically an issue, extra safety has been added in this area. 
+	
 
 **[1.11.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.10)**
 
