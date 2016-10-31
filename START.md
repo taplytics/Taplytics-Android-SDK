@@ -390,7 +390,7 @@ The properties for all sources are in the following format:
 
 Link a device (even in release mode) to Taplytics.
 
-**NOTE: This is used only for deeplink pairing, and is unnecessary if your LAUNCH activity does NOT have a singleTask flag. IF you followed step 5.**
+**NOTE: This is used only for deeplink pairing **
 
 Retrieve deeplink through Taplytics deeplink intercepted via either email or SMS device pairing. It contains your Taplytics URL scheme and device token. If you wish to intercept the deeplink and then pair the device yourself in your application's code, call this method in your app's LAUNCH activity or MAIN activity, like so:
 
