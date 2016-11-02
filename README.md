@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-###**Current Version: [1.11.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.11)**
+###**Current Version: [1.12.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.12.0)**
 
 ###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
@@ -19,21 +19,37 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.12.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.12.0)**
+
+1. Explicitly require HashMap in options for startTaplytics
+
+	Due to operations done within Taplytics, this can no longer be an ArrayMap and must explicitly be a HashMap. 
+
+2. Optimized and refactored ListView and RecyclerView visual editing.
+
+	Visual edits made on RecyclerViews are now far more reliable due to a change in the identification of which list cell needs to be changed. Visual edits on List/RecyclerViews also now operate much more efficiently. 
+	
+3. Fixed bug in dynamic variables with numbers which are both floats or integers.
+
+	When a dynamic variable's default value was a float or integer, all variations were expected to be of the same type. This was problematic when parsing JSON, as the system saw any numbers with no decimal as an integer, even if the type was a float. This resulted in the default value always being returned. This has been handled and will no longer be an issue.
+	
+4. Various small efficiency improvements in width/height visual edits. 	
+	 
 **[1.11.11](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.11.11)**
 
 1. DelayLoad should no longer immediately return during liveUpdate builds.
 
 	delayLoad now waits for a pass/fail on the config request before triggering. Previously, on connected debug builds, it would trigger after visual edits have been applied, even if just from disk. 
 
-3. Track Adobe Analytics `trackState` calls. 
+2. Track Adobe Analytics `trackState` calls. 
 
 	Previously Taplytics would only track `trackAction`, but now it also allows for `trackState`
 
-4. Added safety around new external integration methods.
+3. Added safety around new external integration methods.
 
 	Simple safety checks and catches to ensure no errors showing up. Errors are expected in these integrations and our attempts do deal with them, however they are squelched. This update just ensures that such errors don't reach crashlytics and cause confusion. 
 
-5. Update Taplytics internal Retrofit interceptor. 
+4. Update Taplytics internal Retrofit interceptor. 
 
 	Taplytics uses a networkInterceptor to do a simple obfuscation of network traffic through Taplytics (using its own okKttpClient). This may not work depending on the app's okHttp/retrofit versions (older). While not technically an issue, extra safety has been added in this area. 
 	
