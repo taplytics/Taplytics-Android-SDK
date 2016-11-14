@@ -19,6 +19,17 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Changelog
 
+**[1.12.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.12.2)**
+
+1. Update event saving for those who use multiple SDK keys for different environments.
+
+	Previously, stored events were not associated with a project and would be sent to the project associated with the current SDK key. This meant that stored events had the potential to be sent to the incorrect project. This mainly effected those using multiple SDK keys to debug.
+
+2. Add some additional logs for support. 
+
+3. Add additional option to ignore fragment classnames in projects which heavily obfuscate activities and fragments, causing them to have different names upon each build. 
+
+
 **[1.12.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.12.1)**
 
 1. Security optimizations. Taplytics will now encrypt all data. Taplytics data in of itself is not sensitive data. However, custom data appended to events as well as potential user attributes set by the client may contain sensitive data. While not easily obtained, rooted devices had the ability to view this data. This is now handled by encrypting all data saved on the device. 
