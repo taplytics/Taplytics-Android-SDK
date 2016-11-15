@@ -249,7 +249,7 @@ Taplytics.getRunningExperimentsAndVariations(new TaplyticsRunningExperimentsList
 });
 ```
 
-NOTE: This function runs asynchronously, as it waits for the updated properties to load from Taplytics' servers before returning the running experiments.
+NOTE: This function runs asynchronously, as it waits for the updated properties to load from Taplytics' servers before returning the running experiments. **Use only after startTaplytics has been called**
 
 If you want to see when the experiments have been loaded by Taplytics, you can add a `TaplyticsExperimentLoadedListener` to your `startTaplytics` call. For example
 
@@ -268,6 +268,7 @@ Taplytics.startTaplytics(this, "YOUR API KEY", null, new TaplyticsExperimentsLoa
 To keep track of when Taplytics defines a new session, use a `TaplyticsNewSessionListener` as follows.
 
 ```  
+Use after startTaplytics has been called.
 Taplytics.setTaplyticsNewSessionListener(new TaplyticsNewSessionListener() {
      @Override
       public void onNewSession() {
