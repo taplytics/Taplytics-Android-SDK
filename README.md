@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-###**Current Version: [1.12.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.12.5)**
+###**Current Version: [1.12.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.12.6)**
 
 ###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
@@ -18,6 +18,12 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.12.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.12.6)**
+
+1. Modified timing of propertiesLoaded callback to allow for creation / updating dynamic variables in the propertiesLoaded callback with much better reliability.
+2. Updated socket retry logic to back off better.
+3. Perform check on deep-links to improve performance in apps with many deep links and Taplytics advanced pairing.
 
 
 **[1.12.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.12.5)**
