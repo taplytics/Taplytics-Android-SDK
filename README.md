@@ -21,7 +21,7 @@ _How do I, as a developer, start using Taplytics?_
 
 **[1.13.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.13.0)**
 
-1. Added a new `startNewSession` function which allows for manually starting a new user session. This also allows for manually fetching new Taplytics experiments for the user if there are any. [See the docs here]()
+1. Added a new `startNewSession` function which allows for manually starting a new user session. This also allows for manually fetching new Taplytics experiments for the user if there are any. [See the docs here](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/EXPERIMENTS.md#startnewsession)
 
 **[1.12.6](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.12.6)**
 
