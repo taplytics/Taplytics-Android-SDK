@@ -266,7 +266,7 @@ Taplytics.startTaplytics(this, "YOUR API KEY", null, new TaplyticsExperimentsLoa
 
 By default, Taplytics defines a session as when a user is using the app with less than 10 minutes of inactivity. If the app has been backgrounded for 10 minutes, the next time the user opens the app it will be considered a new session. Similarly, if the app is entirely force closed, the next time the app is opened, it will be considered a new session.
 
-## StartNewSession
+### StartNewSession
 
 To manually force a new user session (ex: A user has logged in / out), there exists ```Taplytics.startNewSession```
 
