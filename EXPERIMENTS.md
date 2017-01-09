@@ -262,8 +262,26 @@ Taplytics.startTaplytics(this, "YOUR API KEY", null, new TaplyticsExperimentsLoa
 });
 ```
 
+## Sessions
 
-## Session Listener
+## StartNewSession
+
+To manually force a new user session (ex: A user has logged in / out), there exists ```Taplytics.startNewSession```
+
+If there is an internet connection, a new session will be created, and new experiments/variations will be fetched from Taplytics if they exist. 
+
+It can be used as follows:
+
+```java
+Taplytics.startNewSession(new TaplyticsNewSessionListener() {
+            @Override
+            public void onNewSession() {
+                // New session here! Only returns if successful.
+            }
+        });
+```
+
+### Session Listener
 
 To keep track of when Taplytics defines a new session, use a `TaplyticsNewSessionListener` as follows.
 
