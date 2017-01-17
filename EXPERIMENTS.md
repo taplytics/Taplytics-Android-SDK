@@ -52,7 +52,7 @@ Asynchronous variables take three parameters in its constructor:
 2. Default Value
 3. TaplyticsVarListener
 
-Just as for synchronous variables the type of the variable is defined in the first diamond brackets, and can be a `String`, `Number` or `Boolean`.
+Just as for synchronous variables the type of the variable is defined in the first diamond brackets, and can be a `String`, `Number`, `Boolean` or `JSON`.
 
 For example, using a variable of type `Number`:
 
