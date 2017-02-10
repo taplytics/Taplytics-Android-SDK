@@ -4,11 +4,11 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-###**Current Version: [1.13.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.13.2)**
+###**Current Version: [1.13.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.13.3)**
 
-###Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
+### Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
-###Big News: Retrofit2 can be used in place of Volley in 1.8.0+
+### Big News: Retrofit2 can be used in place of Volley in 1.8.0+
 
 ## Getting Started
 _How do I, as a developer, start using Taplytics?_
@@ -18,6 +18,12 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.13.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.13.3)**
+
+1. Added another step to the check for whether a device is in dev mode or not. Previously, it only checked for the `FLAG_DEBUGGABLE` flag on the application info. Now, there is also a check on your applications `BuildConfig.DEBUG` parameter to add extra safety around this entire process. 
+    * Also added a starting option for "`debugCheckType`" with options "`flag`" or "`config`" if you do not want both to be checked.
+2. Added a "`isDebug`" starting option, which allows you to manually control the debug status of a device based on your own parameters. For example, if you were to pass in `BuildConfig.DEBUG` as this option, the debug status would be determined based directly on the current value of that parameter.
 
 **[1.13.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.13.2)**
 
