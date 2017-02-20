@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [1.13.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.13.4)**
+### **Current Version: [1.13.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.13.5)**
 
 ### Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
 
@@ -18,6 +18,14 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.13.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.13.5)**
+
+1. Added ability to aggressively force visual changes on elements that may be modified by code in the future.
+	
+ For example, a TextView that may be updated in an activity's OnCreate previously would have overridden Taplytics' changes, but now it should remain the values sent by Taplytics. This currently works for **Visibility** and **Text** changes. 
+
+ Simply add the "aggressive" starting option to Taplytics will enable this feature.
 
 **[1.13.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.13.4)**
 
