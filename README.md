@@ -24,7 +24,7 @@ _How do I, as a developer, start using Taplytics?_
 1. Added manual push open tracking. This is meant only for clients who do not use Taplytics to _build_ notifications, but build themselves.
 
     Use as follows: 
-`Taplytics.pushOpened(tl_id, custom_keys)`
+`Taplytics.trackPushOpen(tl_id, custom_keys)`
 
     where tl_id and custom_keys are retrieved from the bundle within the Taplytics notification intent.
 
