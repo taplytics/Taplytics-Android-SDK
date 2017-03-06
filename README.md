@@ -4,11 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [1.14.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.14.0)**
-
-### Big News: [Push has changed and is better in 1.9.0+](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/push%20update.md)
-
-### Big News: Retrofit2 can be used in place of Volley in 1.8.0+
+### **Current Version: [1.15.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.15.0)**
 
 ## Getting Started
 _How do I, as a developer, start using Taplytics?_
@@ -18,6 +14,19 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.15.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.15.0)**
+
+1. Added manual push dismissed/received tracking. This is meant only for clients who do not use Taplytics to _build_ notifications, but build themselves.
+
+    Use as follows: 
+     `Taplytics.pushReceived(tl_id, custom_keys)`
+
+    `Taplytics.pushDismissed(tl_id, custom_keys)`
+
+     where tl_id and custom_keys are retrieved from the bundle within the Taplytics notification intent.
+    
+2. Greatly improved visual editing on carousels and ViewPagers. 
 
 **[1.14.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.14.0)**
 
