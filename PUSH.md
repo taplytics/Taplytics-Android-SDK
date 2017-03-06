@@ -234,3 +234,31 @@ Taplytics.resetAppUser(listener);
 Now, the device that the app is currently running on will no longer receive push notifications until the app user attributes are updated again.
 
 
+## 7. Building your own Notifications and Manually Tracking.
+
+You maybe using Taplytics simply to send push notifications. In the event that you already have a system to build notifications, then when extending the Taplytics BroadcastReceiver, you will see duplicates.
+
+To avoid this problem, first, **do not call `super.onReceive()`** where super would be the `TLGCMBroadcastReceiver`.
+
+Now, **Taplytics will not have any push notification tracking if you do this**. 
+
+To mitigate this, you must use the Taplytics functions provided. In each function, **you must pass in the tl_id in the notification attempt**.
+
+#### Push Open
+
+    Taplytics.trackPushOpen("tl_id",customKeys);
+        
+ Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable 
+
+#### Push Dismissed
+
+    Taplytics.trackPushDismissed("tl_id",customKeys);
+        
+ Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable 
+ 
+#### Push Received
+
+    Taplytics.trackPushReceived("tl_id",customKeys);
+        
+ Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable 
+

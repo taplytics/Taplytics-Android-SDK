@@ -20,9 +20,9 @@ _How do I, as a developer, start using Taplytics?_
 1. Added manual push dismissed/received tracking. This is meant only for clients who do not use Taplytics to _build_ notifications, but build themselves.
 
     Use as follows: 
-     `Taplytics.pushReceived(tl_id, custom_keys)`
+     `Taplytics.trackPushReceived(tl_id, custom_keys)`
 
-    `Taplytics.pushDismissed(tl_id, custom_keys)`
+    `Taplytics.trackPushDismissed(tl_id, custom_keys)`
 
      where tl_id and custom_keys are retrieved from the bundle within the Taplytics notification intent.
     
