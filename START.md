@@ -250,7 +250,7 @@ Taplytics.resetAppUser(new TaplyticsResetUserListener() {
 
 ### 4. Track Events
 
-####Automatic Events
+#### Automatic Events
 
 Some events are automatically tracked by Taplytics and will appear on your dashboard. These events are:
 
@@ -265,7 +265,7 @@ App terminate is also tracked, but this is only true when your MAIN activity is 
 
 No changes are needed in your code for this event tracking to occur.
 
-####Custom Events
+#### Custom Events
 
 To log your own events, simply call:    
 
@@ -289,7 +289,7 @@ customInfo.put("some title", someValue)
 Taplytics.logEvent("Your Event Name", num, customInfo);
 ```
 
-####Revenue Logging
+#### Revenue Logging
 
 It's also possible to log revenue.
 
@@ -313,11 +313,11 @@ Taplytics.logRevenue("Revenue Name", someRevenue, customInfo);
 ### 5. Receiving External Analytics
 At the moment, Taplytics supports Mixpanel, Google Analytics, Adobe Analytics, Flurry, Localytics and Amplitude as a source of external analytics.
 
-####Mixpanel, Adobe, Localytics and Amplitude
+#### Mixpanel, Adobe, Localytics and Amplitude
 
 When the Taplytics SDK is installed alongside any of these sources, all of your existing and future analytics events will be sent to both the source _and_ Taplytics.
 
-####Flurry
+#### Flurry
 
 To properly support sending Flurry data, you simply need to tell Taplytics whenever a new Flurry session begins. This can be done directly after Flurry initialization.
 
@@ -333,11 +333,11 @@ To properly support sending Flurry data, you simply need to tell Taplytics whene
         });
 ```
 
-#####Google Analytics 7.0.0-
+##### Google Analytics 7.0.0-
 
 If you are using Google Analytics 7.0.0 and below, all Google Analytics will automatically be sent to both Google Analytics _and_ Taplytics.
 
-#####Google Analytics 7.3.0+
+##### Google Analytics 7.3.0+
 
 If you are using Google Analytics 7.3.0 or above, you have the option of changing things to send your Google Analytics to both Google _and_ Taplytics.
 
@@ -361,7 +361,7 @@ Taplytics.logGAEvent(t, new HitBuilders.EventBuilder().setCategory("someCategory
 
 ---
 
-##6. Sending to External Analytics
+## 6. Sending to External Analytics
 Taplytics can send experiment data to external analytics sources on startup. This integration is automatic with the exception of Google Analytics where the tracker instance must be passed as a startup option to Taplytics.
 ```
 HashMap<String, Object> options = new HashMap<>();
