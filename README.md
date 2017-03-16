@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [1.15.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.15.0)**
+### **Current Version: [1.16.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.16.0)**
 
 ## Getting Started
 _How do I, as a developer, start using Taplytics?_
@@ -14,6 +14,15 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+
+**[1.16.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.16.0)**
+
+1. Updated the behaviour of Dynamic Variables with respect to sessions:
+
+    In the event that a new session begins, Taplytics will now ensure that async variables have their values updated in the event that they have changed in the new session. Further, sync variables will also have a new value so long as they are re-initialized.
+    
+2. Added support for ListView and RecyclerView header/footer visual editing. 
 
 **[1.15.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.15.0)**
 
