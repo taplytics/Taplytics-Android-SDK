@@ -8,6 +8,8 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |4  | [Custom Data and Tracking Push Interactions](#4-custom-data-and-tracking-push-interactions)             |     
 |5  | [Special Push Options (title, silent, priority)](#5-special-push-options-title-silent-push-etc)   |           
 |6  | [Resetting Users](#6-resetting-users)                                     |
+|6  | [Tracking Self Built Notifications](#7-tracking-self-built-notifications)                                     |
+
 
  ***New!: Taplytics has updated the way push notifications are handled. See [here!](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/PUSH.md#4-custom-data-and-tracking-push-interactions)***
 
@@ -234,7 +236,7 @@ Taplytics.resetAppUser(listener);
 Now, the device that the app is currently running on will no longer receive push notifications until the app user attributes are updated again.
 
 
-## 7. Building your own Notifications and Manually Tracking.
+## 7. Tracking Self Built Notifications
 
 You maybe using Taplytics simply to send push notifications. In the event that you already have a system to build notifications, then when extending the Taplytics BroadcastReceiver, you will see duplicates.
 
