@@ -212,7 +212,7 @@ The dashboard allows for custom data to be entered into your push notifications.
 
 
 | Name  | Values |Explanation
-|---|---|---|---|
+|---|---|---|
 |tl_title   | String | This changes the TITLE of the push notification. By default, it is your application's name. But with this option you can change the title to be anything.  |   
 | tl_silent | boolean: true/false  | Taplytics does give the option to send a SILENT push notification (meaning it will not actually show up in the user's push notifications). It will, however, still triger the pushReceived callback in the custom receiver above!|   
 | tl_priority | integer  | Set the priority of the push notification. For more info see the section ['Correctly set and manage notification priorty' here.](https://developer.android.com/design/patterns/notifications.html) The value set must be the integer that is associated with the priorities, [which can be found here](https://developer.android.com/reference/android/app/Notification.html#PRIORITY_DEFAULT).  |   
