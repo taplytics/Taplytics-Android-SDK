@@ -30,7 +30,7 @@ Synchronous variables take two parameters in its constructor:
 1. Variable name (String)
 2. Default Value
 
-The type of the variable is defined in the first diamond brackets, and can be a `String`, `Number` or `Boolean`.
+The type of the variable is defined in the first diamond brackets, and can be a `String`, `Number`, `Boolean` or `JSON`.
 
 For example, using a variable of type `String`:
 ```java
