@@ -67,6 +67,7 @@ TaplyticsVar<Number> var = new TaplyticsVar<>("name", 5, new TaplyticsVarListene
 
 When the variable's value has been updated, the listener will be called with that updated value. You can specify what you want to do with the variable inside the `variableUpdated` method.
 
+**Note: Default values for dynamic variables cannot be NULL. NULL values may cause default to trigger in all scenarios**
 
 ----------
 
