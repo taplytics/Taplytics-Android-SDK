@@ -4,11 +4,12 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |---|---                                                                        |
 |1  |  Setup: [Android Studio](#android-studio)           |
 |2  | [Receiving Push Notifications](#2-receiving-push-notifications)           |
-|3  | [Push Campaigns](#3-push-campaigns)                                       |
-|4  | [Custom Data and Tracking Push Interactions](#4-custom-data-and-tracking-push-interactions)             |     
-|5  | [Special Push Options (title, silent, priority)](#5-special-push-options-title-silent-push-etc)   |           
-|6  | [Resetting Users](#6-resetting-users)                                     |
-|6  | [Tracking Self Built Notifications](#7-tracking-self-built-notifications)                                     |
+|3 | [Receiving Push Notifications](#2-receiving-push-notifications)           |
+|4  | [Push Campaigns](#4-push-campaigns)                                       |
+|5  | [Custom Data and Tracking Push Interactions](#5-custom-data-and-tracking-push-interactions)             |     
+|6  | [Special Push Options (title, silent, priority)](#6-special-push-options-title-priority-etc)   |           
+|7  | [Resetting Users](#7-resetting-users)                                     |
+|8  | [Tracking Self Built Notifications](#8-tracking-self-built-notifications)                                     |
 
 
  ***New!: Taplytics has updated the way push notifications are handled. See [here!](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/PUSH.md#4-custom-data-and-tracking-push-interactions)***
@@ -97,6 +98,16 @@ Taplytics.setTaplyticsPushTokenListener(new TaplyticsPushTokenListener() {
 ```
 
 ---
+
+## 4. Image Push
+
+Taplytics provides the option to send a push with an image in it directly from the Taplytics dashboard. 
+
+Android will automatically crop all images to be a 2:1 aspect ratio, scaling if necessary. 
+
+Max image size is 10mb. Note that images are not downscaled and if a image is sent, the full file size of the crop will be used. 
+
+
 
 
 ## 3. Push Campaigns
@@ -206,7 +217,7 @@ And then in your manifest:
 <service android:name="com.taplytics.sdk.TLGcmIntentService" />
 ```
 
-## 5. Special Push Options (title, silent push, etc)
+## 5. Special Push Options (title, priority)
 
 The dashboard allows for custom data to be entered into your push notifications. However there are some options that can be added to the custom data for special functionality.
 
@@ -214,7 +225,6 @@ The dashboard allows for custom data to be entered into your push notifications.
 | Name  | Values |Explanation
 |---|---|---|
 |tl_title   | String | This changes the TITLE of the push notification. By default, it is your application's name. But with this option you can change the title to be anything.  |   
-| tl_silent | boolean: true/false  | Taplytics does give the option to send a SILENT push notification (meaning it will not actually show up in the user's push notifications). It will, however, still triger the pushReceived callback in the custom receiver above!|   
 | tl_priority | integer  | Set the priority of the push notification. For more info see the section ['Correctly set and manage notification priorty' here.](https://developer.android.com/design/patterns/notifications.html) The value set must be the integer that is associated with the priorities, [which can be found here](https://developer.android.com/reference/android/app/Notification.html#PRIORITY_DEFAULT).  |   
 
 
