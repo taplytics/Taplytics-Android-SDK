@@ -107,7 +107,9 @@ Android will automatically crop all images to be a 2:1 aspect ratio, scaling if 
 
 Max image size is 10mb. Note that images are not downscaled and if a image is sent, the full file size of the crop will be used. 
 
+Here is an example of a push notification with an image:
 
+![image](https://s3.amazonaws.com/cdn.taplytics.com/Images/android_push_image_example.png)
 
 
 ## 3. Push Campaigns
