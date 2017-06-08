@@ -99,7 +99,7 @@ Taplytics.setTaplyticsPushTokenListener(new TaplyticsPushTokenListener() {
 
 ---
 
-## 4. Image Push
+## 3. Image Push
 
 Taplytics provides the option to send a push with an image in it directly from the Taplytics dashboard. 
 
@@ -112,7 +112,7 @@ Here is an example of a push notification with an image:
 ![image](https://s3.amazonaws.com/cdn.taplytics.com/Images/android_push_image_example.png)
 
 
-## 3. Push Campaigns
+## 4. Push Campaigns
 
 Push Campaigns allow you to send pushes in reaction to events, called triggers. Location based triggers use the Google Play Services Location API in order to create geofences for the locations you specify.
 
@@ -144,7 +144,7 @@ The only additional dependency needed is Google Play Services Location API, whic
 
 **Geofences require location services 9.x**
 
-## 4. Custom Data and Tracking Push Interactions
+## 5. Custom Data and Tracking Push Interactions
 
 Taplytics has changed as of version 1.9 and push notifications are easier than ever:
 
@@ -219,7 +219,7 @@ And then in your manifest:
 <service android:name="com.taplytics.sdk.TLGcmIntentService" />
 ```
 
-## 5. Special Push Options (title, priority)
+## 6. Special Push Options (title, priority)
 
 The dashboard allows for custom data to be entered into your push notifications. However there are some options that can be added to the custom data for special functionality.
 
@@ -230,7 +230,7 @@ The dashboard allows for custom data to be entered into your push notifications.
 | tl_priority | integer  | Set the priority of the push notification. For more info see the section ['Correctly set and manage notification priorty' here.](https://developer.android.com/design/patterns/notifications.html) The value set must be the integer that is associated with the priorities, [which can be found here](https://developer.android.com/reference/android/app/Notification.html#PRIORITY_DEFAULT).  |   
 
 
-## 6. Resetting Users
+## 7. Resetting Users
 
 Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, you may want them to stop receiving push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
 
@@ -248,7 +248,7 @@ Taplytics.resetAppUser(listener);
 Now, the device that the app is currently running on will no longer receive push notifications until the app user attributes are updated again.
 
 
-## 7. Tracking Self Built Notifications
+## 8. Tracking Self Built Notifications
 
 You maybe using Taplytics simply to send push notifications. In the event that you already have a system to build notifications, then when extending the Taplytics BroadcastReceiver, you will see duplicates.
 
