@@ -7,7 +7,7 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |3  | [Image Push](#3-image-push)           |
 |4  | [Push Campaigns](#4-push-campaigns)                                       |
 |5  | [Custom Data and Tracking Push Interactions](#5-custom-data-and-tracking-push-interactions)             |     
-|6  | [Special Push Options (title, silent, priority)](#6-special-push-options-title-priority-etc)   |           
+|6  | [Special Push Options (title, priority)](#6-special-push-options-title-priority)   |           
 |7  | [Resetting Users](#7-resetting-users)                                     |
 |8  | [Tracking Self Built Notifications](#8-tracking-self-built-notifications)                                     |
 
