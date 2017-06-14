@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [1.18.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
+### **Current Version: [1.18.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
 ## Getting Started
 _How do I, as a developer, start using Taplytics?_
@@ -14,6 +14,10 @@ _How do I, as a developer, start using Taplytics?_
 3. Create [Experiments](/EXPERIMENTS.md) or send [Push Notifications](/PUSH.md) to your users!
 
 ## Changelog
+
+**[1.18.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.18.1)**
+
+1. Fixed potential crash if some actions were performed before `startTaplytics` was called.
 
 **[1.18.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.18.0)**
 
@@ -460,15 +464,6 @@ _How do I, as a developer, start using Taplytics?_
 
 1. Fixed potential `ListView` hang.
 2. Enforce button colors on Taplytics dialogs.
-
-**[1.7.15](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.15)**
-
-1. Fixed some initialization errors on Chinese phones.
-2. Persistent experiment caching.
-
-**[1.7.13](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.7.13)**
-
-1. Draft experiments returned in `getRunningExperiments` callback.
 
 
 ## Questions or Need Help
