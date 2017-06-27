@@ -4,7 +4,7 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |---|---                                                                        |
 |1  |  Setup: [Android Studio](#android-studio)           |
 |2  | [Receiving Push Notifications](#2-receiving-push-notifications)           |
-|3  | [Image Push](#3-rick-push-notifications)           |
+|3  | [Image Push](#3-rich-push-notifications)           |
 |4  | [Push Campaigns](#4-push-campaigns)                                       |
 |5  | [Custom Data and Tracking Push Interactions](#5-custom-data-and-tracking-push-interactions)             |     
 |6  | [Special Push Options (title, priority)](#6-special-push-options-title-priority)   |           
