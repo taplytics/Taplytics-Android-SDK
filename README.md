@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https:/88/github.com/taplytics/Taplytics-Android-SDK/blob/master/FAQ/FAQ.md)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [1.18.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
+### **Current Version: [1.19.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
 ## Getting Started
 _How do I, as a developer, start using Taplytics?_
@@ -18,6 +18,12 @@ _How do I, as a developer, start using Taplytics?_
 _The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://taplytics.com/docs?utm_source=github&utm_campaign=documentation&utm_medium=content) for more detailed installation and usage information._
 
 ## Changelog
+
+ **[1.19.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.19.0)**
+ 
+1. Improved visual editing on ListViews and RecyclerViews inside of ViewPagers.
+2. Modified all AsyncTasks to operate on separate thread pool for newer Android SDK versions
+3. Support for visual editing on ListViews and RecyclerViews with row elements that are single Views. Previously only supported rows which are ViewGroups.
 
  **[1.18.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.18.2)**
  
@@ -374,16 +380,6 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 1. Fixed Adobe event tracking to work with Adobe 4.11
 2. Updated geofence logic to ensure geofences won't be lost if they are not successfully added the first time.
-
-**[1.9.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.9.8)**
-
-1. In the event that there are multiple `onClickListener`s stacked on top of each other, Taplytics will default to tracking the _first_ one it finds set up with button clicks. This shouldn't cause issues so long as your app does not have two button click goals stacked on top of each other.
-
-2. **You can no longer ProGuard Taplytics**, hopefully. Taplytics is already proguarded by us. Here is the reasoning behind this:
-  * Recently, many clients have put options in ProGuard that inadvertently proguarded Taplytics a second time. As you can imagine, this makes it impossible for us to use _our_ mappings to find the issue with that stacktrace, as we are referencing a special obfuscation (our animal names!)
-  * Much of Taplytics runs on Reflection to make things more efficient and to access some fields that normally can't be accessed by a library. ProGuard checks method invocations to determine what is used and what isn't, removing those it deems not being used -- however, it is impossible for ProGuard to know when a method is accessed via reflection. This leads to some listeners and other internal systems being removed incorrectly.
-  * To really compress and obfuscate Taplytics, we overload our obfuscations aggressively. This means that many methods and classes will share obfuscated names. The compiler understands this within itself. However, in the event that it gets proguarded again by another system, this can cause unsatisfied links and missing classes.
-  * Retrofit services don't play well with being proguarded twice
 
   ------
 ### [Full historical changelog can be found here](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)
