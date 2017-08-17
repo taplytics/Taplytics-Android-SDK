@@ -4,7 +4,7 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |---|---                                                                        |
 |1  |  Setup: [Android Studio](#android-studio)           |
 |2  | [Receiving Push Notifications](#2-receiving-push-notifications)           |
-|3  | [Image Push](#3-image-push)           |
+|3  | [Image Push](#3-rich-push-notifications)           |
 |4  | [Push Campaigns](#4-push-campaigns)                                       |
 |5  | [Custom Data and Tracking Push Interactions](#5-custom-data-and-tracking-push-interactions)             |     
 |6  | [Special Push Options (title, priority)](#6-special-push-options-title-priority)   |           
@@ -99,13 +99,13 @@ Taplytics.setTaplyticsPushTokenListener(new TaplyticsPushTokenListener() {
 
 ---
 
-## 3. Image Push
+## 3. Rich Push Notifications
 
-Taplytics provides the option to send a push with an image in it directly from the Taplytics dashboard. 
+Implementing rich push notification support can help improve user engagement with your push notifications with image content attached. We currently support JPEG and PNG images sent from the Taplytics dashboard or API.
 
 Android will automatically crop all images to be a 2:1 aspect ratio, scaling if necessary. 
 
-Max image size is 10mb. Note that images are not downscaled and if a image is sent, the full file size of the crop will be used. 
+The max image size that can be uploaded is 10mb. Note that images are not downscaled and if an image is sent, the full file size of the crop will be used. 
 
 Here is an example of a push notification with an image:
 

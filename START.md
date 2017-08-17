@@ -125,7 +125,7 @@ Taplytics.startTaplytics(this, "Your Api Key", options);
 
 | Option Name  | Values | Default | Explanation
 |---|---|---|---|
-|liveUpdate   | boolean: true/false  | set by build (enabled in debug)  | Disable live update to remove the border, and activity refreshing in your debug builds to test the functionality of your applications as if they were in release mode. Note that this functionality is always disabled in release builds.  |   
+|liveUpdate   | boolean: true/false  | set by build (enabled in debug)  | Disable live update to remove the border, and activity refreshing in your debug builds to test the functionality of your applications as if they were in release mode. Note that this functionality is always disabled by _default_ in release builds. Setting liveUpdate to true on a release build will override this and force the application into debug mode.   |   
 | shakeMenu | boolean: true/false   | set by build (enabled in debug)  | In your debug builds, disable the quick menu that appears when you shake your device. This menu is never present in release builds.|   
 | aggressive | boolean  | false | Taplytics has the option to allow for aggressive visual changes. This means that if text or visibility is changed within your app by code outside of Taplytics, Taplytics will force the values to remain what has been set on the dashboard. |  
 | sessionMinutes | int > 0  | 10 | If you do your own analytics alongside taplytics, it helps to define your sessions to be the same length to reconcile your data. Set this to be the same timing interval that your app counts sessions. |   
