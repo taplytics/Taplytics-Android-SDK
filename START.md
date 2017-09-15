@@ -396,6 +396,7 @@ Link a device (even in release mode) to Taplytics.
 Retrieve deeplink through Taplytics deeplink intercepted via either email or SMS device pairing. It contains your Taplytics URL scheme and device token. If you wish to intercept the deeplink and then pair the device yourself in your application's code, call this method in your app's LAUNCH activity or MAIN activity, like so:
 
 ```java
+
 private void handleDeepLink(Intent intent) {
     String tlDeeplink = intent.getDataString(); //example deep link: 'tl-506f596f://e10651f9ef6b'
     if (tlDeeplink == null) {
@@ -403,6 +404,16 @@ private void handleDeepLink(Intent intent) {
             return;
     }
     Taplytics.deviceLink(tlDeeplink);
+}
+```
+Additionally, if you are using singleTop activities, you MUST handle the incoming intents in your activity like so:
+
+```java
+@Override
+protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+    // this handles the intents in the case where your main activity has already been created
+    handleDeepLink(intent);
 }
 ```
 
