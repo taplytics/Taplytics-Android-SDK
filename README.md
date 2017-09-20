@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [1.19.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
+### **Current Version: [1.19.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
 ## Getting Started
 _How do I, as a developer, start using Taplytics?_
@@ -18,6 +18,10 @@ _How do I, as a developer, start using Taplytics?_
 _The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://taplytics.com/docs?utm_source=github&utm_campaign=documentation&utm_medium=content) for more detailed installation and usage information._
 
 ## Changelog
+
+ **[1.19.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.19.1)**
+ 
+1. Refactored Taplytics.delayLoad and Taplytics.startActivity. These now can handle multiple listeners and delay load properly short circuits when startActity is complete.
 
  **[1.19.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.19.0)**
  
