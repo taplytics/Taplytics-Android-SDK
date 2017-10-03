@@ -1,4 +1,4 @@
-#Taplytics-Android SDK
+# Taplytics-Android SDK
 
 _Taplytics is a native mobile A/B testing and push notification platform that helps you optimize your Android app!_
 
