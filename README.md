@@ -6,7 +6,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 ### **Current Version: [1.20.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
-## Note: Update avaialble for android Oreo Push Notificiations. Please see docs (links)
+## Note: Update available for Android Oreo Push Notifications. Please see docs for updates.
 
 ## Getting Started
 _How do I, as a developer, start using Taplytics?_
