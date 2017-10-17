@@ -35,7 +35,7 @@ And you must add the following receiver and service under your application tag:
     <intent-filter>
         <action android:name="com.google.android.c2dm.intent.RECEIVE" />
     </intent-filter>
-    
+
     <intent-filter>
          <action android:name="taplytics.push.OPEN" />
          <action android:name="taplytics.push.DISMISS" />
@@ -49,6 +49,8 @@ Then add the following to your build.gradle:
 ```
 compile("com.google.android.gms:play-services-gcm:9.+")
 ```
+
+If you are using firebase in your project as well, you must match the google play services version to the firebase version.
 
 
 In order to set the notification icon you must add a meta-tag to your manifest specifying the drawable you want to use as the icon:
@@ -77,7 +79,7 @@ Simply add a custom data value to the push with the key `tl_activity` and with t
 
 ### Push Title
 
-By default, the title of a push notification will be the application name. 
+By default, the title of a push notification will be the application name.
 
 Currently, the best way to change the title of a push notification is to add a `tl_title` custom key. For Example:
 
@@ -103,9 +105,9 @@ Taplytics.setTaplyticsPushTokenListener(new TaplyticsPushTokenListener() {
 
 Implementing rich push notification support can help improve user engagement with your push notifications with image content attached. We currently support JPEG and PNG images sent from the Taplytics dashboard or API.
 
-Android will automatically crop all images to be a 2:1 aspect ratio, scaling if necessary. 
+Android will automatically crop all images to be a 2:1 aspect ratio, scaling if necessary.
 
-The max image size that can be uploaded is 10mb. Note that images are not downscaled and if an image is sent, the full file size of the crop will be used. 
+The max image size that can be uploaded is 10mb. Note that images are not downscaled and if an image is sent, the full file size of the crop will be used.
 
 Here is an example of a push notification with an image:
 
@@ -118,10 +120,10 @@ Push Campaigns allow you to send pushes in reaction to events, called triggers. 
 
 For location based triggers add the following two permissions to you manifest:
 
-```xml 
+```xml
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-``` 
+```
 
 The `ACCESS_FINE_LOCATION` permission is used to get the devices location, and the `RECEIVE_BOOT_COMPLETED` permission is to re-register the locations which the campaign is triggered in, which get cleared upon reboot.
 
@@ -148,11 +150,11 @@ The only additional dependency needed is Google Play Services Location API, whic
 
 Taplytics has changed as of version 1.9 and push notifications are easier than ever:
 
-To retrieve custom data set in the Taplytics dashboard, as well as to track push interactions (receive, open, dismiss), simply extend the TLBroadcastReceiver and override the function that you need. Then, rplace the TLGcmBroadcastReceiver in your manifest with that one! 
+To retrieve custom data set in the Taplytics dashboard, as well as to track push interactions (receive, open, dismiss), simply extend the TLBroadcastReceiver and override the function that you need. Then, rplace the TLGcmBroadcastReceiver in your manifest with that one!
 
 Below is an example receiver that explains exactly how this is done. You can put this class directly in your app and start tracking push notifications right away. By default, taplytics will open the LAUNCH activity of your app, but this can be changed by not calling the super (see example below).
 
-Note that Taplytics automatically tracks the following, however if you would like to do so for internal reasons, this is how. 
+Note that Taplytics automatically tracks the following, however if you would like to do so for internal reasons, this is how.
 
 **Note there is also a TLGgcmBroadcastReceiverNonWakeful**.
 
@@ -175,8 +177,8 @@ public class MyBroadcastReceiver extends TLGcmBroadcastReceiver {
 
         //A user clicked on the notification! Do whatever you want here!
 
-        /* If you call through to the super, 
-        Taplytics will launch your app's LAUNCH activity. 
+        /* If you call through to the super,
+        Taplytics will launch your app's LAUNCH activity.
         This is optional. */
         super.pushOpened(context, intent);
     }
@@ -210,7 +212,7 @@ And then in your manifest:
     <intent-filter>
         <action android:name="com.google.android.c2dm.intent.RECEIVE" />
     </intent-filter>
-    
+
     <intent-filter>
          <action android:name="taplytics.push.OPEN" />
          <action android:name="taplytics.push.DISMISS" />
@@ -254,25 +256,24 @@ You maybe using Taplytics simply to send push notifications. In the event that y
 
 To avoid this problem, first, **do not call `super.onReceive()`** where super would be the `TLGCMBroadcastReceiver`.
 
-Now, **Taplytics will not have any push notification tracking if you do this**. 
+Now, **Taplytics will not have any push notification tracking if you do this**.
 
 To mitigate this, you must use the Taplytics functions provided. In each function, **you must pass in the tl_id in the notification attempt**.
 
 #### Push Open
 
     Taplytics.trackPushOpen("tl_id",customKeys);
-        
- Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable 
+
+ Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable
 
 #### Push Dismissed
 
     Taplytics.trackPushDismissed("tl_id",customKeys);
-        
- Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable 
- 
+
+ Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable
+
 #### Push Received
 
     Taplytics.trackPushReceived("tl_id",customKeys);
-        
- Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable 
 
+ Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable
