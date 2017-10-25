@@ -126,6 +126,8 @@ For example:
 ```
 ## Visual Editing
 
+**NOTE: Not currently supported for Android TV / Fire TV**
+
 You don't have to do anything else! You can use the Taplytics dashboard to make all your visual changes. See the docs on visual editing [here](https://taplytics.com/docs/guides/visual-experiments).
 
 #### Dialogs
@@ -139,7 +141,7 @@ fragmentTransaction.addToBackStack("fragment_some_dialog");
 someDialog.show(fragmentTransaction, "fragment_some_dialog");
 ```
 
-Taplytics tracks the appearance/disappearance of the dialog via the backstack manager, which is why it needs to be sent there. The tag is necessary to confirm that the visual edits are being applied to the correct fragment. 
+Taplytics tracks the appearance/disappearance of the dialog via the backstack manager, which is why it needs to be sent there. The tag is necessary to confirm that the visual edits are being applied to the correct fragment.
 
 This only works with dialogFragments as normal Dialogs do not have any unique identifying tags.
 
@@ -271,7 +273,7 @@ By default, Taplytics defines a session as when a user is using the app with les
 
 To manually force a new user session (ex: A user has logged in / out), there exists ```Taplytics.startNewSession```
 
-If there is an internet connection, a new session will be created, and new experiments/variations will be fetched from Taplytics if they exist. 
+If there is an internet connection, a new session will be created, and new experiments/variations will be fetched from Taplytics if they exist.
 
 It can be used as follows:
 

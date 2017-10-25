@@ -1,12 +1,12 @@
 # Taplytics-Android SDK
 
-_Taplytics is a native mobile A/B testing and push notification platform that helps you optimize your Android app!_
+_Taplytics is a native mobile A/B testing and push notification platform that helps you optimize your Android / Android TV / Fire TV app!_
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [1.20.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
+### **Current Version: [1.21.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
-## Note: Update available for Android Oreo Push Notifications. Please see docs for updates.
+#### Note: Update available for Android Oreo Push Notifications. Please see docs for updates.
 
 ## Getting Started
 _How do I, as a developer, start using Taplytics?_
@@ -20,6 +20,11 @@ _How do I, as a developer, start using Taplytics?_
 _The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://taplytics.com/docs?utm_source=github&utm_campaign=documentation&utm_medium=content) for more detailed installation and usage information._
 
 ## Changelog
+
+**[1.21.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.21.0)**
+
+1. Added support for Android TV and Fire TV!
+2. Properly track fragments in a fragment's `childFragmentManager`.
 
 **[1.20.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.20.0)**
 

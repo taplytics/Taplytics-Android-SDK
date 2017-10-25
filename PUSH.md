@@ -50,7 +50,7 @@ Then add the following to your build.gradle:
 compile("com.google.android.gms:play-services-gcm:9.+")
 ```
 
-If you are using firebase in your project as well, you must match the google play services version to the firebase version.
+If you are using Firebase in your project as well, you must match the google play services version to the Firebase version.
 
 
 In order to set the notification icon you must add a meta-tag to your manifest specifying the drawable you want to use as the icon:

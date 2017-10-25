@@ -1,4 +1,4 @@
-You can get started with using Taplytics on Android in minutes. Just follow the steps below:
+You can get started with using Taplytics on your Android phones and Android TV / Fire TV devices in minutes. Just follow the steps below:
 
 |#  |Step                                                                       |
 |---|---                                                                        |
@@ -73,12 +73,12 @@ _**NOTE: You can use EITHER Retrofit2 or Volley.**_
     ```
 
 5. _To be able to connect to Taplytics on a release build, add the following intent-filter tag to the end of your *MAIN* activity:_
-    
+
     First, [get your Taplytics URL Scheme from your Project's Settings](https://taplytics.com/dashboard):
 
     ![image](https://taplytics.com/assets/docs/install-sdk/url-scheme.png)
-    
-    Then, add it to your manifest in its _own_ intent filter (do not merge with another intent filter). 
+
+    Then, add it to your manifest in its _own_ intent filter (do not merge with another intent filter).
 
     ```xml
         ...
@@ -128,16 +128,15 @@ Taplytics.startTaplytics(this, "Your Api Key", options);
 |liveUpdate   | boolean: true/false  | set by build (enabled in debug)  | Disable live update to remove the border, and activity refreshing in your debug builds to test the functionality of your applications as if they were in release mode. Note that this functionality is always disabled by _default_ in release builds. Setting liveUpdate to true on a release build will override this and force the application into debug mode.   |   
 | shakeMenu | boolean: true/false   | set by build (enabled in debug)  | In your debug builds, disable the quick menu that appears when you shake your device. This menu is never present in release builds.|   
 | aggressive | boolean  | false | Taplytics has the option to allow for aggressive visual changes. This means that if text or visibility is changed within your app by code outside of Taplytics, Taplytics will force the values to remain what has been set on the dashboard. |  
-| sessionMinutes | int > 0  | 10 | If you do your own analytics alongside taplytics, it helps to define your sessions to be the same length to reconcile your data. Set this to be the same timing interval that your app counts sessions. |   
-| turnMenu | boolean: true/false | false | If you are doing visual testing on an emulator, or UI automation, many emulators do not have the ability to shake the device. So, to pop up the taplytics menu on such devices, set turnMenu to true, and simply rotate the device from portrait/landscape twice in a row within 30 seconds and this menu will show.|   
+| sessionMinutes | int > 0  | 10 | If you do your own analytics alongside Taplytics, it helps to define your sessions to be the same length to reconcile your data. Set this to be the same timing interval that your app counts sessions. |   
+| turnMenu | boolean: true/false | false | If you are doing visual testing on an emulator, or UI automation, many emulators do not have the ability to shake the device. So, to pop up the Taplytics menu on such devices, set turnMenu to true, and simply rotate the device from portrait/landscape twice in a row within 30 seconds and this menu will show.|   
 | disableBorders | boolean: true/false | set by build (enabled in debug) | This will entirely disable the informational borders Taplytics applies during debug mode testing. Useful to disable for UI testing. Note that this border will NOT show in release mode regardless of setting (except for on previously paired phones).|   
 | testExperiments | HashMap | null | See: [Testing Specific Experiments](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/EXPERIMENTS.md#testing-specific-experiments).|   
 | retrofit | boolean: true/false | set by build (true if only retrofit present) | Taplytics will default to using Volley if it is present. In the event that you have both enabled, you can use this flag to force the library to use retrofit instead. |
 
-
 ### Timeouts
 
-Timeouts have since been removed from individual callbacks and have been added as a starting parameter. 
+Timeouts have since been removed from individual callbacks and have been added as a starting parameter.
 
 By default the timeout is 4000ms. After this timeout has been reached, Taplytics will use only whatever values were loaded from disk for the remainder of the session. All `variableUpdated` callbacks will trigger, all `getRunningExperimentsAndVariations` will return with disk values, and the `TaplyticsExperimentLoadedListener` will trigger. The new values will still attempt to download and they will be cached and ready to be used for the next session.
 
@@ -149,7 +148,7 @@ or
 
 `Taplytics.startTaplytics(Context, ApiKey, TimeoutInMillis)`
 
-Etc. 
+Etc.
 
 #### The Border / Shake menu.
 
@@ -219,20 +218,21 @@ JSONObject attributes = new JSONObject();
 attributes.put("example", 0);
 Taplytics.setUserAttributes(attributes);
 ```
+
 ### Retrieving Session Info
 
 Taplytics also offers a method to retrieve select information of what you know about a session at a given time. This method returns the user's Taplytics identifier (`appUser_id`) and current session id (`session_id`)
 
 ```java
 Taplytics.getSessionInfo(new SessionInfoRetrievedListener() {
-        @Override
-        public void sessionInfoRetrieved(HashMap sessionInfo) {
-            //Use your Hashmap of Session Info
-        }
-    });
+    @Override
+    public void sessionInfoRetrieved(HashMap sessionInfo) {
+        //Use your Hashmap of Session Info
+    }
+});
 ```
 
-### Resetting user attributes or Logging out a user 
+### Resetting user attributes or Logging out a user
 
 Once a user logs out of your app, their User Attributes are no longer valid. You can reset their data by calling `resetAppUser`, make sure you do not set any new user attributes until you receive the callback.
 
@@ -322,15 +322,14 @@ When the Taplytics SDK is installed alongside any of these sources, all of your 
 To properly support sending Flurry data, you simply need to tell Taplytics whenever a new Flurry session begins. This can be done directly after Flurry initialization.
 
 ```java
+FlurryAgent.init(this, "your flurry API key");
 
-    FlurryAgent.init(this, "your flurry API key");
-
-    FlurryAgent.setFlurryAgentListener(new FlurryAgentListener() {
-            @Override
-            public void onSessionStarted() {
-                Taplytics.startFlurrySession();
-            }
-        });
+FlurryAgent.setFlurryAgentListener(new FlurryAgentListener() {
+    @Override
+    public void onSessionStarted() {
+        Taplytics.startFlurrySession();
+    }
+});
 ```
 
 ##### Google Analytics 7.0.0-
@@ -348,22 +347,35 @@ You can do this with a simple find/replace in your application.
 An example:
 
 ```java
-Tracker t = TrackerManager.getInstance().getGoogleAnalyticsTracker(TrackerManager.TrackerName.APP_TRACKER, getApplication());
-t.send(new HitBuilders.EventBuilder().setCategory("someCategory").setAction("someAction").setLabel("someLabel").setValue(12).build());
+Tracker t = TrackerManager.getInstance()
+                          .getGoogleAnalyticsTracker(TrackerManager.TrackerName.APP_TRACKER, getApplication());
+t.send(new HitBuilders.EventBuilder()
+                      .setCategory("someCategory")
+                      .setAction("someAction")
+                      .setLabel("someLabel")
+                      .setValue(12)
+                      .build());
 ```
 
 Would be changed to:
 
 ```java
-Tracker t = TrackerManager.getInstance().getGoogleAnalyticsTracker(TrackerManager.TrackerName.APP_TRACKER, getApplication());
-Taplytics.logGAEvent(t, new HitBuilders.EventBuilder().setCategory("someCategory").setAction("someAction").setLabel("someLabel").setValue(12).build());
+Tracker t = TrackerManager.getInstance()
+                          .getGoogleAnalyticsTracker(TrackerManager.TrackerName.APP_TRACKER, getApplication());
+Taplytics.logGAEvent(t, new HitBuilders.EventBuilder()
+                                       .setCategory("someCategory")
+                                       .setAction("someAction")
+                                       .setLabel("someLabel")
+                                       .setValue(12)
+                                       .build());
 ```
 
 ---
 
 ## 6. Sending to External Analytics
 Taplytics can send experiment data to external analytics sources on startup. This integration is automatic with the exception of Google Analytics where the tracker instance must be passed as a startup option to Taplytics.
-```
+
+```java
 HashMap<String, Object> options = new HashMap<>();
 options.put("gaTracker", tracker);
 Taplytics.startTaplytics(this, "YOUR API KEY", options);
@@ -391,17 +403,15 @@ The properties for all sources are in the following format:
 
 Link a device (even in release mode) to Taplytics.
 
-**NOTE: This is used only for deeplink pairing **
+** NOTE: This is used only for deeplink pairing. **
 
 Retrieve deeplink through Taplytics deeplink intercepted via either email or SMS device pairing. It contains your Taplytics URL scheme and device token. If you wish to intercept the deeplink and then pair the device yourself in your application's code, call this method in your app's LAUNCH activity or MAIN activity, like so:
 
 ```java
-
 private void handleDeepLink(Intent intent) {
     String tlDeeplink = intent.getDataString(); //example deep link: 'tl-506f596f://e10651f9ef6b'
     if (tlDeeplink == null) {
-            // No deeplink found
-            return;
+            return; // No deeplink found
     }
     Taplytics.deviceLink(tlDeeplink);
 }
@@ -424,14 +434,14 @@ Do not forget to [get your Taplytics URL Scheme from your Project's Settings](ht
 Then, add it to your manifest in its _own_ intent filter:
 
 ```xml
-        ...
-             <intent-filter>
-                    <action android:name="android.intent.action.VIEW"/>
-                    <category android:name="android.intent.category.DEFAULT"/>
-                    <category android:name="android.intent.category.BROWSABLE"/>
-                    <data android:scheme="YOUR URL SCHEME"/>
-            </intent-filter>
-    </activity>
+    ...
+         <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="YOUR URL SCHEME"/>
+        </intent-filter>
+</activity>
 ```
 
 **NOTE: The socketIO dependency must be present in the release build (ie not set to `debugcompile`) to pair with a release build.**
