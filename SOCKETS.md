@@ -1,7 +1,7 @@
 ### Sockets
 
 #### Usage
-Sockets are used in the Taplytics SDK to establish a two way connection to Taplytics' servers. This connection is used for editing experiments, both for visual experiments and dynamic variables. However it is only used in the development versions of the app, or devices which have been explicitly paired with Taplytics using a pairing email or text message. 
+Sockets are used in the Taplytics SDK to establish a two way connection to Taplytics' servers. This connection is used for editing experiments, both for visual experiments and dynamic variables. However it is only used in the development versions of the app, or devices which have been explicitly paired with Taplytics using a pairing email or text message.
 
 #### Inclusion in release builds - as of 1.7.0
 
@@ -22,9 +22,10 @@ There was a recent change (1.7.0) in the package name of the socket library used
 
 There is a quick change that will fix this issue, simple change:
 ```
- compile("com.github.nkzawa:socket.io-client:+") {
+compile("com.github.nkzawa:socket.io-client:+") {
             exclude group: 'org.json'
 }
+
 compile("com.github.nkzawa:engine.io-client:+") {
             exclude group: 'org.json'
 }
