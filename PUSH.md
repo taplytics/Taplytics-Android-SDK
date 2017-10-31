@@ -150,7 +150,7 @@ The only additional dependency needed is Google Play Services Location API, whic
 
 Taplytics has changed as of version 1.9 and push notifications are easier than ever:
 
-To retrieve custom data set in the Taplytics dashboard, as well as to track push interactions (receive, open, dismiss), simply extend the TLBroadcastReceiver and override the function that you need. Then, rplace the TLGcmBroadcastReceiver in your manifest with that one!
+To retrieve custom data set in the Taplytics dashboard, as well as to track push interactions (receive, open, dismiss), simply extend the TLBroadcastReceiver and override the function that you need. Then, replace the `TLGcmBroadcastReceiver` in your manifest with that one!
 
 Below is an example receiver that explains exactly how this is done. You can put this class directly in your app and start tracking push notifications right away. By default, taplytics will open the LAUNCH activity of your app, but this can be changed by not calling the super (see example below).
 
@@ -221,6 +221,21 @@ And then in your manifest:
 <service android:name="com.taplytics.sdk.TLGcmIntentService" />
 ```
 
+If you are handling push notifications with custom payloads, the custom data key/values will be added to the `custom_keys` object as seen below in an example push payload:
+
+```json
+{
+  "data": {
+    "message": "Test Push",
+    "tl_id": "",
+    "custom_keys": {
+      "custom_data_key": "custom_data_value"
+    },
+    "image_url": ""
+  }
+}
+```
+
 ## 6. Special Push Options (title, priority)
 
 The dashboard allows for custom data to be entered into your push notifications. However there are some options that can be added to the custom data for special functionality.
@@ -230,7 +245,6 @@ The dashboard allows for custom data to be entered into your push notifications.
 |---|---|---|
 |tl_title   | String | This changes the TITLE of the push notification. By default, it is your application's name. But with this option you can change the title to be anything.  |   
 | tl_priority | integer  | Set the priority of the push notification. For more info see the section ['Correctly set and manage notification priorty' here.](https://developer.android.com/design/patterns/notifications.html) The value set must be the integer that is associated with the priorities, [which can be found here](https://developer.android.com/reference/android/app/Notification.html#PRIORITY_DEFAULT).  |   
-
 
 ## 7. Resetting Users
 
