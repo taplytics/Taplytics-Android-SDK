@@ -21,6 +21,11 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 ## Changelog
 
+**[1.21.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.21.2)**
+
+1. Added more granular language support.
+2. Google Analytics integration maintenance.
+
 **[1.21.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.21.1)**
 
 1. Update Adobe integration
