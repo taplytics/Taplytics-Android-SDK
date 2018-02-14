@@ -283,6 +283,9 @@ Taplytics.startNewSession(new TaplyticsNewSessionListener() {
             public void onNewSession() {
                 // New session here! Only returns if successful.
             }
+            public void onError() {
+                // No new session here! Only returns if unsuccessful.
+            }
         });
 ```
 
@@ -295,6 +298,9 @@ Taplytics.setTaplyticsNewSessionListener(new TaplyticsNewSessionListener() {
      @Override
       public void onNewSession() {
 		//We are in a new session
+      }
+      public void onError() {
+        //We are not in a new session
       }
  });
 ```

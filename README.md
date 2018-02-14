@@ -21,6 +21,13 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 ## Changelog
 
+**[1.22.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.22.0)**
+
+1. Added support for multiline rich push notifications.
+2. Improved error support for creating new sessions by adding an on error callback to `TaplyticsNewSessionListener`.
+3. Enhanced usability of `resetAppUser`.
+4. Ensure that new session rate limit is being followed.
+
 **[1.21.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.21.2)**
 
 1. Added more granular language support.
