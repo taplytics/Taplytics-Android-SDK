@@ -23,8 +23,8 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 **[1.22.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.22.1)**
 
-1. Improved usability of startTaplytics call by adding multithreading capabilities.
-2. Fixed Url encoding issues.
+1. Better support for Multithreaded Application classes.
+2. Improved encoding of URL parameters.
 
 **[1.22.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.22.0)**
 
