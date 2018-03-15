@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [1.22.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
+### **Current Version: [1.22.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
 #### Note: Update available for Android Oreo Push Notifications. Please see docs for updates.
 
@@ -21,6 +21,11 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 ## Changelog
 
+**[1.22.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.22.2)**
+
+1. Enhanced support for views added on runtime.
+2. Ensured that onError callbacks are being called.
+
 **[1.22.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.22.1)**
 
 1. Better support for Multithreaded Application classes.
@@ -31,7 +36,7 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 1. Added support for multiline rich push notifications.
 2. Improved error support for creating new sessions by adding an on error callback to `TaplyticsNewSessionListener`.
 3. Enhanced usability of `resetAppUser`.
-4. Ensure that new session rate limit is being followed.
+4. Ensured that new session rate limit is being followed.
 
 **[1.21.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.21.2)**
 
@@ -56,7 +61,7 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 1. Improved performance of app lifecycle event tracking.
 2. Fixed occurrences where potential memory leaks can happen.
-3. Ensure that visual changes get applied from disk when launching the app with no internet connection.
+3. Ensured that visual changes get applied from disk when launching the app with no internet connection.
 
  **[1.19.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.19.1)**
 
