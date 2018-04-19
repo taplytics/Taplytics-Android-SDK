@@ -31,6 +31,19 @@ if (Taplytics.featureFlagEnabled("featureFlagKey")) {
 }
 ```
 
+## Running Feature Flags
+
+If you would like to see which feature flags are running on a given device, there exists a `getRunningFeatureFlags(TaplyticsRunningFeatureFlagsListener listener)` function which provides a callback with a map of the current feature flags. An example:
+
+```java
+Taplytics.getRunningFeatureFlags(new TaplyticsRunningFeatureFlagsListener() {
+    @Override
+    public void runningFeatureFlags(Map<String, String> featureFlags) {
+        // TODO: Do something with the map.
+    }
+});
+```
+
 ### Dynamic Variables
 
 Taplytics variables are values in your app that are controlled by experiments. Changing the values can update the content or functionality of your app. Variables are reusable between experiments and operate in one of two modes: synchronous or asynchronous.

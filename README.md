@@ -21,6 +21,10 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 ## Changelog
 
+**[1.24.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.24.0)**
+
+1. Added getRunningFeatureFlags functionality.
+
 **[1.23.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.23.0)**
 
 1. Added support for feature flags.
