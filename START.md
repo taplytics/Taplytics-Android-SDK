@@ -162,6 +162,28 @@ You can long-press on the top of the border to switch experiments, or shake your
 
 Taplytics offers a Taplytics.showMenu() function that can be used to call up the experiment menu. This is useful for testing environments that cannot shake or turn the device.
 
+#### User Opt-In / Opt-Out
+
+Using the User Opt-In / Opt-Out APIs allows you to simplify the process to get user consent for analytics tracking and experimentation. Calling `optOutTracking` will disable all Taplytics analytics tracking and experiments, and calling `optInTracking` will re-enable all Taplytics analytics tracking and experiments. You can retrieve the current status using: `hasUserOptedOutTracking`.
+
+```
+// Opt In
+Taplytics.optInTracking(this);
+
+// Opt Out
+Taplytics.optOutTracking(this);
+
+// Check if user has opted out
+Taplytics.hasUserOptedOutTracking(this, new TaplyticsHasUserOptedOutListener() {
+    @Override
+    public void hasUserOptedOutTracking(boolean hasOptedOut) {
+        // use hasOptedOut:
+        // true: user has opted out
+        // false: user has opted in
+    }
+});
+```
+
 ---
 
 ### 3. Setting User Attributes
