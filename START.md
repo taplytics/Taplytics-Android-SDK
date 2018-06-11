@@ -164,7 +164,7 @@ Taplytics offers a Taplytics.showMenu() function that can be used to call up the
 
 #### User Opt-In / Opt-Out
 
-Using the User Opt-In / Opt-Out APIs allows you to simplify the process to get user consent for analytics tracking and experimentation. Calling `optOutUserTracking` will disable all Taplytics analytics tracking and experiments, and calling `optInUserTracking` will re-enable all Taplytics analytics tracking and experiments. You can retrieve the current status using: `hasUserOptedOutTracking`.
+Using the User Opt-In / Opt-Out APIs allows you to simplify the process to get user consent for analytics tracking and experimentation. Calling `optOutTracking` will disable all Taplytics analytics tracking and experiments, and calling `optInTracking` will re-enable all Taplytics analytics tracking and experiments. You can retrieve the current status using: `hasUserOptedOutTracking`.
 
 ```
 // Opt In
