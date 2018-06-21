@@ -221,6 +221,17 @@ attributes.put("subscriptionPlan", "yearly");
 Taplytics.setUserAttributes(attributes);
 ```
 
+You can also attach a callback to notify you when user attributes has finished calling:
+
+```
+Taplytics.setUserAttributes(attributes, new TaplyticsSetUserAttributesListener() {
+    @Override
+    public void finishedSettingUserAttributes() {
+        // Finished setting user attributes
+    }
+});
+```
+
 #### User Attributes on First Launch
 
 User Attributes set before `startTaplytics` is called will be used for experiment segmentation on the first session of your app. Any attributes that are set after `startTaplytics` is called will not be used for experiment segmentation until the next session of your app.
