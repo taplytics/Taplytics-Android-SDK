@@ -7,7 +7,7 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |3  | [Image Push](#3-rich-push-notifications)           |
 |4  | [Push Campaigns](#4-push-campaigns)                                       |
 |5  | [Custom Data and Tracking Push Interactions](#5-custom-data-and-tracking-push-interactions)             |     
-|6  | [Special Push Options (title, priority)](#6-special-push-options-title-priority)   |           
+|6  | [Special Push Options (title, priority, icon)](#6-special-push-options-title-priority)   |           
 |7  | [Resetting Users](#7-resetting-users)                                     |
 |8  | [Tracking Self Built Notifications](#8-tracking-self-built-notifications)                                     |
 
@@ -236,7 +236,7 @@ If you are handling push notifications with custom payloads, the custom data key
 }
 ```
 
-## 6. Special Push Options (title, priority)
+## 6. Special Push Options (title, priority, icon)
 
 The dashboard allows for custom data to be entered into your push notifications. However there are some options that can be added to the custom data for special functionality.
 
