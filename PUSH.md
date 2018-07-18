@@ -245,6 +245,7 @@ The dashboard allows for custom data to be entered into your push notifications.
 |---|---|---|
 |tl_title   | String | This changes the TITLE of the push notification. By default, it is your application's name. But with this option you can change the title to be anything.  |   
 | tl_priority | integer  | Set the priority of the push notification. For more info see the section ['Correctly set and manage notification priorty' here.](https://developer.android.com/design/patterns/notifications.html) The value set must be the integer that is associated with the priorities, [which can be found here](https://developer.android.com/reference/android/app/Notification.html#PRIORITY_DEFAULT).  |   
+| TL_image_icon | boolean | Will replace the large app icon in the push notification with the image that is sent in the push notification when set to true. Defaults to false. | 
 
 ## 7. Resetting Users
 
