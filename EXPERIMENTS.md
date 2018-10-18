@@ -4,6 +4,7 @@ Creating experiments is easy using Taplytics. You can either use our visual edit
 | ----------------- |
 | [Feature Flags](#feature-flags)|
 | [Dynamic Variables](#dynamic-variables) |
+| [Code Blocks](#code-blocks) |
 | [Testing Specific Experiments](#testing-specific-experiments) |
 | [Visual Editing](#visual-editing) |
 | [First-view Experiments](#delay-load) |
@@ -113,7 +114,7 @@ Taplytics.setTaplyticsExperimentsUpdatedListener(new TaplyticsExperimentsUpdated
     }
 });
 ```
-### Code Blocks
+## Code Blocks
 
 Similar to Dynamic Variables, Taplytics has an option for 'Code Blocks'. Code blocks are linked to Experiments through the Taplytics website very much the same way that Dynamic Variables are, and will be executed based on the configuration of the experiment through the Taplytics website. A Code Block is a callback that can be enabled or disabled depending on the variation. If enabled, the code within the callback will be executed. If disabled, the variation will not get the callback.
 
@@ -149,7 +150,7 @@ For example:
 ```
 ## Visual Editing
 
-**NOTE: Not currently supported for Android TV / Fire TV**
+**NOTE: Not currently fully supported for Android TV / Fire TV**
 
 You don't have to do anything else! You can use the Taplytics dashboard to make all your visual changes. See the docs on visual editing [here](https://taplytics.com/docs/guides/visual-experiments).
 
