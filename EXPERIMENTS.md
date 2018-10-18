@@ -2,20 +2,14 @@ Creating experiments is easy using Taplytics. You can either use our visual edit
 
 | Table of Contents |
 | ----------------- |
-| [Dynamic Variables & Code Blocks](#dynamic-variables--code-blocks)|
-| [Code Experiments](#code-experiments-deprecated) |
+| [Feature Flags](#feature-flags)|
+| [Dynamic Variables](#dynamic-variables) |
 | [Testing Specific Experiments](#testing-specific-experiments) |
 | [Visual Editing](#visual-editing) |
 | [First-view Experiments](#delay-load) |
 | [List Running Experiments](#running-experiments) |
 
-## Dynamic Variables & Code Blocks
-
-**To see and modify these variables or blocks on the dashboard, the app must be launched and this code containing the variable or block must be navigated to at least once.**
-
-The code below is used to send the information of the variable or block to Taplytics, so it will appear on the dashboard.
-
-### Feature Flags
+## Feature Flags
 
 Taplytics feature flags operate in synchronous mode.
 
@@ -44,7 +38,7 @@ Taplytics.getRunningFeatureFlags(new TaplyticsRunningFeatureFlagsListener() {
 });
 ```
 
-### Dynamic Variables
+## Dynamic Variables
 
 Taplytics variables are values in your app that are controlled by experiments. Changing the values can update the content or functionality of your app. Variables are reusable between experiments and operate in one of two modes: synchronous or asynchronous.
 
