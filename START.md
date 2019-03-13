@@ -133,6 +133,7 @@ Taplytics.startTaplytics(this, "Your Api Key", options);
 | disableBorders | boolean: true/false | set by build (enabled in debug) | This will entirely disable the informational borders Taplytics applies during debug mode testing. Useful to disable for UI testing. Note that this border will NOT show in release mode regardless of setting (except for on previously paired phones).|   
 | testExperiments | HashMap | null | See: [Testing Specific Experiments](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/EXPERIMENTS.md#testing-specific-experiments).|   
 | retrofit | boolean: true/false | set by build (true if only retrofit present) | Taplytics will default to using Volley if it is present. In the event that you have both enabled, you can use this flag to force the library to use retrofit instead. |
+| trackingId | string | null | To separate all users devices, Taplytics will use device identifiers by default as an identification tool. However, clients are able to provide their own tracking IDs to Taplytics for user devices, such as google advertising IDs. If this option is used, Taplytics will not collect any device identifiers. |
 
 ### Timeouts
 
