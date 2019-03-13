@@ -53,6 +53,9 @@ _**NOTE: You can use EITHER Retrofit2 or Volley.**_
 3. _Override your Application’s onCreate() method (not your main activity) and call Taplytics.startTaplytics(). If you don't have an Application class, create one. It should look like this:_
 
     ```java
+
+    import com.taplytics.sdk.Taplytics;
+
     public class ExampleApplication extends Application {
         @Override
         public void onCreate() {
