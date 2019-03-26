@@ -4,9 +4,9 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [1.31.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
+### **Current Version: [2.0.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
-#### Note: Update available for Android Oreo Push Notifications. Please see docs for updates.
+#### Note: Migrate your project to v2.0.0 to use pushes. Instructions for migrating can be found [here](/MIGRATE.md). 
 
 ## Getting Started
 _How do I, as a developer, start using Taplytics?_
@@ -21,7 +21,11 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 ## Changelog
 
-**[1.31.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.29.0)**
+**[2.0.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.0.0)**
+
+1. Migration from GCM to FCM push notification system.
+
+**[1.31.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/1.31.0)**
 
 1. Added manual device tracking option.
 
