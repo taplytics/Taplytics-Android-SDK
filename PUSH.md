@@ -1,57 +1,40 @@
 Setting up Push Notifications using Taplytics is simple. Follow the steps below to get started.
 
-|#  |Step                                                                       |
+|  |Step                                                                       |
 |---|---                                                                        |
 |1  |  Setup: [Android Studio](#android-studio)           |
 |2  | [Receiving Push Notifications](#2-receiving-push-notifications)           |
 |3  | [Image Push](#3-rich-push-notifications)           |
-|4  | [Push Campaigns](#4-push-campaigns)                                       |
-|5  | [Custom Data and Tracking Push Interactions](#5-custom-data-and-tracking-push-interactions)             |     
-|6  | [Special Push Options (title, priority, icon)](#6-special-push-options-title-priority)   |           
-|7  | [Resetting Users](#7-resetting-users)                                     |
-|8  | [Tracking Self Built Notifications](#8-tracking-self-built-notifications)                                     |
+|4  | [Custom Data and Tracking Push Interactions](#4-custom-data-and-tracking-push-interactions)             |     
+|5  | [Special Push Options (title, priority, icon)](#5-special-push-options-title-priority-icon)   |           
+|6  | [Tracking Self Built Notifications](#6-tracking-self-built-notifications)                                     |
+|7  | [Troubleshooting](#7-troubleshooting)                                     |
 
-
- ***New!: Taplytics has updated the way push notifications are handled. See [here!](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/PUSH.md#4-custom-data-and-tracking-push-interactions)***
+ 
+### Google has [changed](https://developers.google.com/cloud-messaging/android/android-migrate-fcm) the way push notifications work from using GCM to FCM, migrate ASAP!
 
 ## 1. Setup
 
+Set up your Firebase certificate on Taplytics by following these [docs](https://docs.taplytics.com/docs/guides-upload-your-push-certificates#section-google-cloud-messaging-credentials).
+
 ### Android Studio
 
-If you wish to use Push Notifications on Taplytics, you must add the following permissions (replace `com.yourpackagename` with your app's package name) to your Android Manifest:
+Follow these [instructions](https://firebase.google.com/docs/android/setup) to add firebase to your project. Then, add the following to your dependencies in your `build.gradle`:
 
-```xml
-<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-<permission android:name="com.yourpackagename.permission.C2D_MESSAGE"/>
-<uses-permission android:name="com.yourpackagename.permission.C2D_MESSAGE" />
-<uses-permission android:name="android.permission.WAKE_LOCK" />
+```implementation com.google.firebase:firebase-messaging:17.+```
+
+### Android Manifest
+
+If you wish to use Push Notifications on Taplytics, you must add the following to your `AndroidManifest.xml` file under the application tag:
+
 ```
-And you must add the following receiver and service under your application tag:
-
-```xml
-<receiver
-    android:name="com.taplytics.sdk.TLGcmBroadcastReceiver"
-    android:permission="com.google.android.c2dm.permission.SEND" >
+<service
+    android:name="com.taplytics.sdk.fcm.TLFirebaseMessagingService">
     <intent-filter>
-        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
     </intent-filter>
-
-    <intent-filter>
-         <action android:name="taplytics.push.OPEN" />
-         <action android:name="taplytics.push.DISMISS" />
-    </intent-filter>
-</receiver>
-<service android:name="com.taplytics.sdk.TLGcmIntentService" />
+</service>
 ```
-
-Then add the following to your build.gradle:
-
-```
-compile("com.google.android.gms:play-services-gcm:9.+")
-```
-
-If you are using Firebase in your project as well, you must match the google play services version to the Firebase version.
-
 
 In order to set the notification icon you must add a meta-tag to your manifest specifying the drawable you want to use as the icon:
 
@@ -62,11 +45,9 @@ In order to set the notification icon you must add a meta-tag to your manifest s
 
 If this isn't set the application's icon will be used instead.
 
----
-
 ## 2. Receiving Push Notifications
 
-To send your users Push Notifications, we'll need you to upload your Google Cloud Messaging credentials. Please follow [this guide](https://taplytics.com/docs/guides/push-notifications/google-push-certificates) to do so.
+To send your users Push Notifications, we'll need you to upload your Google Cloud Messaging credentials. Please follow [this guide](https://docs.taplytics.com/docs/guides-upload-your-push-certificates#section-google-cloud-messaging-credentials) to do so.
 
 ### Activity Routing
 
@@ -99,8 +80,6 @@ Taplytics.setTaplyticsPushTokenListener(new TaplyticsPushTokenListener() {
 });
 ```
 
----
-
 ## 3. Rich Push Notifications
 
 Implementing rich push notification support can help improve user engagement with your push notifications with image content attached. We currently support JPEG and PNG images sent from the Taplytics dashboard or API.
@@ -113,40 +92,7 @@ Here is an example of a push notification with an image:
 
 ![image](https://s3.amazonaws.com/cdn.taplytics.com/Images/android_push_image_example.png)
 
-
-## 4. Push Campaigns
-
-Push Campaigns allow you to send pushes in reaction to events, called triggers. Location based triggers use the Google Play Services Location API in order to create geofences for the locations you specify.
-
-For location based triggers add the following two permissions to you manifest:
-
-```xml
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-```
-
-The `ACCESS_FINE_LOCATION` permission is used to get the devices location, and the `RECEIVE_BOOT_COMPLETED` permission is to re-register the locations which the campaign is triggered in, which get cleared upon reboot.
-
-
-Also needed is a boot receiver to re-register events, and an intent service to react to geofence events. Both which go in your manifest, under the application tag:
-
-```xml
-<receiver android:name="com.taplytics.sdk.TLBootReceiver">
-	<intent-filter>
-		<action android:name="android.intent.action.BOOT_COMPLETED"/>
-	</intent-filter>
-</receiver>
-
-<service android:name="com.taplytics.sdk.TLGeofenceEventService"/>
-```
-
-The only additional dependency needed is Google Play Services Location API, which you can add to your module's  `build.gradle` file under dependencies:
-
-`compile 'com.google.android.gms:play-services-location:9.+'`
-
-**Geofences require location services 9.x**
-
-## 5. Custom Data and Tracking Push Interactions
+## 4. Custom Data and Tracking Push Interactions
 
 Taplytics has changed as of version 1.9 and push notifications are easier than ever:
 
@@ -218,7 +164,6 @@ And then in your manifest:
          <action android:name="taplytics.push.DISMISS" />
     </intent-filter>
 </receiver>
-<service android:name="com.taplytics.sdk.TLGcmIntentService" />
 ```
 
 If you are handling push notifications with custom payloads, the custom data key/values will be added to the `custom_keys` object as seen below in an example push payload:
@@ -236,7 +181,7 @@ If you are handling push notifications with custom payloads, the custom data key
 }
 ```
 
-## 6. Special Push Options (title, priority, icon)
+## 5. Special Push Options (title, priority, icon)
 
 The dashboard allows for custom data to be entered into your push notifications. However there are some options that can be added to the custom data for special functionality.
 
@@ -244,32 +189,14 @@ The dashboard allows for custom data to be entered into your push notifications.
 | Name  | Values |Explanation
 |---|---|---|
 |tl_title   | String | This changes the TITLE of the push notification. By default, it is your application's name. But with this option you can change the title to be anything.  |   
-| tl_priority | integer  | Set the priority of the push notification. For more info see the section ['Correctly set and manage notification priorty' here.](https://developer.android.com/design/patterns/notifications.html) The value set must be the integer that is associated with the priorities, [which can be found here](https://developer.android.com/reference/android/app/Notification.html#PRIORITY_DEFAULT).  |   
+| tl_priority | integer  | Set the priority of the push notification. For more info see the section ['Correctly set and manage notification priority' here.](https://developer.android.com/design/patterns/notifications.html) The value set must be the integer that is associated with the priorities, [which can be found here](https://developer.android.com/reference/android/app/Notification.html#PRIORITY_DEFAULT).  |   
 | tl_image_icon | boolean | Will not show a preview image as the notification icon when set to false. Defaults to true. | 
 | tl_large_icon | boolean | Will show the app icon in the notification when set to true. Defaults to false. | 
 
 
-## 7. Resetting Users
+## 6. Tracking Self Built Notifications
 
-Sometimes, it may be useful to reset an app user for push notifications. For instance, if a user is logged out in your app, you may want them to stop receiving push notifications. If you wish to turn off push notifications for an app user, it can be done as such:
-
-```java
-TaplyticsResetUserListener listener = new TaplyticsResetUserListener() {
-  @Override
-  public void finishedResettingUser() {
-    // Do stuff
-  }
-};
-
-Taplytics.resetAppUser(listener);
-```
-
-Now, the device that the app is currently running on will no longer receive push notifications until the app user attributes are updated again.
-
-
-## 8. Tracking Self Built Notifications
-
-You maybe using Taplytics simply to send push notifications. In the event that you already have a system to build notifications, then when extending the Taplytics BroadcastReceiver, you will see duplicates.
+You may be using Taplytics simply to send push notifications. If you already have a system to build notifications, then extending the Taplytics BroadcastReceiver will cause you to see duplicates.
 
 To avoid this problem, first, **do not call `super.onReceive()`** where super would be the `TLGCMBroadcastReceiver`.
 
@@ -294,3 +221,15 @@ To mitigate this, you must use the Taplytics functions provided. In each functio
     Taplytics.trackPushReceived("tl_id",customKeys);
 
  Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable
+ 
+
+## 7. Troubleshooting
+
+Using the shake menu, you can copy the token to your clipboard, force to save the token to Taplytics, or renew the token.
+
+```
+Taplytics.showMenu(); // Shows the shake menu, exposing some useful items like the push token
+```
+
+![image](https://s3.amazonaws.com/cdn.taplytics.com/images/shake_menu_push_options.png)
+
