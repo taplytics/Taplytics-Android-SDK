@@ -31,7 +31,7 @@ In your app `build.gradle` dependencies add the following:
 
 ```
 implementation 'com.google.firebase:firebase-messaging:17.+'
-implementation 'com.google.firebase:firebase-core:16.0.1'
+implementation 'com.google.firebase:firebase-core:16.0.8'
 ```
 
 Add the following to the end of your `build.gradle` file if you haven't already: 
