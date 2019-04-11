@@ -29,7 +29,8 @@ If you wish to use Push Notifications on Taplytics, you must add the following t
 
 ```
 <service
-    android:name="com.taplytics.sdk.fcm.TLFirebaseMessagingService">
+    android:name="com.taplytics.sdk.fcm.TLFirebaseMessagingService"
+    android:exported="false">
     <intent-filter>
         <action android:name="com.google.firebase.MESSAGING_EVENT" />
     </intent-filter>
@@ -101,8 +102,6 @@ To retrieve custom data set in the Taplytics dashboard, as well as to track push
 Below is an example receiver that explains exactly how this is done. You can put this class directly in your app and start tracking push notifications right away. By default, taplytics will open the LAUNCH activity of your app, but this can be changed by not calling the super (see example below).
 
 Note that Taplytics automatically tracks the following, however if you would like to do so for internal reasons, this is how.
-
-**Note there is also a TLGgcmBroadcastReceiverNonWakeful**.
 
 ```java
 /**
