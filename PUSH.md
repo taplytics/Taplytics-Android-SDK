@@ -1,16 +1,15 @@
 Setting up Push Notifications using Taplytics is simple. Follow the steps below to get started.
 
-|  |Step                                                                       |
-|---|---                                                                        |
-|1  |  Setup: [Android Studio](#android-studio)           |
-|2  | [Receiving Push Notifications](#2-receiving-push-notifications)           |
-|3  | [Image Push](#3-rich-push-notifications)           |
-|4  | [Custom Data and Tracking Push Interactions](#4-custom-data-and-tracking-push-interactions)             |     
-|5  | [Special Push Options (title, priority, icon)](#5-special-push-options-title-priority-icon)   |           
-|6  | [Manual Token Registration](#6-manual-token-registration)                                     |
-|7  | [Tracking Self Built Notifications](#7-tracking-self-built-notifications)                                 |
-|8  | [Troubleshooting](#8-troubleshooting)                                     |
-
+|   | Step                                                                                        |
+|---|---------------------------------------------------------------------------------------------|
+| 1 | Setup [Android Studio](#android-studio)                                                     |
+| 2 | [Receiving Push Notifications](#2-receiving-push-notifications)                             |
+| 3 | [Image Push](#3-rich-push-notifications)                                                    |
+| 4 | [Custom Data and Tracking Push Interactions](#4-custom-data-and-tracking-push-interactions) |
+| 5 | [Special Push Options (title, priority, icon)](#5-special-push-options-title-priority-icon) |
+| 6 | [Manual Token Registration (Optional)](#6-manual-token-registration-optional)               |
+| 7 | [Tracking Self Built Notifications](#7-tracking-self-built-notifications)                   |
+| 8 | [Troubleshooting](#8-troubleshooting)                                                       |
  
 ### Google has [changed](https://developers.google.com/cloud-messaging/android/android-migrate-fcm) the way push notifications work from using GCM to FCM, migrate ASAP!
 
