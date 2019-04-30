@@ -20,7 +20,7 @@ _How do I, as a developer, start using Taplytics?_
 _The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://taplytics.com/docs?utm_source=github&utm_campaign=documentation&utm_medium=content) for more detailed installation and usage information._
 
 ## Changelog
-**[2.1.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.2.0)**
+**[2.2.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.2.0)**
 
 - Added TLFirebaseMessagingServiceLite class 
 
