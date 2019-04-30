@@ -7,8 +7,9 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 |3  | [Image Push](#3-rich-push-notifications)           |
 |4  | [Custom Data and Tracking Push Interactions](#4-custom-data-and-tracking-push-interactions)             |     
 |5  | [Special Push Options (title, priority, icon)](#5-special-push-options-title-priority-icon)   |           
-|6  | [Tracking Self Built Notifications](#6-tracking-self-built-notifications)                                     |
-|7  | [Troubleshooting](#7-troubleshooting)                                     |
+|6  | [Manual Token Registration](#6-manual-token-registration)                                     |
+|7  | [Tracking Self Built Notifications](#7-tracking-self-built-notifications)                                 |
+|8  | [Troubleshooting](#8-troubleshooting)                                     |
 
  
 ### Google has [changed](https://developers.google.com/cloud-messaging/android/android-migrate-fcm) the way push notifications work from using GCM to FCM, migrate ASAP!
@@ -192,8 +193,14 @@ The dashboard allows for custom data to be entered into your push notifications.
 | tl_image_icon | boolean | Will not show a preview image as the notification icon when set to false. Defaults to true. | 
 | tl_large_icon | boolean | Will show the app icon in the notification when set to true. Defaults to false. | 
 
+## 6. Manual Token Registration (Optional)
 
-## 6. Tracking Self Built Notifications
+If you already have a system to receive Firebase push tokens, you can use `TLFirebaseMessagingServiceLite` instead of `TLFirebaseMessagingService`. Instead of overriding `onNewToken` and saving the token to our system automatically, all `TLFirebaseMessagingServiceLite` does is process the push notification.
+
+You then must use `Taplytics.savePushToken("PUSH_TOKEN")` to enable push notifications through Taplytics.
+
+
+## 7. Tracking Self Built Notifications
 
 You may be using Taplytics simply to send push notifications. If you already have a system to build notifications, then extending the Taplytics BroadcastReceiver will cause you to see duplicates.
 
@@ -222,7 +229,7 @@ To mitigate this, you must use the Taplytics functions provided. In each functio
  Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable
  
 
-## 7. Troubleshooting
+## 8. Troubleshooting
 
 Using the shake menu, you can copy the token to your clipboard, force to save the token to Taplytics, or renew the token.
 
