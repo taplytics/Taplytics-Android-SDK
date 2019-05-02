@@ -1,16 +1,15 @@
 Setting up Push Notifications using Taplytics is simple. Follow the steps below to get started.
 
-|  |Step                                                                       |
-|---|---                                                                        |
-|1  |  Setup: [Android Studio](#android-studio)           |
-|2  | [Receiving Push Notifications](#2-receiving-push-notifications)           |
-|3  | [Image Push](#3-rich-push-notifications)           |
-|4  | [Custom Data and Tracking Push Interactions](#4-custom-data-and-tracking-push-interactions)             |     
-|5  | [Special Push Options (title, priority, icon)](#5-special-push-options-title-priority-icon)   |           
-|6  | [Manual Token Registration](#6-manual-token-registration)                                     |
-|7  | [Tracking Self Built Notifications](#7-tracking-self-built-notifications)                                 |
-|8  | [Troubleshooting](#8-troubleshooting)                                     |
-
+|   | Step                                                                                        |
+|---|---------------------------------------------------------------------------------------------|
+| 1 | Setup [Android Studio](#android-studio)                                                     |
+| 2 | [Receiving Push Notifications](#2-receiving-push-notifications)                             |
+| 3 | [Image Push](#3-rich-push-notifications)                                                    |
+| 4 | [Custom Data and Tracking Push Interactions](#4-custom-data-and-tracking-push-interactions) |
+| 5 | [Special Push Options (title, priority, icon)](#5-special-push-options-title-priority-icon) |
+| 6 | [Manual Token Registration (Optional)](#6-manual-token-registration-optional)               |
+| 7 | [Tracking Self Built Notifications](#7-tracking-self-built-notifications)                   |
+| 8 | [Troubleshooting](#8-troubleshooting)                                                       |
  
 ### Google has [changed](https://developers.google.com/cloud-messaging/android/android-migrate-fcm) the way push notifications work from using GCM to FCM, migrate ASAP!
 
@@ -195,7 +194,12 @@ The dashboard allows for custom data to be entered into your push notifications.
 
 ## 6. Manual Token Registration (Optional)
 
-If you already have a system to receive Firebase push tokens, you can use `TLFirebaseMessagingServiceLite` instead of `TLFirebaseMessagingService`. Instead of overriding `onNewToken` and saving the token to our system automatically, all `TLFirebaseMessagingServiceLite` does is process the push notification.
+If you already have a system to receive Firebase push tokens, you can use `TLFirebaseMessagingServiceLite` instead of `TLFirebaseMessagingService`. Instead of overriding `onNewToken` and saving the token to our system automatically, all `TLFirebaseMessagingServiceLite` does is process the push notification. You must also use the start option `manualPushToken` and set it to true to bypass saving the token automatically.
+
+```
+options.put("manualPushToken", true);
+Taplytics.startTaplytics(this, "YOUR_API_KEY", options);
+```
 
 You then must use `Taplytics.savePushToken("PUSH_TOKEN")` to enable push notifications through Taplytics.
 
