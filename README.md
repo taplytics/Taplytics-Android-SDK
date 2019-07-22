@@ -23,6 +23,7 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 **[2.5.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.5.0)**
 
 - Added `logging` option to enable debug logging
+- Updated recycler view visual editing
 
 **[2.4.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.4.0)**
 
