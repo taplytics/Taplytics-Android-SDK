@@ -128,7 +128,7 @@ Taplytics.startTaplytics(this, "Your Api Key", options);
 
 | Option Name  | Values | Default | Explanation
 |---|---|---|---|
-|liveUpdate   | boolean: true/false  | set by build (enabled in debug)  | Disable live update to remove the border, and activity refreshing in your debug builds to test the functionality of your applications as if they were in release mode. Note that this functionality is always disabled by _default_ in release builds. Setting liveUpdate to true on a release build will override this and force the application into debug mode.   |   
+| liveUpdate   | boolean: true/false  | set by build (enabled in debug)  | Disable live update to remove the border, and activity refreshing in your debug builds to test the functionality of your applications as if they were in release mode. Note that this functionality is always disabled by _default_ in release builds. Setting liveUpdate to true on a release build will override this and force the application into debug mode.   |   
 | shakeMenu | boolean: true/false   | set by build (enabled in debug)  | In your debug builds, disable the quick menu that appears when you shake your device. This menu is never present in release builds.|   
 | aggressive | boolean  | false | Taplytics has the option to allow for aggressive visual changes. This means that if text or visibility is changed within your app by code outside of Taplytics, Taplytics will force the values to remain what has been set on the dashboard. |  
 | sessionMinutes | int > 0  | 10 | If you do your own analytics alongside Taplytics, it helps to define your sessions to be the same length to reconcile your data. Set this to be the same timing interval that your app counts sessions. |   
@@ -137,6 +137,7 @@ Taplytics.startTaplytics(this, "Your Api Key", options);
 | testExperiments | HashMap | null | See: [Testing Specific Experiments](https://github.com/taplytics/Taplytics-Android-SDK/blob/master/EXPERIMENTS.md#testing-specific-experiments).|   
 | retrofit | boolean: true/false | set by build (true if only retrofit present) | Taplytics will default to using Volley if it is present. In the event that you have both enabled, you can use this flag to force the library to use retrofit instead. |
 | trackingId | string | null | To separate all users devices, Taplytics will use device identifiers by default as an identification tool. However, clients are able to provide their own tracking IDs to Taplytics for user devices, such as google advertising IDs. If this option is used, Taplytics will not collect any device identifiers. |
+| logging | boolean: true/false | false | This will provide more verbose logging from Taplytics to help with debugging. |
 
 ### Timeouts
 
@@ -192,7 +193,7 @@ Taplytics.hasUserOptedOutTracking(this, new TaplyticsHasUserOptedOutListener() {
 
 ### 3. Setting User Attributes
 
-It's possible to send custom user attributes to Taplytics using a JSONObject of user info.
+It's possible to send custom user attributes to Taplytics using a JSONObject of user info. If logging is enabled, logs will show the user attributes every time they are set or updated.
 
 The possible fields are:
 
@@ -271,7 +272,7 @@ Taplytics.getSessionInfo(new SessionInfoRetrievedListener() {
 
 ### Resetting user attributes or Logging out a user
 
-Once a user logs out of your app, their User Attributes are no longer valid. You can reset their data by calling `resetAppUser`, make sure you do not set any new user attributes until you receive the callback.
+Once a user logs out of your app, their User Attributes are no longer valid. You can reset their data by calling `resetAppUser`, make sure you do not set any new user attributes until you receive the callback. If logging is enabled, logs will show if there is an error resetting the user.
 
 ```java
 Taplytics.resetAppUser(new TaplyticsResetUserListener() {
@@ -325,6 +326,8 @@ JSONObject customInfo = new JSONObject();
 customInfo.put("some title", someValue)
 Taplytics.logEvent("Your Event Name", num, customInfo);
 ```
+
+If logging is enabled, logs will show the logged event name and data.
 
 #### Revenue Logging
 
@@ -410,7 +413,7 @@ Taplytics.logGAEvent(t, new HitBuilders.EventBuilder()
 ---
 
 ## 6. Sending to External Analytics
-Taplytics can send experiment data to external analytics sources on startup. This integration is automatic with the exception of Google Analytics where the tracker instance must be passed as a startup option to Taplytics.
+Taplytics can send experiment data to external analytics sources on startup. This integration is automatic with the exception of Google Analytics where the tracker instance must be passed as a startup option to Taplytics. If logging is enabled, logs will show the logged experiment data and the analytics source(s) it was sent to.
 
 ```java
 HashMap<String, Object> options = new HashMap<>();
