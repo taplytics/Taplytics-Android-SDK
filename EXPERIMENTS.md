@@ -41,7 +41,7 @@ Taplytics.getRunningFeatureFlags(new TaplyticsRunningFeatureFlagsListener() {
 
 ## Dynamic Variables
 
-Taplytics variables are values in your app that are controlled by experiments. Changing the values can update the content or functionality of your app. Variables are reusable between experiments and operate in one of two modes: synchronous or asynchronous.
+Taplytics variables are values in your app that are controlled by experiments. Changing the values can update the content or functionality of your app. If logging is enabled, logs will show when a variable has been set, updated or when `get()` is called. Variables are reusable between experiments and operate in one of two modes: synchronous or asynchronous.
 
 #### Synchronous
 
@@ -265,7 +265,9 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ## Running Experiments
 
-If you would like to see which variations and experiments are running on a given device, there exists a `getRunningExperimentsAndVariations(TaplyticsRunningExperimentsListener listener)` function which provides a callback with a map of the current experiments and their running variation. An example:
+If you would like to see which variations and experiments are running on a given device, there exists a `getRunningExperimentsAndVariations(TaplyticsRunningExperimentsListener listener)` function which provides a callback with a map of the current experiments and their running variation. If logging is enabled, logs will also show this map.
+
+An example:
 
 ```java
 Taplytics.getRunningExperimentsAndVariations(new TaplyticsRunningExperimentsListener() {
@@ -297,7 +299,7 @@ By default, Taplytics defines a session as when a user is using the app with les
 
 To manually force a new user session (ex: A user has logged in / out), there exists ```Taplytics.startNewSession```
 
-If there is an internet connection, a new session will be created, and new experiments/variations will be fetched from Taplytics if they exist.
+If there is an internet connection, a new session will be created, and new experiments/variations will be fetched from Taplytics if they exist. If logging is enabled, logs will show when a new session has been started or if an error has occurred.
 
 It can be used as follows:
 
