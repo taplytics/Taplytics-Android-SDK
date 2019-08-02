@@ -214,21 +214,23 @@ Now, **Taplytics will not have any push notification tracking if you do this**.
 
 To mitigate this, you must use the Taplytics functions provided. In each function, **you must pass in the tl_id in the notification attempt**.
 
+The tl_id is the push notification id from Taplytics and is part of the overall notification payload.
+
 #### Push Open
 
-    Taplytics.trackPushOpen("tl_id",customKeys);
+    Taplytics.trackPushOpen(tl_id,customKeys);
 
  Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable
 
 #### Push Dismissed
 
-    Taplytics.trackPushDismissed("tl_id",customKeys);
+    Taplytics.trackPushDismissed(tl_id,customKeys);
 
  Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable
 
 #### Push Received
 
-    Taplytics.trackPushReceived("tl_id",customKeys);
+    Taplytics.trackPushReceived(tl_id,customKeys);
 
  Where tl_id is retrieved from the notification intent. CustomKeys is the metadata passed into the notification. It is optional/nullable
  
