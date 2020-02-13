@@ -138,6 +138,7 @@ Taplytics.startTaplytics(this, "Your Api Key", options);
 | retrofit | boolean: true/false | set by build (true if only retrofit present) | Taplytics will default to using Volley if it is present. In the event that you have both enabled, you can use this flag to force the library to use retrofit instead. |
 | trackingId | string | null | To separate all users devices, Taplytics will use device identifiers by default as an identification tool. However, clients are able to provide their own tracking IDs to Taplytics for user devices, such as google advertising IDs. If this option is used, Taplytics will not collect any device identifiers. |
 | logging | boolean: true/false | false | This will provide more verbose logging from Taplytics to help with debugging. |
+| userBucketing | boolean: true/false | false | This will turn on user based bucketing logic for your SDK, creating an anonymous `user_id` if one is not provided. Otherwise it will take the saved `user_id` from the device that was saved using `setUserAttributes`. |
 
 ### Timeouts
 
