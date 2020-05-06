@@ -26,6 +26,17 @@ if (Taplytics.featureFlagEnabled("featureFlagKey")) {
 }
 ```
 
+#### Setting a Default value
+
+In the event that Taplytics was unable to load, Taplytics will by default return FALSE when using ```featureFlagEnabled```. To prevent this behavour and instead default a feature to being ON in cases of no network, pass in the desired default behavior. 
+
+```java
+if (Taplytics.featureFlagEnabled("featureFlagKey", true)) {
+    //Put feature code here, or launch feature from here
+}
+```
+
+
 ## Running Feature Flags
 
 If you would like to see which feature flags are running on a given device, there exists a `getRunningFeatureFlags(TaplyticsRunningFeatureFlagsListener listener)` function which provides a callback with a map of the current feature flags. An example:

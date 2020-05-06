@@ -20,6 +20,12 @@ _How do I, as a developer, start using Taplytics?_
 _The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://taplytics.com/docs?utm_source=github&utm_campaign=documentation&utm_medium=content) for more detailed installation and usage information._
 
 ## Changelog
+**[2.8.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.8.0)**
+
+- Added the ability to provide a default value to Feature Flags
+- Updates for upcoming speed enhancements
+
+
 **[2.7.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.7.1)**
 
 - Fixed minor crashes 
