@@ -358,6 +358,16 @@ At the moment, Taplytics supports Mixpanel, Google Analytics, Adobe Analytics, F
 
 When the Taplytics SDK is installed alongside any of these sources, all of your existing and future analytics events will be sent to both the source _and_ Taplytics.
 
+##### Amplitude
+
+As of [2.9.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.9.0), experiments and variations will be set as user properties once Taplytics loads the experiments so that experiments and variations are attributed to events in Amplitude thereafter. The property will be `TL_Experiments` as an array of strings where each value is the exp/var in this format: 
+
+`
+exp:var
+`
+
+To instead log the experiments as an event `TL_Experiments`, use the start option `expAmplitudeEventFormat` in the start options and set it to `true`.
+
 #### Flurry
 
 To properly support sending Flurry data, you simply need to tell Taplytics whenever a new Flurry session begins. This can be done directly after Flurry initialization.
