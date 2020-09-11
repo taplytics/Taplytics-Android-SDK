@@ -2,7 +2,7 @@
 
 _Taplytics is a native mobile A/B testing and push notification platform that helps you optimize your Android / Android TV / Fire TV app!_
 
-**[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
+**[Get started with Taplytics](https://docs.taplytics.com/docs/android-getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
 ### **Current Version: [2.9.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
@@ -17,7 +17,7 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Questions or Need Help
 
-_The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://taplytics.com/docs?utm_source=github&utm_campaign=documentation&utm_medium=content) for more detailed installation and usage information._
+_The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://docs.taplytics.com/docs?utm_source=github&utm_campaign=documentation&utm_medium=content) for more detailed installation and usage information._
 
 ## Changelog
 **[2.9.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.9.1)**
