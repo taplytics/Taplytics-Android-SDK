@@ -17,9 +17,15 @@ _How do I, as a developer, start using Taplytics?_
 
 ## Questions or Need Help
 
-_The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://taplytics.com/docs?utm_source=github&utm_campaign=documentation&utm_medium=content) for more detailed installation and usage information._
+_The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://docs.taplytics.com/docs) for more detailed installation and usage information._
 
 ## Changelog
+
+**[2.10.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.10.0)**
+
+- Fixed new session listener not being called when a new session is started
+
+
 **[2.9.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.9.1)**
 
 - Fixed cached experiments not being used when timeout is reached
