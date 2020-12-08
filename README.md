@@ -21,6 +21,10 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 ## Changelog
 
+**[2.10.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.10.1)**
+- Fix TaplyticsVarListener memory leak
+- Log experiments received from config to Mixpanel
+
 **[2.10.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.10.0)**
 
 - Fixed new session listener not being called when a new session is started
