@@ -1,0 +1,88 @@
+---
+- - :name_project
+  - Taplytics Android SDK
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2017-02-14 18:21:27.372019000 Z
+- - :whitelist
+  - MIT
+  - :who: Aaron Glazer
+    :why: Approved for use
+    :versions: []
+    :when: 2017-02-14 18:21:52.120647000 Z
+- - :whitelist
+  - Apache 2.0
+  - :who: Aaron Glazer
+    :why: Approved for use
+    :versions: []
+    :when: 2017-02-14 18:21:54.622719000 Z
+- - :whitelist
+  - BSD-3-Clause
+  - :who: Aaron Glazer
+    :why: Approved for use
+    :versions: []
+    :when: 2017-02-14 18:22:01.093093000 Z
+- - :license
+  - volley
+  - Apache 2.0
+  - :who: Aaron Glazer
+    :why: Malformed license file
+    :versions: []
+    :when: 2017-02-14 19:19:44.913973000 Z
+- - :license
+  - socket.io-client
+  - MIT
+  - :who: Aaron Glazer
+    :why: Malformed license file
+    :versions: []
+    :when: 2017-02-14 19:19:44.913973000 Z
+- - :license
+  - engine.io-client
+  - MIT
+  - :who: Aaron Glazer
+    :why: Malformed license file
+    :versions: []
+    :when: 2017-02-14 19:19:44.913973000 Z
+- - :ignore
+  - support-compat
+  - :who: Aaron Glazer
+    :why: Core Android Library
+    :versions: []
+    :when: 2017-02-14 19:55:43.017836000 Z
+- - :ignore
+  - support-core-ui
+  - :who: Aaron Glazer
+    :why: Core Android Library
+    :versions: []
+    :when: 2017-02-14 19:55:43.017836000 Z
+- - :ignore
+  - support-core-utils
+  - :who: Aaron Glazer
+    :why: Core Android Library
+    :versions: []
+    :when: 2017-02-14 19:55:43.017836000 Z
+- - :ignore
+  - support-fragment
+  - :who: Aaron Glazer
+    :why: Core Android Library
+    :versions: []
+    :when: 2017-02-14 19:55:43.017836000 Z
+- - :ignore
+  - support-media-compat
+  - :who: Aaron Glazer
+    :why: Core Android Library
+    :versions: []
+    :when: 2017-02-14 19:55:43.017836000 Z
+- - :ignore
+  - recyclerview-v7
+  - :who: Aaron Glazer
+    :why: Core Android Library
+    :versions: []
+    :when: 2017-02-14 19:55:43.017836000 Z
+- - :ignore
+  - support-annotations
+  - :who: Aaron Glazer
+    :why: Core Android Library
+    :versions: []
+    :when: 2017-02-14 19:55:43.017836000 Z

@@ -1,0 +1,75 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/project
+    docker:
+      - image: circleci/android:api-29@sha256:56caefe7f89f171f14cb43e8eefae2b2d395abac4c71ddd35e78066bdd55e89c
+    shell: /bin/bash --login
+    steps:
+      - restore_cache:
+          keys:
+            - v1-dep-{{ .Branch }}-
+            - v1-dep-dev-
+            - v1-dep-
+      - checkout:
+          name: Checkout Code
+      - run: 
+          name: Sync Submodules and Update
+          command: git submodule sync && git submodule update --init
+      - save_cache:
+          key: v1-dep-{{ .Branch }}-{{ epoch }}
+          paths:
+            - ~/.gradle
+            - ~/.android
+            - ~/android
+            - ~/.git
+      - run: 
+          name: Test
+          working_directory: ~/project/Taplytics
+          command: ./gradlew test --info
+      - store_test_results:
+          path: /tmp/circleci-test-results
+  deploy:
+    working_directory: ~/project
+    docker:
+      - image: circleci/android:api-29@sha256:56caefe7f89f171f14cb43e8eefae2b2d395abac4c71ddd35e78066bdd55e89c
+    steps:
+      - checkout:
+          name: Checkout Code
+      - run:
+          name: Configure user name
+          command: git config user.name "jsalaber"
+      - run:
+          name: Configure user email
+          command: git config user.email "jcsalaber@hotmail.com"
+      - run:
+          name: Checkout staging
+          command: git fetch origin staging && git checkout staging
+      - run:
+          name: Replace mapping file
+          working_directory: ~/project/Taplytics
+          command: | 
+            rm taplytics/mapping.txt
+            git checkout origin/dev -- taplytics/mapping.txt
+            git diff-index --quiet HEAD -- || (git add . && git commit -m 'force dev mapping')
+      - run:
+          name: Merge dev into staging
+          working_directory: ~/project/Taplytics
+          command: git merge -X theirs origin/dev --no-commit --no-ff
+      - run:
+          name: Run gradle build and commit build files to staging
+          working_directory: ~/project/Taplytics/taplytics
+          command: |
+            ./gradlew clean build --refresh-dependencies copyMapping
+            git diff-index --quiet HEAD -- || (git add ../../. && git commit -m 'deploy aar' && git push origin staging)
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: dev

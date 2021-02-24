@@ -1,0 +1,8 @@
+<taskdef name="stringer" classname="com.licel.stringer.AntTask" classpath="stringer/stringer.jar" />
+<stringer checkCaller="false" verbose="false"
+		optimize="false" integrityProtection="false"
+		resourceEncryption="false"
+		osgiCompatibility="false"
+    	srcFile="../Android Studio/Taplytics/taplytics/build/intermediates/bundles/release/classes.jar"
+    	destFile="../../Taplytics-Android-SDK/Eclipse/Taplytics-sdk/libs/taplytics.jar">
+</stringer>

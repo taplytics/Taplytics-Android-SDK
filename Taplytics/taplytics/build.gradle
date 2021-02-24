@@ -1,0 +1,218 @@
+/*
+ * Copyright © 2020 Taplytics Inc. See https://taplytics.com/terms/ for more
+ */
+
+/** To build:
+ *  ./gradlew build
+ *
+ *  To generate the AARs and move them to the git repo:
+ *  ./gradlew uploadArchives
+ **/
+plugins {
+    id "com.github.hierynomus.license" version "0.14.0"
+}
+
+apply plugin: "com.android.library"
+apply plugin: "maven"
+apply plugin: "kotlin-android"
+apply plugin: 'kotlin-kapt'
+apply from: "../dependencies.gradle"
+
+//UPDATE ALONG WITH CHANGES
+version = "2.10.4"
+group = "com.taplytics.sdk"
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion '30.0.2'
+    //TODO: Fix the need for this (multipart upload things, its not included in 6+) (Its done if you only support retrofit)
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        group = "com.taplytics.sdk"
+        minSdkVersion 14
+        targetSdkVersion 30
+
+        consumerProguardFiles 'proguard-consumer.txt'
+        versionName version
+
+        // Have to add this to retrieve the VERSION_NAME in BuildConfig because of gradle plugin
+        // see https://issuetracker.google.com/issues/158695880
+        buildConfigField 'String', 'VER_NAME', "\"$versionName\""
+    }
+
+    lintOptions {
+        disable 'InvalidPackage', 'DefaultLocale'
+        abortOnError false
+    }
+
+    buildTypes {
+        all {
+            minifyEnabled true
+            proguardFiles = [getDefaultProguardFile("proguard-android.txt"), 'proguard-project.pro'];
+        }
+    }
+
+    sourceSets {
+        main {
+            java { srcDirs += ['src/main/java', 'libs/httpclient/httpmime/src/main/java'] }
+        }
+        test {
+            java { srcDirs += ['src/test/java'] }
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    testOptions {
+        unitTests.all {
+            systemProperty 'robolectric.dependency.repo.url', 'https://repo1.maven.org/maven2'
+        }
+    }
+}
+
+repositories {
+    google()
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Retrofit
+    androidTestImplementation 'com.squareup.okhttp3:okhttp:+'
+    androidTestImplementation 'com.squareup.okhttp3:okhttp-ws:+'
+    androidTestImplementation('com.squareup.retrofit2:retrofit:+') {
+        transitive = false
+    }
+
+    implementation restDependencies.values()
+    implementation supportDependencies.values()
+    implementation firebaseDependencies.values()
+
+    // SocketIO
+    // DO NOT UPDATE THIS UNTIL THE SERVER GETS UPDATED AS WELL
+    // IT WILL BREAK THE SOCKET CONNECTION
+    implementation('io.socket:socket.io-client:1.0.1') {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+
+    //TESTING
+    testImplementation 'com.android.support.test:runner:+'
+    // Set this dependency to use JUnit 4 rules
+    testImplementation 'com.android.support.test:rules:+'
+
+    // JUnit
+    testImplementation('junit:junit:4.13') {
+        exclude module: 'hamcrest-core'
+    }
+
+    // Espresso
+    testImplementation 'com.android.support.test.espresso:espresso-core:+'
+
+    // Set this dependency to build and run UI Automator tests
+    //androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
+
+    // JSON
+    testImplementation 'org.json:json:20140107'
+
+    // Assert
+    testImplementation 'com.squareup.assertj:assertj-android:+'
+
+    // UI Automater
+    testImplementation 'com.android.support.test.uiautomator:uiautomator-v18:+'
+
+    // Robolectric
+    testImplementation 'org.robolectric:robolectric:3.1.1'
+
+    // Awaitility
+    testImplementation 'com.jayway.awaitility:awaitility:+'
+
+    // Mockito
+    testImplementation 'org.mockito:mockito-core:2.28.2'
+
+    // JSON Assert
+    testImplementation 'org.skyscreamer:jsonassert:+'
+
+    // Hamcrest
+    testImplementation 'org.hamcrest:hamcrest-core:+'
+
+    // Powermock
+    def powermock_version = '2.0.2'
+    testImplementation "org.powermock:powermock-api-mockito2:$powermock_version"
+    testImplementation "org.powermock:powermock-module-junit4:$powermock_version"
+
+    // mockk
+    testImplementation "io.mockk:mockk:1.10.5"
+    testImplementation("net.bytebuddy:byte-buddy:1.10.19")
+
+    // Play services
+    testImplementation 'com.google.android.gms:play-services-analytics:11.+'
+}
+
+
+//For releasing
+uploadArchives {
+    repositories.mavenDeployer {
+        //REMINDER: TURN PROGUARD ON
+        repository(url: "file://" + projectDir.absolutePath + "/../../SDK/AndroidStudio/")
+    }
+}
+//See note below
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.0'
+}
+
+task clearSDK(type: Delete) {
+    delete("../../SDK/AndroidStudio")
+}
+
+task copyMapping(type: Copy) {
+    from("/build/outputs/mapping/release/mapping.txt")
+    into("/")
+}
+
+uploadArchives.dependsOn(clearSDK)
+copyMapping.dependsOn(uploadArchives)
+
+license {
+    ext.year = Calendar.getInstance().get(Calendar.YEAR)
+    ext.name = 'Taplytics'
+    ext.email = 'hello@taplytics.com'
+    include "**/*.java"
+    excludes(["**/*Test.java", "**/promise*", "**/compat/*.java"])
+}
+
+downloadLicenses {
+    ext.apacheTwo = license('Apache License, Version 2.0', 'http://opensource.org/licenses/Apache-2.0')
+    ext.bsd = license('BSD License', 'http://www.opensource.org/licenses/bsd-license.php')
+    ext.taplytics = license('Taplytics', 'Copyright © 2020 Taplytics Inc. See https://taplytics.com/terms/ for more')
+    ext.MIT = license('MIT License', 'https://opensource.org/licenses/MIT')
+
+    includeProjectDependencies = true
+    licenses = [
+            'com.squareup.okhttp:okhttp:+'     : apacheTwo,
+            'com.squareup.okhttp:okhttp-ws:+'  : apacheTwo,
+            'com.android.volley:volley:+'      : apacheTwo,
+            'com.squareup.retrofit2:retrofit:+': apacheTwo,
+            'io.socket:socket.io-client:1.0.1' : MIT,
+            'com.taplytics.sdk:taplytics:+'    : taplytics
+    ]
+
+    aliases = [
+            (apacheTwo): ['The Apache Software License, Version 2.0', 'Apache 2', 'Apache License Version 2.0', 'Apache License, Version 2.0', 'Apache License 2.0', license('Apache License', 'http://www.apache.org/licenses/LICENSE-2.0')],
+            (bsd)      : ['BSD', license('New BSD License', 'http://www.opensource.org/licenses/bsd-license.php')]
+    ]
+
+    excludeDependencies = [
+            'com.android.support:recyclerview-v7:26.+',
+            'com.android.support:support-fragment:26.+',
+    ]
+
+    dependencyConfiguration = 'compile'
+}

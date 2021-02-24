@@ -1,0 +1,76 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>test</groupId>
+    <artifactId>hello-osgi-bundle</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+
+    <name>Hello Osgi Bundle</name>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>licel</id>
+            <url>https://licel.ru/m2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories> 
+   
+    <dependencies>
+     <dependency>
+       <groupId>org.apache.felix</groupId>
+       <artifactId>org.osgi.core</artifactId>
+       <version>1.0.0</version>
+     </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>            
+                <groupId>com.licel</groupId>
+                <artifactId>stringer-maven-plugin</artifactId>
+                <version>1.6.11</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>stringer</goal>
+                        </goals>
+                        <configuration>  
+                            <verbose>true</verbose>
+                            <checkCaller>true</checkCaller>
+                            <resourceEncryption>false</resourceEncryption>	
+                            <integrityProtection>true</integrityProtection>	
+                            <osgiCompatibility>true</osgiCompatibility>
+			    <!-- Since 1.0.2 ${user.home}/stringer.licel is default location-->	
+                            <!--licenseFile>${user.home}/stringer.licel</licenseFile-->
+                            <includes>
+                                <include>test/**</include>
+                            </includes>
+                            <excludes>
+                                <exclude>exclude/**</exclude>
+                            </excludes>  
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+      <plugin>    <!-- (2) START -->
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Export-Package>test.api</Export-Package>
+            <Private-Package>test.*</Private-Package>
+            <Bundle-Activator>test.HelloImpl</Bundle-Activator>
+          </instructions>
+        </configuration>
+      </plugin>    <!-- (2) END -->
+    </plugins>
+    </build>
+
+</project>

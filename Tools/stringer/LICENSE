@@ -1,0 +1,162 @@
+LICEL LLC END-USER LICENSE AGREEMENT
+
+SOFTWARE LICENSE
+
+1. Grant of License. This End-User License Agreement ("License") is a legal
+contract between Licensee (either (a) an individual user or (b) a business
+organization) ("Licensee") and Licel, LLC ("Licensor" or "Licel") that contains
+rights and restrictions associated with use of the accompanying software and
+documentation ("Software"). The Software also includes any updates, add-on
+components, web services and supplements that Licensor may in the future provide
+to Licensee or make available to Licensee, to the extent such items are not
+accompanied by a separate license agreement or terms of use. The Software is
+licensed, not sold. Licensor is willing to license the Software to Licensee only
+if Licensee accepts the terms and conditions of this License. Read the License
+carefully before installing the Software. By installing and/or using the
+Software, Licensee agrees to the terms and conditions of this License. Upon
+Licensee's payment of the full license price and acceptance of this License,
+Licel grants to Licensee a non-exclusive, non-assignable, non-transferable
+limited license to install and use the Software on the terms and conditions set
+forth herein.
+
+2. Restrictions on Use of Software. Licensee may install and use the Software
+only for its internal business purposes. Licensee will not rent, lease, lend,
+sublicense, redistribute or otherwise allow third parties to use the Software
+directly or indirectly, whether on a time sharing, remote job entry, or service
+bureau arrangement or to provide commercial hosting services to third parties.
+Notwithstanding the foregoing, Licensee shall be permitted to perform all acts
+necessary to use the Software for its intended purpose including providing
+access to Software for independent consultants and subcontractors, solely for
+Licensee's internal business purposes. Licensee may freely distribute
+applications that it has processed using the Software.
+
+3. Licensing Policy. Stringer is licensed per seat. You need a separate license 
+for each developer workstation and build server. The license is perpetual. Each 
+license includes free minor upgrades, e.g. from 4.2.1 to 4.5.0.
+
+4. Technical support services. Each new licence includes complimentary 1-year 
+technical support subscription. We guarantee response time of less than 24 hours 
+(business days) or equal. Under this subscription you have unlimited number of tickets 
+via email only.
+
+5. No Modification Non-Use by Third Parties. Licensee may not modify the
+Software files, executables, or otherwise. Use of this software is limited to
+first party applications. Licensee may not, directly or indirectly, provide as a
+service, use of the Software. By way of example, but not as limitations this
+includes providing a networked interface to the software, direct or indirect use
+of the Software for other persons by the Licensee, or knowingly allowing third
+parties to access the Software. This License is for the use of the Software in
+object code form only. Licensee agrees to take all reasonable precautions to
+secure the Software from distribution to any third party.
+
+6. Other Restrictions. Licensee agrees that the Software is the sole and
+exclusive property of Licel and is proprietary to Licel. Licensee shall use the
+Software only as expressly permitted by this License and shall keep confidential
+and use the Licensee's best efforts to prevent and protect the contents of the
+Software (or any part thereof) from unauthorized disclosure. Licensee shall not
+modify, decompile, disassemble, decrypt, extract, or otherwise reverse engineer
+Software. Software may not be leased, assigned, or sublicensed, in whole or in
+part. Licensee accepts full responsibility for use of the Software including,
+but not limited to, acceptance of full responsibility pursuant to third party
+software and licensing agreements regarding the use of the Software to modify,
+examine, or otherwise process such third party software. Licensee shall have
+sole responsibility for the installation of the Software.
+
+7. Maintenance or Other Services. If ordered by Licensee and upon payment of the
+applicable fee, Licensee is entitled to receive technical support services,
+including corrections, fixes and enhancements to the Software as such are made
+generally available (the "Maintenance Services") from Licensor in accordance
+with Licensor's then-current maintenance terms for the applicable maintenance
+level purchased by Licensee. Maintenance services will not include any releases
+of the Software that Licensor determines to be a separate product or for which
+Licensor charges its customers extra or separately. The provision and use of
+Maintenance Services is governed by the Licensor's policies and programs
+described in the online documentation. Any supplemental software code provided
+to Licensee as part of the Maintenance Services shall be considered part of the
+Software and subject to the terms and conditions of this License.
+
+8. Trademarks and Logos. This License does not authorize Licensee to use any
+name, trademark or logo of Licensor. Licensee acknowledges that Licensor owns
+the "Licel", "Stringer",
+trademarks, logos and icons. Licensee shall neither take nor permit any action
+that will delete or obscure Licensor's copyright legend on any Software and any
+related documentation and materials.
+
+9. Competitive Product Restriction. Licensee may not use, distribute or
+integrate the Runtime Software with any general-purpose obfuscation,
+optimization, size reduction, monitoring, or application lifecycle management
+product that is generally competitive with Licel's product offerings; nor may
+Licensee use the Software or Runtime Software to create a product that is
+generally competitive with Licel's product offerings.
+
+10. Disclaimer of Warranty. The Software is provided "AS IS," without any
+warranty or representation of any kind. TO THE MAXIMUM EXTENT PERMITTED BY
+APPLICABLE LAW, THE SOFTWARE IS PROVIDED BY LICEL LLC AND ITS SUPPLIERS "AS IS"
+WITHOUT ANY CONDITION OR WARRANTY WHATSOEVER. ALL CONDITIONS AND WARRANTIES,
+WHETHER EXPRESS OR IMPLIED, ARE DISCLAIMED BY LICEL LLC AND ITS SUPPLIERS,
+INCLUDING, WITHOUT LIMITATION, THE IMPLIED CONDITIONS AND/OR WARRANTIES OF
+MERCHANTABILITY, TITLE, NONINFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN
+THE EVENT OF ANY ACTUAL BREACH OF THIS LICENSE BY LICEL, LICENSEE'S SOLE AND
+EXCLUSIVE REMEDY SHALL BE THE RECISSION OF THIS LICENSE AND RECOVERY OF ANY SUMS
+PAID BY LICENSEE TO LICEL DURING THE PREVIOUS TWELVE MONTHS.
+
+11. Limitation of Liability. LICEL AND ITS LICENSORS SHALL NOT BE LIABLE FOR ANY
+DAMAGES SUFFERED BY LICENSEE OR ANY THIRD PARTY AS A RESULT OF USING OR
+DISTRIBUTING SOFTWARE. WITHOUT LIMITING THE GENERALITY OF THE PRECEDING
+SENTENCE, IN NO EVENT WILL LICEL OR ITS LICENSORS BE LIABLE FOR ANY LOST
+REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL,
+INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF
+LIABILITY, ARISING OUT OF THE USE OF OR INABILITY TO USE SOFTWARE, EVEN IF LICEL
+HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+12. Termination. Licensee may terminate this License by either returning the
+Software to Licel or destroying the Software (in which event, Licensee shall
+certify in writing to Licel that such destruction has occurred). This License
+will terminate immediately without notice from Licel if Licensee fails to comply
+with any provision of this License. Upon such termination, Licensee must destroy
+all copies of Software, and upon Licel's request, Licensee shall certify in
+writing to Licel that such destruction has occurred. In the event of a
+termination of the License for any reason or by any party, Licensee shall have
+no right to claim a refund for any sums paid by Licensee to Licel. From and
+after the termination of the License for any reason or by any party, Licensee
+shall not use the Software for any purpose whatsoever and shall not disclose or
+use the Software (or any part thereof) in any fashion.
+
+13. Increased Usage. Should Licensee desire to increase its use of the Software
+beyond that which it had contracted for, Licensee agrees that pricing for the
+increased usage will be at the then current rates.
+
+14. Severability. If any of the above provisions are held to be in violation of
+applicable law, void, or unenforceable in any jurisdiction, then such provisions
+are herewith waived to the extent necessary for the License to be otherwise
+enforceable in such jurisdiction. However, if in Licensor's opinion deletion of
+any provisions of the License by operation of this paragraph unreasonably
+compromises the rights or increase the liabilities of Licensor or its licensors,
+Licensor reserves the right to terminate the License and refund the fee paid by
+Licensee, if any, and such refund shall be Licensee's sole and exclusive remedy.
+
+15. No Waiver. No waiver by Licensor of any breach of any provision of this
+Agreement shall be elective unless in writing signed by Licensor. No waiver
+shall constitute a continuing waiver unless expressly provided in the writing
+signed by Licensor.
+
+16. Parties. Licensee and Licensor are independent parties. Nothing in this
+Agreement shall be construed as making Licensee an employee, agent or legal
+representative of Licensor. There are no third-party beneficiaries of this
+Agreement.
+
+17. Taxes. Licel's fees are exclusive of all taxes, levies, or duties imposed by
+taxing authorities, and Licensee shall be responsible for payment of all such
+items.
+
+18. Educational and Non-Commercial license. If you have aforementioned license you have
+no right to use Stringer for commercial purposes.
+
+19. Term. This Agreement commences on the earlier of either the date this
+Agreement is accepted by requesting an activation code.
+
+20. Third-Party Licenses. Information about third-party components and its
+licenses can be found in distribution.
+
+21. THIS END-USER LICENSE AGREEMENT MAY BE CHANGED UNILATERALLY BY LICEL AT ANY 
+TIME. LATEST VERSION OF EULA CAN BE FOUND IN CURRENT VERSION OF DISTRIBUTION.

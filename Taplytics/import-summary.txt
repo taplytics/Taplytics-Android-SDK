@@ -1,0 +1,92 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Risky Project Location:
+-----------------------
+The tools *should* handle project locations in any directory. However,
+due to bugs, placing projects in directories containing spaces in the
+path, or characters like ", ' and &, have had issues. We're working to
+eliminate these bugs, but to save yourself headaches you may want to
+move your project to a location where this is not a problem.
+/Users/vic/work/Taplytics-Android/Android Studio/Taplytics
+                                         -                
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* README.md
+* build.xml
+* doc/
+* doc/allclasses-frame.html
+* doc/allclasses-noframe.html
+* doc/com/
+* doc/com/taplytics/
+* doc/com/taplytics/sdk/
+* doc/com/taplytics/sdk/Taplytics.TaplyticsCodeExperimentListener.html
+* doc/com/taplytics/sdk/Taplytics.html
+* doc/com/taplytics/sdk/class-use/
+* doc/com/taplytics/sdk/class-use/Taplytics.TaplyticsCodeExperimentListener.html
+* doc/com/taplytics/sdk/class-use/Taplytics.html
+* doc/com/taplytics/sdk/package-frame.html
+* doc/com/taplytics/sdk/package-summary.html
+* doc/com/taplytics/sdk/package-tree.html
+* doc/com/taplytics/sdk/package-use.html
+* doc/constant-values.html
+* doc/deprecated-list.html
+* doc/help-doc.html
+* doc/index-files/
+* doc/index-files/index-1.html
+* doc/index-files/index-2.html
+* doc/index-files/index-3.html
+* doc/index-files/index-4.html
+* doc/index-files/index-5.html
+* doc/index-files/index-6.html
+* doc/index-files/index-7.html
+* doc/index.html
+* doc/overview-tree.html
+* doc/package-list
+* doc/resources/
+* doc/resources/inherit.gif
+* doc/stylesheet.css
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:+
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => taplytics/src/main/AndroidManifest.xml
+* assets/ => taplytics/src/main/assets/
+* lint.xml => taplytics/lint.xml
+* res/ => taplytics/src/main/res/
+* src/ => taplytics/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

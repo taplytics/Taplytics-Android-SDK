@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+  <dict>
+    <key>CFBundleName</key>
+    <string>Stringer-GUI</string>
+    <key>CFBundleVersion</key>
+    <string>1.6.11</string>
+    <key>CFBundleAllowMixedLocalizations</key>
+    <string>true</string>
+    <key>CFBundleExecutable</key>
+    <string>JavaApplicationStub</string>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>English</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleIconFile</key>
+    <string>stringer.icns</string>
+    <key>Java</key>
+    <dict>
+      <key>MainClass</key>
+      <string>com.licel.stringer.gui.StringerDialog</string>
+      <key>JVMVersion</key>
+      <string>1.4+</string>
+      <key>ClassPath</key>
+      <array><string>$JAVAROOT/repo/com/licel/stringer-gui/1.6.11/stringer-gui-1.6.11.jar</string><string>$JAVAROOT/repo/org/swinglabs/swing-layout/1.0.3/swing-layout-1.0.3.jar</string><string>$JAVAROOT/repo/com/licel/stringer/1.6.11/stringer-1.6.11.jar</string><string>$JAVAROOT/repo/org/apache/ant/ant/1.8.1/ant-1.8.1.jar</string><string>$JAVAROOT/repo/org/apache/ant/ant-launcher/1.8.1/ant-launcher-1.8.1.jar</string><string>$JAVAROOT/repo/com/licel/stringer-annotations/1.0.3/stringer-annotations-1.0.3.jar</string></array>
+          </dict>
+  </dict>
+</plist>
