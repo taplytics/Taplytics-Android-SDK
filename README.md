@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [2.10.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
+### **Current Version: [2.10.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
 #### Note: Migrate your project to v2.0.0 to use pushes. Instructions for migrating can be found [here](/MIGRATE.md). 
 
@@ -20,6 +20,10 @@ _How do I, as a developer, start using Taplytics?_
 _The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://docs.taplytics.com/docs) for more detailed installation and usage information._
 
 ## Changelog
+
+**[2.10.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.10.10)**
+- Potential fix for intercepting non-Taplytics network requests
+
 
 **[2.10.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/2.10.8)**
 - Fix an issue where client events would be posted in fastmode if disable options were present
