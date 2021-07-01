@@ -2,7 +2,7 @@
 
 _Taplytics is a native mobile A/B testing and push notification platform that helps you optimize your Android / Android TV / Fire TV app!_
 
-**[Get started with Taplytics](https://taplytics.com/docs/android-sdk/getting-started)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
+**[Get started with Taplytics](https://docs.taplytics.com/docs/android-sdk)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
 ### **Current Version: [2.10.10](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
