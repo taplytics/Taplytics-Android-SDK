@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://docs.taplytics.com/docs/android-sdk)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [2.12.](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
+### **Current Version: [2.12.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
 #### Note: Migrate your project to v2.0.0 to use push notifications. Instructions for migrating can be found [here](/MIGRATE.md). 
 
