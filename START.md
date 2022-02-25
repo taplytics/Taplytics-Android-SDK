@@ -13,7 +13,9 @@ You can use Taplytics to create [Experiments](https://taplytics.com/docs/android
 
 ### Android Studio
 
-1. _In your module’s build.gradle, add the url to the sdk._
+1. _In your module’s build.gradle, add the url to the sdk._ 
+
+    _**NOTE: In newer applications, this must also be added to your project's settings.gradle**_
 
     ```
     repositories {                                                                                              
