@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing and push notification platform that he
 
 **[Get started with Taplytics](https://docs.taplytics.com/docs/android-sdk)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
 
-### **Current Version: [3.0.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
+### **Current Version: [3.0.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
 #### Note: Migrate your project to v2.0.0 to use push notifications. Instructions for migrating can be found [here](/MIGRATE.md). 
 
@@ -21,7 +21,10 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 ## Changelog
 
-**[3.0.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.2)**
+**[3.0.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.4)**
+- Fixed issue opening push notifications for Android 12+
+
+**[3.0.3](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.3)**
 - Added option to disable overlay
 
 **[3.0.2](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.2)**
