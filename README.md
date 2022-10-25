@@ -26,6 +26,12 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 
 
+**[3.0.5](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.5)**
+- fixed duplicate events happening on some locales
+- fixed duplicate events happening on some locales
+
+
+
 **[3.0.4](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.4)**
 - Fixed issue opening push notifications for Android 12+
 
