@@ -20,6 +20,8 @@ _How do I, as a developer, start using Taplytics?_
 _The Taplytics team is available 24/7 to answer any questions you have. Just email support@taplytics.com or visit [our docs page](https://docs.taplytics.com/docs) for more detailed installation and usage information._
 
 ## Changelog
+**[3.0.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.7)**
+- Fixed push opened event tracking for Android SDK versions 23-30
 
 **[3.0.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.7)**
 - Added app update checking
