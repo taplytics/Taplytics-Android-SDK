@@ -1,4 +1,4 @@
-# Google Push Certificates
+# Google Push Certificates / FCM Certs
 
 #### Upload your Google Push certificates so you can send push notifications using Taplytics.
 
