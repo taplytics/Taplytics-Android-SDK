@@ -1,4 +1,4 @@
-### Sockets
+### Sockets and Socket.io usage
 
 #### Usage
 Sockets are used in the Taplytics SDK to establish a two way connection to Taplytics' servers. This connection is used for editing experiments, both for visual experiments and dynamic variables. However it is only used in the development versions of the app, or devices which have been explicitly paired with Taplytics using a pairing email or text message.
