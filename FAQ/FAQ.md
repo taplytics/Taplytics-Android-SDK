@@ -1,8 +1,6 @@
 # Taplytics FAQ
 
-### Q. Why is Taplytics making my app take 15+ seconds to load?
-
-In 99% of cases, this is the fault of Instant Run being enabled. Due to the nature of libraries not being able to have the `vmSafeMode` tag (it is application specific), this process cannot currently be sped up.
+### Q. Why is instant run causing slowness?
 
 **[Here is a response from an Android Studio developer on the problem](https://www.reddit.com/r/androiddev/comments/4m2v25/instant_run_causing_incredibly_long_app_start/d3s9iox)**
 
@@ -81,19 +79,3 @@ This only works with dialogFragments as normal Dialogs do not have any unique id
 
 **NOTE:**
 dialogFragments exist on an entirely different view hierarchy than traditional view elements. They exist within their own `window` and have an entirely different viewRoot than the rest of your application. This makes changes on dialogs very difficult, and this feature is not 100% guaranteed to work for all dialogs.
-
-### Q. Why do your callbacks no longer have timeouts as parameters?
-
-**We wanted all callbacks to use the same timeout, so it has since been changed to a starting parameter. Please see the starting docs.**
-
-For example:
-
-```java
-Taplytics.startTaplytics(Context, ApiKey, TimeOut)
-```
-
-or
-
-```java
-Taplytics.StartTaplytics(Context, ApiKey, Options, TimeOut...)
-```
