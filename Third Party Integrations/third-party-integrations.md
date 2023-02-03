@@ -1,6 +1,6 @@
 # Third Party Integrations
 
-### Push your experiments to your favourite analytics sources
+### Push your experiments to your favorite analytics sources
 
 The Taplytics SDK can automatically push experiments to the following Analytics Sources:
 
