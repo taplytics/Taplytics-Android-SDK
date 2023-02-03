@@ -11,7 +11,6 @@ Setting up Push Notifications using Taplytics is simple. Follow the steps below 
 | 7 | [Tracking Self Built Notifications](#7-tracking-self-built-notifications)                   |
 | 8 | [Troubleshooting](#8-troubleshooting)                                                       |
  
-### Google has [changed](https://developers.google.com/cloud-messaging/android/android-migrate-fcm) the way push notifications work from using GCM to FCM, migrate ASAP!
 
 ## 1. Setup
 
