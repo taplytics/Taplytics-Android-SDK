@@ -1,8 +1,8 @@
 # Taplytics-Android SDK
 
-_Taplytics is a native mobile A/B testing and push notification platform that helps you optimize your Android / Android TV / Fire TV app!_
+_Taplytics is a native mobile A/B testing, feature flagging, and push notification platform that helps you optimize your Android / Android TV / Fire TV app!_
 
-**[Get started with Taplytics](https://docs.taplytics.com/docs/android-sdk)** | **[View the Javadoc](https://s3.amazonaws.com/cdn.taplytics.com/javadoc/index.html)** |   	 **[FAQ](https://github.com/taplytics/Taplytics-Android-SDK/tree/master/FAQ)** |  **[Commercial License / Terms](http://taplytics.com/terms)**
+**[Check out the Docs](https://docs.taplytics.com/docs/android-sdk)**
 
 ### **Current Version: [3.0.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
@@ -611,3 +611,5 @@ _Note: Contact support@taplytics.com to get your project user based bucketing en
 
   ------
 ### [Full historical changelog can be found here](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)
+
+ **[Commercial License / Terms](http://taplytics.com/terms)**
