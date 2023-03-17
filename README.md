@@ -4,7 +4,7 @@ _Taplytics is a native mobile A/B testing, feature flagging, and push notificati
 
 **[Check out the Docs](https://docs.taplytics.com/docs/android-sdk)**
 
-### **Current Version: [3.1.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
+### **Current Version: [3.1.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/latest)**
 
 
 ## Getting Started
@@ -20,10 +20,14 @@ _The Taplytics team is available 24/7 to answer any questions you have. Just ema
 
 ## Changelog
 
-**[3.1.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.7)**
+
+**[3.1.1](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.1.1)**
+- Deobfuscate public listeners
+
+**[3.1.0](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.1.0)**
 - Added debug function `getAllVariables` to allow for getting information on all variables in the config at the moment.
 
-**[3.0.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.7)**
+**[3.0.8](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.8)**
 - Fixed push opened event tracking for Android SDK versions 23-30
 
 **[3.0.7](https://github.com/taplytics/Taplytics-Android-SDK/releases/tag/3.0.7)**
